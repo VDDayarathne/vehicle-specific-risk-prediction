@@ -1,0 +1,501 @@
+accident_id,date,time,day_of_week,is_weekend,hour,location_name,latitude,longitude,elevation_m,vehicle_type,num_vehicles,accident_type,driver_age,driver_gender,driving_exp_yrs,estimated_speed_kmh,speed_limit_kmh,speeding,weather_condition,precipitation_mm,temp_avg_c,visibility_km,wind_speed_kmh,pressure_hpa,road_curvature,road_slope_deg,surface_condition,severity,injuries,fatalities,risk_score,reporting_officer
+KDG-0218,2019-01-01,17:18,Tuesday,0,17,Kandy Road Descent,7.247473,80.525466,591,lorry,1,overturn,34.0,female,13.0,88.0,60,1,foggy,0.0,29.2,0.2,26.0,1010.7,mild,9.2,dry,medium,2,0,11,SLP-1034
+KDG-0248,2019-01-01,17:42,Tuesday,0,17,Sensation Rock Bend,7.254662,80.531674,561,lorry,2,pedestrian_hit,27.0,female,9.0,71.0,50,1,clear,0.0,26.1,8.1,16.8,1008.6,sharp,13.4,oily,high,5,2,12,SLP-1008
+KDG-0385,2019-01-07,09:37,Monday,0,9,Kadugannawa Town Entry,7.255901,80.534916,587,motorcycle,3,head_on,36.0,male,6.0,80.0,60,1,mist,0.0,26.2,,26.7,1012.9,mild,6.9,wet,medium,2,0,10,SLP-1077
+KDG-0334,2019-01-09,07:22,Wednesday,0,7,Sensation Rock Bend,7.254332,80.530516,612,car,1,hit_barrier,27.0,male,9.0,,50,1,clear,0.0,29.0,6.0,5.4,1012.4,sharp,15.0,dry,medium,1,0,7,SLP-1080
+KDG-0442,2019-01-21,07:47,Monday,0,7,Tunnel Bend,7.248884,80.527274,471,car,1,overturn,54.0,male,15.0,64.0,50,1,light_rain,4.8,30.2,2.0,27.0,1010.7,sharp,11.1,wet,medium,2,0,9,SLP-1038
+KDG-0056,2019-02-01,08:13,Friday,0,8,Rock Cutting Zone,7.252192,80.529484,540,motorcycle,1,overturn,37.0,male,3.0,49.0,50,0,clear,0.0,23.8,6.6,13.4,1007.7,sharp,13.9,dry,medium,3,0,7,SLP-1074
+KDG-0425,2019-02-04,22:48,Monday,0,22,Tunnel Bend,7.249763,80.527762,656,bus,1,overturn,56.0,male,5.0,60.0,50,1,clear,0.0,28.1,9.8,4.3,1012.3,sharp,13.3,dry,medium,1,0,10,SLP-1060
+KDG-0161,2019-02-08,09:42,Friday,0,9,Sensation Rock Bend,7.254167,80.531124,605,lorry,3,sideswipe,18.0,female,0.0,42.0,50,0,clear,0.0,28.8,9.4,20.7,1009.0,sharp,13.4,dry,medium,3,0,7,SLP-1006
+KDG-0412,2019-02-12,18:14,Tuesday,0,18,A1 Bridge Section,7.239186,80.517856,515,car,1,vehicle_fire,21.0,male,,100.0,70,1,clear,0.0,30.1,9.2,3.4,1014.2,straight,2.4,oily,low,0,0,6,SLP-1035
+KDG-0348,2019-02-13,12:29,Wednesday,0,12,Rock Cutting Zone,7.251872,80.529379,467,motorcycle,1,hit_barrier,21.0,female,2.0,66.0,50,1,clear,0.0,27.4,8.7,17.4,1013.2,sharp,12.9,dry,medium,2,0,9,SLP-1080
+KDG-0358,2019-02-18,12:32,Monday,0,12,Peradeniya Junction,7.235141,80.514385,537,three-wheeler,1,vehicle_fire,22.0,female,4.0,90.0,70,1,light_rain,2.6,29.6,,15.4,1009.7,straight,1.9,very_wet,medium,1,0,7,SLP-1072
+KDG-0129,2019-02-20,08:30,Wednesday,0,8,Queens Hotel Hairpin,7.262064,80.539118,531,three-wheeler,1,overturn,31.0,male,0.0,48.0,50,0,clear,0.0,27.6,8.8,14.8,1012.5,sharp,11.0,oily,medium,1,0,9,SLP-1006
+KDG-0415,2019-02-25,17:00,Monday,0,17,Peradeniya Junction,7.236543,80.513993,489,car,1,overturn,45.0,male,19.0,62.0,70,0,light_rain,3.4,26.8,2.7,16.9,1010.9,straight,0.7,wet,low,0,0,3,SLP-1038
+KDG-0320,2019-02-26,08:52,Tuesday,0,8,Sensation Rock Bend,7.255035,80.531395,568,three-wheeler,1,fell_off_road,37.0,male,12.0,37.0,50,0,light_rain,2.5,25.9,2.6,17.7,,sharp,14.5,wet,medium,3,0,8,SLP-1063
+KDG-0459,2019-03-05,12:13,Tuesday,0,12,Tunnel Bend,7.250396,80.527171,620,lorry,1,hit_barrier,44.0,male,12.0,77.0,50,1,clear,0.0,28.8,8.0,18.1,1010.6,sharp,12.4,very_wet,medium,1,0,11,SLP-1056
+KDG-0324,2019-03-16,10:16,Saturday,1,10,Queens Hotel Hairpin,7.261748,80.538587,537,car,2,sideswipe,46.0,male,5.0,84.0,50,1,light_rain,7.3,25.1,2.6,12.6,1009.0,sharp,11.7,wet,medium,3,1,9,SLP-1066
+KDG-0226,2019-03-17,10:22,Sunday,1,10,Queens Hotel Hairpin,7.262151,80.53887,521,car,2,rear_end,36.0,female,10.0,40.0,50,0,foggy,0.0,26.2,0.3,3.4,1006.5,sharp,10.5,oily,high,5,1,13,SLP-1087
+KDG-0304,2019-03-28,16:57,Thursday,0,16,Kandy Road Descent,7.247234,80.526257,657,motorcycle,2,pedestrian_hit,39.0,female,2.0,,60,1,clear,0.0,28.5,8.7,13.6,1013.8,mild,9.0,dry,low,0,0,6,SLP-1051
+KDG-0441,2019-03-31,11:31,Sunday,1,11,Peradeniya Junction,7.235751,80.513253,605,car,3,pedestrian_hit,,female,14.0,83.0,70,1,light_rain,3.6,25.8,3.5,25.4,1009.5,straight,0.6,wet,low,2,0,5,SLP-1077
+KDG-0262,2019-04-14,17:37,Sunday,1,17,Tunnel Bend,7.249573,80.528526,634,bus,2,pedestrian_hit,44.0,male,7.0,47.0,50,0,light_rain,5.5,28.1,3.5,16.1,1012.6,sharp,11.2,wet,medium,4,1,8,SLP-1069
+KDG-0296,2019-04-21,17:40,Sunday,1,17,Queens Hotel Hairpin,7.260685,80.538224,528,car,1,vehicle_fire,28.0,male,0.0,45.0,50,0,clear,0.0,24.8,8.0,21.8,1009.4,sharp,13.0,dry,low,1,0,5,SLP-1055
+KDG-0152,2019-04-23,11:10,Tuesday,0,11,Rock Cutting Zone,7.251299,80.530375,571,motorcycle,2,head_on,31.0,male,13.0,80.0,50,1,clear,0.0,25.3,5.2,9.1,1009.2,sharp,14.1,dry,medium,1,0,9,SLP-1040
+KDG-0197,2019-04-23,12:16,Tuesday,0,12,Sensation Rock Bend,7.253319,80.530935,473,lorry,3,pedestrian_hit,38.0,male,7.0,40.0,50,0,foggy,0.0,28.9,0.3,5.2,1011.7,sharp,13.4,dry,high,3,0,12,SLP-1074
+KDG-0448,2019-04-30,08:52,Tuesday,0,8,Sensation Rock Bend,7.253684,80.530881,626,car,1,overturn,53.0,female,1.0,68.0,50,1,clear,0.0,26.0,5.0,6.5,1016.3,sharp,15.6,oily,medium,4,0,10,SLP-1043
+KDG-0379,2019-05-02,14:30,Thursday,0,14,Galaboda Straight,7.241165,80.519906,583,motorcycle,1,hit_barrier,18.0,male,0.0,104.0,70,1,clear,0.0,27.8,8.0,17.1,1009.7,straight,3.2,dry,low,1,0,5,SLP-1044
+KDG-0359,2019-05-04,10:36,Saturday,1,10,Dawson's Rock Viewpoint,7.260304,80.536846,526,car,1,fell_off_road,27.0,male,9.0,60.0,60,0,light_rain,4.5,26.0,,7.8,1012.3,mild,8.8,wet,low,0,0,4,SLP-1043
+KDG-0431,2019-05-09,22:49,Thursday,0,22,Queens Hotel Hairpin,7.261273,80.538593,471,three-wheeler,1,vehicle_fire,32.0,male,3.0,42.0,50,0,light_rain,4.0,24.8,3.7,25.1,1012.7,sharp,10.9,wet,medium,3,0,10,SLP-1086
+KDG-0484,2019-05-14,16:09,Tuesday,0,16,Queens Hotel Hairpin,7.261014,80.538536,666,three-wheeler,1,vehicle_fire,,male,2.0,85.0,50,1,clear,0.0,28.1,5.3,25.6,1011.3,sharp,12.6,wet,medium,2,0,9,SLP-1074
+KDG-0273,2019-05-14,09:48,Tuesday,0,9,Tunnel Bend,7.248996,80.527892,677,three-wheeler,2,sideswipe,32.0,male,14.0,38.0,50,0,light_rain,6.6,31.1,3.7,14.0,,sharp,11.8,wet,medium,2,0,8,SLP-1091
+KDG-0473,2019-05-25,10:04,Saturday,1,10,Peradeniya Junction,7.234584,80.513886,560,lorry,3,rear_end,23.0,female,2.0,105.0,70,1,light_rain,1.6,23.8,2.2,13.4,1010.6,straight,1.2,wet,medium,4,0,7,SLP-1026
+KDG-0195,2019-05-28,10:41,Tuesday,0,10,Sensation Rock Bend,7.253661,80.530787,522,car,1,hit_barrier,48.0,female,6.0,77.0,50,1,foggy,0.0,27.1,0.1,16.6,1013.3,sharp,13.9,dry,high,3,3,12,SLP-1059
+KDG-0241,2019-06-03,17:58,Monday,0,17,Sensation Rock Bend,7.25311,80.531574,475,lorry,1,overturn,18.0,male,0.0,76.0,50,1,heavy_rain,15.2,24.1,1.3,15.7,1016.2,sharp,13.8,very_wet,high,4,1,15,SLP-1067
+KDG-0280,2019-06-14,07:35,Friday,0,7,Sensation Rock Bend,7.253115,80.531646,500,car,3,pedestrian_hit,29.0,male,,36.0,50,0,heavy_rain,24.8,23.8,0.5,19.1,1011.0,sharp,13.7,very_wet,medium,1,0,11,SLP-1078
+KDG-0311,2019-06-18,14:16,Tuesday,0,14,Tunnel Bend,7.249497,80.52866,663,bus,1,hit_barrier,30.0,female,7.0,39.0,50,0,light_rain,4.3,29.6,2.6,8.6,1009.6,sharp,12.8,wet,medium,2,0,8,SLP-1034
+KDG-0060,2019-06-18,12:51,Tuesday,0,12,Kadugannawa Town Entry,7.255042,80.534783,460,car,1,fell_off_road,64.0,female,13.0,46.0,60,0,light_rain,4.5,29.0,3.5,12.3,,mild,6.7,wet,low,0,0,4,SLP-1037
+KDG-0256,2019-06-18,06:34,Tuesday,0,6,Kandy Road Descent,7.247653,80.525795,641,three-wheeler,2,head_on,34.0,male,7.0,54.0,60,0,light_rain,7.4,25.1,2.2,15.1,1008.9,mild,10.2,very_wet,medium,2,0,7,SLP-1002
+KDG-0181,2019-06-21,00:38,Friday,0,0,Queens Hotel Hairpin,7.261531,80.539487,607,lorry,2,rear_end,28.0,male,10.0,66.0,50,1,clear,0.0,23.3,8.4,4.9,1012.0,sharp,11.3,dry,medium,3,1,11,SLP-1071
+KDG-0478,2019-07-01,08:24,Monday,0,8,Tunnel Bend,7.249609,80.527738,657,bus,1,vehicle_fire,33.0,male,8.0,66.0,50,1,clear,0.0,25.3,6.1,5.7,1010.0,sharp,12.3,oily,medium,3,0,11,SLP-1095
+KDG-0223,2019-07-03,20:14,Wednesday,0,20,Tunnel Bend,7.249494,80.527781,627,bus,1,fell_off_road,18.0,male,0.0,69.0,50,1,heavy_rain,13.3,22.2,1.4,9.2,1007.5,sharp,12.0,dry,high,5,0,14,SLP-1070
+KDG-0468,2019-07-04,02:46,Thursday,0,2,Tunnel Bend,7.249571,80.52772,494,car,1,overturn,37.0,male,8.0,72.0,50,1,clear,0.0,22.3,8.6,4.6,1009.2,sharp,12.5,very_wet,medium,1,0,11,SLP-1005
+KDG-0080,2019-07-05,11:36,Friday,0,11,Kadugannawa Town Entry,7.255721,80.533887,545,bus,1,fell_off_road,21.0,male,1.0,80.0,60,1,clear,0.0,24.2,7.3,2.4,1013.1,mild,6.6,dry,low,0,0,5,SLP-1066
+KDG-0475,2019-07-07,23:00,Sunday,1,23,Dawson's Rock Viewpoint,7.260229,80.53688,551,car,1,fell_off_road,24.0,male,2.0,73.0,60,1,clear,0.0,23.0,5.7,,1010.6,mild,8.0,dry,low,1,0,6,SLP-1095
+KDG-0170,2019-07-18,14:27,Thursday,0,14,Rock Cutting Zone,7.252271,80.52988,579,bus,2,head_on,19.0,female,1.0,73.0,50,1,light_rain,7.4,25.0,3.3,4.1,1009.6,sharp,13.7,very_wet,medium,1,1,11,SLP-1038
+KDG-0044,2019-07-20,19:47,Saturday,1,19,Galaboda Straight,7.241864,80.520216,664,motorcycle,2,sideswipe,37.0,female,15.0,67.0,70,0,clear,0.0,23.4,6.1,4.1,1009.2,straight,3.0,dry,low,1,0,3,SLP-1005
+KDG-0338,2019-08-01,08:48,Thursday,0,8,Kandy Road Descent,7.248541,80.525344,676,car,2,head_on,54.0,male,13.0,57.0,60,0,light_rain,4.5,27.1,2.3,23.3,1012.0,mild,10.2,wet,low,0,0,5,SLP-1053
+KDG-0065,2019-08-02,15:55,Friday,0,15,Queens Hotel Hairpin,7.261081,80.538446,506,three-wheeler,1,vehicle_fire,34.0,female,11.0,71.0,50,1,light_rain,4.6,25.0,1.9,19.3,1012.3,sharp,11.0,dry,medium,2,0,9,SLP-1011
+KDG-0050,2019-08-03,07:26,Saturday,1,7,Kadugannawa Town Entry,7.25514,80.535016,583,motorcycle,1,vehicle_fire,32.0,male,14.0,60.0,60,0,light_rain,6.4,28.1,2.8,10.7,1006.7,mild,7.6,very_wet,medium,2,0,7,SLP-1092
+KDG-0268,2019-08-03,20:11,Saturday,1,20,Tunnel Bend,7.249851,80.528575,478,car,1,fell_off_road,35.0,male,9.0,47.0,50,0,light_rain,1.5,20.8,2.9,3.7,1011.4,sharp,12.1,wet,medium,2,0,9,SLP-1061
+KDG-0350,2019-08-12,11:12,Monday,0,11,Peradeniya Junction,7.235294,80.514037,535,lorry,1,overturn,30.0,male,9.0,93.0,70,1,clear,0.0,25.9,6.9,8.1,1012.4,straight,0.5,dry,low,1,0,5,SLP-1001
+KDG-0138,2019-08-18,17:14,Sunday,1,17,Kadugannawa Town Entry,7.255839,80.533101,630,three-wheeler,2,head_on,54.0,male,7.0,88.0,60,1,clear,0.0,27.6,5.0,16.4,1013.5,mild,4.2,dry,low,1,0,5,SLP-1064
+KDG-0479,2019-08-22,18:35,Thursday,0,18,Queens Hotel Hairpin,7.260865,80.539486,640,motorcycle,1,hit_barrier,31.0,male,5.0,,50,1,light_rain,7.0,23.9,2.9,17.4,1014.0,sharp,12.2,wet,medium,1,0,11,SLP-1070
+KDG-0328,2019-08-25,22:45,Sunday,1,22,Rock Cutting Zone,7.251633,80.529541,680,motorcycle,1,fell_off_road,34.0,male,15.0,64.0,50,1,foggy,0.0,23.8,0.1,24.2,1012.8,sharp,14.0,wet,high,5,1,17,SLP-1080
+KDG-0087,2019-08-31,19:05,Saturday,1,19,Kandy Road Descent,7.248355,80.526222,651,car,2,rear_end,39.0,female,6.0,93.0,60,1,light_rain,7.0,25.4,2.5,22.1,1008.3,mild,9.8,very_wet,medium,1,0,7,SLP-1014
+KDG-0384,2019-09-22,16:24,Sunday,1,16,Dawson's Rock Viewpoint,7.259343,80.537161,537,motorcycle,1,hit_barrier,21.0,male,3.0,76.0,60,1,light_rain,5.6,30.7,2.6,14.1,1011.6,mild,8.4,wet,medium,1,0,8,SLP-1049
+KDG-0236,2019-09-23,09:08,Monday,0,9,Sensation Rock Bend,7.254582,80.532008,635,motorcycle,1,hit_barrier,25.0,female,7.0,85.0,50,1,clear,0.0,25.3,5.3,9.9,1010.9,sharp,14.7,dry,medium,1,0,9,SLP-1080
+KDG-0127,2019-09-28,09:27,Saturday,1,9,A1 Bridge Section,7.240025,80.517732,631,motorcycle,3,sideswipe,51.0,male,8.0,70.0,70,0,clear,0.0,29.9,6.7,15.4,1016.2,straight,1.5,dry,low,0,0,3,SLP-1017
+KDG-0274,2019-10-02,14:49,Wednesday,0,14,Tunnel Bend,7.248694,80.528567,540,three-wheeler,1,overturn,18.0,male,0.0,76.0,50,1,clear,0.0,24.9,9.6,12.1,1009.9,sharp,12.6,dry,medium,2,0,8,SLP-1065
+KDG-0126,2019-10-04,01:13,Friday,0,1,Sensation Rock Bend,7.2548,80.531662,521,car,1,fell_off_road,42.0,male,11.0,48.0,50,0,heavy_rain,37.5,24.6,1.1,9.5,1012.7,sharp,14.8,very_wet,high,4,0,13,SLP-1082
+KDG-0257,2019-10-06,01:06,Sunday,1,1,Kadugannawa Town Entry,7.255636,80.534178,603,lorry,1,fell_off_road,20.0,female,2.0,92.0,60,1,clear,0.0,26.0,4.2,7.9,1009.4,mild,6.3,dry,medium,2,0,8,SLP-1083
+KDG-0179,2019-10-16,14:14,Wednesday,0,14,Dawson's Rock Viewpoint,7.259578,80.536017,461,bus,1,hit_barrier,37.0,male,12.0,72.0,60,1,light_rain,3.8,31.2,1.8,6.3,1010.4,mild,7.6,very_wet,medium,3,0,8,SLP-1012
+KDG-0123,2019-10-18,08:05,Friday,0,8,A1 Bridge Section,7.239274,80.516788,452,car,2,head_on,24.0,male,6.0,85.0,70,1,clear,0.0,24.6,8.6,19.3,1013.0,straight,2.4,dry,low,2,0,3,SLP-1079
+KDG-0374,2019-10-22,09:45,Tuesday,0,9,Galaboda Straight,7.241273,80.51962,575,car,1,overturn,,male,11.0,68.0,70,0,clear,0.0,27.3,8.4,14.7,1008.2,straight,5.1,dry,low,0,0,1,SLP-1073
+KDG-0469,2019-10-26,12:23,Saturday,1,12,Kandy Road Descent,7.247502,80.525909,523,motorcycle,1,fell_off_road,28.0,male,9.0,,60,0,heavy_rain,40.8,23.6,0.9,15.2,1014.6,mild,8.1,very_wet,medium,1,0,10,SLP-1086
+KDG-0043,2019-10-30,12:22,Wednesday,0,12,Peradeniya Junction,7.235087,80.514339,525,car,2,pedestrian_hit,36.0,male,5.0,89.0,70,1,mist,0.0,28.2,,10.1,1008.9,straight,1.7,wet,medium,1,0,8,SLP-1088
+KDG-0027,2019-11-08,15:53,Friday,0,15,Kandy Road Descent,7.248258,80.527926,579,car,2,rear_end,30.0,female,11.0,70.0,60,1,light_rain,7.0,28.5,4.0,21.9,1013.4,mild,9.8,wet,low,1,0,6,SLP-1047
+KDG-0418,2019-11-09,17:55,Saturday,1,17,Dawson's Rock Viewpoint,7.259417,80.536926,521,car,1,vehicle_fire,23.0,female,5.0,50.0,60,0,light_rain,3.2,28.4,3.5,26.6,1012.8,mild,7.6,oily,low,0,0,6,SLP-1064
+KDG-0184,2019-11-10,17:57,Sunday,1,17,Sensation Rock Bend,7.25381,80.531494,648,lorry,2,sideswipe,45.0,male,,38.0,50,0,clear,0.0,30.5,,16.8,1008.0,sharp,14.9,dry,medium,1,0,7,SLP-1012
+KDG-0285,2019-11-11,13:49,Monday,0,13,Kandy Road Descent,7.247662,80.526017,586,motorcycle,1,hit_barrier,40.0,male,10.0,74.0,60,1,light_rain,2.2,25.5,,6.4,1012.7,mild,8.4,wet,medium,3,0,8,SLP-1021
+KDG-0342,2019-11-14,13:57,Thursday,0,13,Rock Cutting Zone,7.251629,80.529257,568,lorry,1,overturn,53.0,male,5.0,44.0,50,0,light_rain,3.5,29.7,2.4,25.8,1012.4,sharp,12.7,dry,medium,3,0,8,SLP-1091
+KDG-0247,2019-11-16,17:45,Saturday,1,17,Kadugannawa Town Entry,7.255703,80.534667,647,bus,2,rear_end,33.0,male,6.0,80.0,60,1,light_rain,4.2,28.6,1.9,6.6,1012.6,mild,6.7,very_wet,medium,1,0,8,SLP-1075
+KDG-0216,2019-11-16,20:33,Saturday,1,20,Sensation Rock Bend,7.254357,80.53107,613,motorcycle,2,rear_end,28.0,male,10.0,81.0,50,1,light_rain,2.3,25.8,3.1,18.3,1008.7,sharp,15.4,wet,high,3,0,13,SLP-1052
+KDG-0167,2019-11-19,12:51,Tuesday,0,12,Kadugannawa Town Entry,7.255195,80.5344,652,car,2,head_on,35.0,male,6.0,89.0,60,1,clear,0.0,30.3,8.5,22.5,1010.5,mild,7.7,wet,low,1,0,5,SLP-1059
+KDG-0426,2019-11-19,19:05,Tuesday,0,19,Peradeniya Junction,7.235746,80.514785,646,car,1,vehicle_fire,40.0,male,8.0,66.0,70,0,clear,0.0,27.9,8.3,13.3,1012.1,straight,0.5,dry,low,0,0,1,SLP-1092
+KDG-0460,2019-11-27,09:02,Wednesday,0,9,Galaboda Straight,7.241528,80.52051,623,bus,2,head_on,45.0,male,7.0,105.0,70,1,heavy_rain,27.9,27.4,0.5,14.5,1011.2,straight,3.1,very_wet,medium,1,0,10,SLP-1026
+KDG-0091,2019-12-02,13:33,Monday,0,13,A1 Bridge Section,7.239654,80.517145,502,car,1,overturn,34.0,male,,95.0,70,1,light_rain,1.4,25.1,2.9,19.2,1011.4,straight,2.0,wet,low,1,0,5,SLP-1066
+KDG-0103,2019-12-05,13:27,Thursday,0,13,Kandy Road Descent,7.248134,80.526445,469,car,2,rear_end,56.0,female,6.0,78.0,60,1,mist,0.0,27.6,0.6,21.5,1009.7,mild,10.4,wet,medium,1,1,9,SLP-1003
+KDG-0062,2019-12-14,09:24,Saturday,1,9,Kandy Road Descent,7.248844,80.526441,529,car,2,head_on,49.0,male,10.0,54.0,60,0,clear,0.0,27.5,10.0,24.4,1011.2,mild,8.6,dry,low,0,0,2,SLP-1018
+KDG-0055,2019-12-14,19:09,Saturday,1,19,Tunnel Bend,7.249665,80.528159,522,lorry,2,rear_end,18.0,male,0.0,78.0,50,1,light_rain,2.9,30.2,2.6,14.5,1015.1,sharp,11.0,wet,medium,1,1,11,SLP-1008
+KDG-0146,2019-12-18,16:51,Wednesday,0,16,Kadugannawa Town Entry,7.25455,80.535245,571,three-wheeler,2,head_on,47.0,female,10.0,48.0,60,0,light_rain,4.9,25.0,2.5,2.5,1013.6,mild,8.5,very_wet,low,0,0,6,SLP-1097
+KDG-0244,2019-12-19,11:11,Thursday,0,11,A1 Bridge Section,7.239811,80.517815,643,motorcycle,2,pedestrian_hit,18.0,male,0.0,98.0,70,1,light_rain,5.8,28.2,2.3,13.8,1013.8,straight,2.1,dry,low,0,0,6,SLP-1040
+KDG-0282,2019-12-19,07:19,Thursday,0,7,Galaboda Straight,7.242005,80.520561,631,motorcycle,2,sideswipe,21.0,male,3.0,84.0,70,1,foggy,0.0,27.3,0.2,24.6,1007.4,straight,3.2,dry,medium,2,0,10,SLP-1039
+KDG-0252,2019-12-29,08:40,Sunday,1,8,A1 Bridge Section,7.23983,80.518469,570,three-wheeler,3,sideswipe,42.0,male,7.0,90.0,70,1,clear,0.0,24.6,5.9,8.7,1009.1,straight,1.3,dry,low,0,0,4,SLP-1005
+KDG-0377,2019-12-31,07:36,Tuesday,0,7,Rock Cutting Zone,7.252541,80.529264,628,car,2,head_on,28.0,male,10.0,37.0,50,0,clear,0.0,27.3,6.4,23.3,1007.8,sharp,12.3,dry,low,0,0,5,SLP-1024
+KDG-0156,2020-01-01,08:14,Wednesday,0,8,Rock Cutting Zone,7.25181,80.529398,468,car,2,pedestrian_hit,34.0,male,4.0,,50,1,light_rain,3.3,26.5,3.6,6.9,1009.4,sharp,12.4,oily,medium,2,0,11,SLP-1020
+KDG-0383,2020-01-02,07:45,Thursday,0,7,Sensation Rock Bend,7.253822,80.531302,612,three-wheeler,1,fell_off_road,33.0,male,5.0,62.0,50,1,clear,0.0,25.3,8.3,11.2,1011.8,sharp,14.2,oily,medium,4,0,11,SLP-1077
+KDG-0302,2020-01-05,11:53,Sunday,1,11,A1 Bridge Section,7.239906,80.517426,510,car,1,vehicle_fire,44.0,male,9.0,104.0,70,1,clear,0.0,29.0,7.1,24.8,1008.2,straight,1.4,very_wet,low,1,0,5,SLP-1096
+KDG-0261,2020-01-07,10:54,Tuesday,0,10,Peradeniya Junction,7.2355,80.514801,611,car,2,head_on,28.0,male,7.0,95.0,70,1,clear,0.0,24.9,5.1,2.1,1009.6,straight,0.5,very_wet,low,0,0,5,SLP-1025
+KDG-0314,2020-01-22,19:01,Wednesday,0,19,Tunnel Bend,7.249257,80.527387,610,three-wheeler,1,overturn,38.0,male,10.0,79.0,50,1,clear,0.0,32.8,4.6,22.7,1007.6,sharp,11.0,dry,medium,3,1,8,SLP-1042
+KDG-0470,2020-01-30,08:51,Thursday,0,8,Sensation Rock Bend,7.254726,80.530976,503,car,1,fell_off_road,36.0,male,7.0,75.0,50,1,light_rain,5.0,26.3,,0.2,1011.3,sharp,16.1,wet,medium,3,0,9,SLP-1081
+KDG-0190,2020-01-30,07:57,Thursday,0,7,Kandy Road Descent,7.247642,80.525067,616,car,1,vehicle_fire,23.0,male,5.0,47.0,60,0,heavy_rain,13.5,27.4,1.0,13.1,1014.8,mild,9.8,very_wet,medium,1,0,8,SLP-1099
+KDG-0489,2020-02-01,08:31,Saturday,1,8,Queens Hotel Hairpin,7.262007,80.538739,638,lorry,1,hit_barrier,19.0,male,1.0,83.0,50,1,heavy_rain,47.7,29.9,0.6,4.2,1012.5,sharp,11.2,very_wet,high,2,0,15,SLP-1016
+KDG-0326,2020-02-11,07:23,Tuesday,0,7,Queens Hotel Hairpin,7.260262,80.53921,545,car,2,head_on,27.0,male,0.0,73.0,50,1,mist,0.0,26.4,0.3,5.7,1009.4,sharp,11.7,dry,medium,3,0,11,SLP-1030
+KDG-0163,2020-02-13,18:55,Thursday,0,18,Sensation Rock Bend,7.25456,80.531055,541,car,2,sideswipe,32.0,male,4.0,79.0,50,1,light_rain,3.2,28.0,3.4,16.3,1009.3,sharp,15.3,wet,medium,3,0,9,SLP-1052
+KDG-0456,2020-02-14,09:47,Friday,0,9,Queens Hotel Hairpin,7.260952,80.538809,619,bus,1,overturn,36.0,male,9.0,79.0,50,1,clear,0.0,25.7,5.5,13.8,1009.0,sharp,10.9,dry,medium,1,0,8,SLP-1029
+KDG-0013,2020-02-14,05:13,Friday,0,5,Galaboda Straight,7.242248,80.520231,585,car,1,fell_off_road,30.0,female,3.0,61.0,70,0,clear,0.0,24.5,5.7,12.4,1007.5,straight,2.9,wet,low,0,0,4,SLP-1014
+KDG-0382,2020-02-16,17:18,Sunday,1,17,Kandy Road Descent,7.248213,80.526599,673,lorry,1,fell_off_road,51.0,female,3.0,84.0,60,1,heavy_rain,44.9,25.0,0.8,9.0,1010.3,mild,8.7,oily,high,3,0,13,SLP-1085
+KDG-0487,2020-02-18,07:02,Tuesday,0,7,Rock Cutting Zone,7.252072,80.529925,525,car,2,rear_end,30.0,male,12.0,40.0,50,0,clear,0.0,28.7,7.2,18.1,1009.0,sharp,11.9,dry,low,0,0,5,SLP-1046
+KDG-0286,2020-02-24,08:32,Monday,0,8,Tunnel Bend,7.248937,80.527461,469,car,1,hit_barrier,41.0,female,6.0,46.0,50,0,heavy_rain,47.1,29.6,0.9,7.1,1009.8,sharp,12.5,very_wet,medium,3,0,11,SLP-1057
+KDG-0416,2020-02-25,13:53,Tuesday,0,13,Queens Hotel Hairpin,7.261298,80.538448,680,car,1,hit_barrier,33.0,female,5.0,45.0,50,0,clear,0.0,24.7,6.1,15.8,1013.8,sharp,12.2,wet,low,0,0,6,SLP-1079
+KDG-0436,2020-02-29,13:48,Saturday,1,13,Kandy Road Descent,7.247849,80.524698,669,lorry,2,pedestrian_hit,49.0,male,11.0,73.0,60,1,clear,0.0,26.8,8.0,13.6,1008.5,mild,8.9,dry,low,1,0,6,SLP-1083
+KDG-0325,2020-03-02,16:59,Monday,0,16,Dawson's Rock Viewpoint,7.260079,80.537029,492,motorcycle,1,hit_barrier,,female,5.0,76.0,60,1,mist,0.0,29.0,0.2,1.7,1009.5,mild,8.0,wet,medium,3,0,11,SLP-1064
+KDG-0424,2020-03-03,06:38,Tuesday,0,6,Rock Cutting Zone,7.252553,80.529218,511,car,2,rear_end,,male,0.0,49.0,50,0,clear,0.0,26.0,5.3,14.5,1013.2,sharp,13.5,oily,medium,1,0,8,SLP-1040
+KDG-0463,2020-03-14,09:06,Saturday,1,9,Rock Cutting Zone,7.251714,80.529666,576,lorry,1,overturn,24.0,male,3.0,46.0,50,0,light_rain,7.1,29.2,2.8,12.4,1013.7,sharp,14.6,wet,medium,3,0,9,SLP-1026
+KDG-0444,2020-03-16,15:27,Monday,0,15,Tunnel Bend,7.250488,80.527957,585,bus,2,pedestrian_hit,28.0,male,,50.0,50,0,heavy_rain,29.1,28.7,0.5,24.3,1008.2,sharp,12.1,very_wet,high,5,0,12,SLP-1010
+KDG-0133,2020-03-22,07:10,Sunday,1,7,Queens Hotel Hairpin,7.261187,80.539486,630,car,2,head_on,45.0,male,0.0,61.0,50,1,clear,0.0,28.5,6.7,11.4,1012.9,sharp,9.5,dry,low,0,0,6,SLP-1032
+KDG-0295,2020-03-24,14:31,Tuesday,0,14,Kandy Road Descent,7.248342,80.525317,522,lorry,1,hit_barrier,18.0,male,0.0,60.0,60,0,clear,0.0,29.7,7.0,15.8,1010.1,mild,9.4,dry,low,0,0,4,SLP-1095
+KDG-0001,2020-04-01,02:17,Wednesday,0,2,Tunnel Bend,7.250048,80.527731,633,car,1,hit_barrier,49.0,male,11.0,77.0,50,1,clear,0.0,25.7,7.5,24.7,1010.4,sharp,11.9,dry,medium,3,0,9,SLP-1021
+KDG-0015,2020-04-03,06:56,Friday,0,6,Kandy Road Descent,7.24803,80.527232,541,car,1,vehicle_fire,45.0,male,11.0,53.0,60,0,clear,0.0,27.2,,16.1,1010.9,mild,8.4,dry,low,2,0,2,SLP-1096
+KDG-0276,2020-04-03,16:31,Friday,0,16,Sensation Rock Bend,7.255002,80.531105,498,car,1,hit_barrier,48.0,female,9.0,43.0,50,0,mist,0.0,28.8,0.4,4.9,1008.6,sharp,14.9,dry,medium,2,0,9,SLP-1083
+KDG-0211,2020-04-07,08:27,Tuesday,0,8,Queens Hotel Hairpin,7.261402,80.538888,472,car,2,rear_end,29.0,male,9.0,35.0,50,0,clear,0.0,25.9,4.1,16.3,1008.1,sharp,12.8,dry,low,0,0,5,SLP-1083
+KDG-0058,2020-04-12,13:12,Sunday,1,13,Dawson's Rock Viewpoint,7.260046,80.536482,495,car,2,pedestrian_hit,27.0,male,9.0,90.0,60,1,light_rain,6.7,26.5,1.9,5.6,1015.9,mild,7.8,wet,low,1,0,6,SLP-1073
+KDG-0264,2020-04-12,13:51,Sunday,1,13,Kandy Road Descent,7.247405,80.526821,653,car,1,overturn,28.0,male,7.0,59.0,60,0,clear,0.0,25.9,8.4,18.5,1010.2,mild,9.8,dry,low,0,0,2,SLP-1097
+KDG-0464,2020-04-14,05:09,Tuesday,0,5,Kandy Road Descent,7.24793,80.526154,659,car,2,rear_end,19.0,female,1.0,,60,0,clear,0.0,23.6,9.0,23.5,1012.1,mild,9.3,oily,medium,2,0,7,SLP-1024
+KDG-0172,2020-04-17,17:35,Friday,0,17,Galaboda Straight,7.241878,80.519658,487,lorry,2,head_on,48.0,male,6.0,69.0,70,0,light_rain,3.9,27.2,2.2,,1007.6,straight,1.9,dry,low,2,0,4,SLP-1088
+KDG-0242,2020-04-19,00:59,Sunday,1,0,Sensation Rock Bend,7.25465,80.532179,503,motorcycle,1,vehicle_fire,60.0,male,0.0,44.0,50,0,mist,0.0,22.3,0.1,17.5,1009.8,sharp,14.4,wet,high,4,0,14,SLP-1021
+KDG-0112,2020-04-20,18:46,Monday,0,18,Sensation Rock Bend,7.254395,80.531754,479,car,2,head_on,47.0,male,11.0,40.0,50,0,clear,0.0,29.0,6.9,17.6,1013.7,sharp,15.4,wet,low,2,0,6,SLP-1095
+KDG-0392,2020-04-25,07:38,Saturday,1,7,A1 Bridge Section,7.239536,80.517794,481,car,1,overturn,34.0,female,10.0,91.0,70,1,clear,0.0,27.3,7.5,13.7,1006.7,straight,3.3,dry,low,0,0,3,SLP-1006
+KDG-0073,2020-04-27,08:16,Monday,0,8,A1 Bridge Section,7.239618,80.518385,657,car,2,sideswipe,40.0,male,19.0,90.0,70,1,light_rain,5.9,24.8,1.8,22.0,1011.8,straight,1.8,oily,medium,3,1,7,SLP-1092
+KDG-0193,2020-05-02,17:28,Saturday,1,17,Rock Cutting Zone,7.252257,80.529234,655,three-wheeler,2,rear_end,50.0,male,5.0,46.0,50,0,clear,0.0,25.4,8.8,6.1,1010.9,sharp,14.8,dry,low,0,0,6,SLP-1029
+KDG-0175,2020-05-03,10:27,Sunday,1,10,Tunnel Bend,7.250807,80.527868,610,car,2,sideswipe,46.0,male,4.0,81.0,50,1,clear,0.0,26.8,6.8,15.3,1007.6,sharp,11.3,wet,medium,1,0,8,SLP-1068
+KDG-0368,2020-05-09,08:06,Saturday,1,8,Queens Hotel Hairpin,7.260898,80.538785,505,car,1,fell_off_road,40.0,female,7.0,35.0,50,0,light_rain,3.2,24.5,1.7,11.3,1013.5,sharp,11.4,dry,low,0,0,6,SLP-1013
+KDG-0347,2020-05-26,06:03,Tuesday,0,6,Dawson's Rock Viewpoint,7.259842,80.536902,464,bus,1,vehicle_fire,29.0,female,6.0,79.0,60,1,mist,0.0,27.1,0.5,8.8,1010.6,mild,6.6,wet,medium,1,0,9,SLP-1085
+KDG-0026,2020-06-01,12:07,Monday,0,12,Kadugannawa Town Entry,7.255979,80.53438,456,car,3,pedestrian_hit,39.0,male,10.0,88.0,60,1,light_rain,6.4,27.9,3.4,21.4,1007.6,mild,5.7,wet,low,2,0,6,SLP-1026
+KDG-0266,2020-06-03,08:40,Wednesday,0,8,Tunnel Bend,7.251006,80.528192,557,bus,3,rear_end,22.0,male,4.0,43.0,50,0,clear,0.0,26.0,7.6,12.2,1011.1,sharp,12.5,dry,low,1,0,6,SLP-1098
+KDG-0141,2020-06-05,07:00,Friday,0,7,Peradeniya Junction,7.236053,80.515094,577,three-wheeler,3,head_on,37.0,male,4.0,68.0,70,0,light_rain,8.0,27.1,3.0,6.0,1015.1,straight,0.6,wet,low,1,0,4,SLP-1012
+KDG-0315,2020-06-13,08:03,Saturday,1,8,Rock Cutting Zone,7.252274,80.529373,455,car,1,fell_off_road,31.0,male,3.0,65.0,50,1,heavy_rain,33.7,25.8,0.5,16.3,1011.2,sharp,11.6,very_wet,high,2,0,13,SLP-1056
+KDG-0158,2020-06-14,15:40,Sunday,1,15,Queens Hotel Hairpin,7.262036,80.53911,451,bus,2,sideswipe,39.0,male,3.0,67.0,50,1,light_rain,1.0,24.7,3.9,13.6,1012.4,sharp,11.9,dry,medium,1,0,9,SLP-1076
+KDG-0307,2020-06-16,18:43,Tuesday,0,18,Queens Hotel Hairpin,7.260808,80.538555,550,three-wheeler,3,head_on,40.0,male,15.0,78.0,50,1,light_rain,7.1,24.4,3.0,8.2,1010.8,sharp,11.2,wet,medium,4,1,10,SLP-1026
+KDG-0408,2020-06-18,15:38,Thursday,0,15,Sensation Rock Bend,7.253659,80.530844,644,lorry,1,hit_barrier,24.0,male,6.0,46.0,50,0,heavy_rain,17.0,28.1,0.3,24.1,1010.4,sharp,14.5,very_wet,high,5,1,14,SLP-1072
+KDG-0165,2020-06-19,12:31,Friday,0,12,Sensation Rock Bend,7.254795,80.531479,621,bus,2,rear_end,27.0,male,7.0,76.0,50,1,clear,0.0,26.0,8.2,4.8,1008.3,sharp,14.3,oily,medium,2,0,11,SLP-1062
+KDG-0201,2020-06-21,22:43,Sunday,1,22,Tunnel Bend,7.249709,80.528487,577,car,1,overturn,35.0,male,16.0,40.0,50,0,light_rain,2.7,21.8,1.9,8.4,1009.8,sharp,11.3,wet,medium,2,0,9,SLP-1008
+KDG-0404,2020-06-22,07:06,Monday,0,7,Rock Cutting Zone,7.252142,80.529006,522,car,2,head_on,29.0,male,0.0,84.0,50,1,light_rain,1.1,24.5,3.6,22.7,1012.9,sharp,13.4,wet,medium,1,0,9,SLP-1034
+KDG-0378,2020-07-04,08:11,Saturday,1,8,Galaboda Straight,7.24134,80.518684,609,car,1,overturn,29.0,male,11.0,65.0,70,0,light_rain,2.5,25.2,,17.9,1014.0,straight,2.8,wet,low,0,0,3,SLP-1044
+KDG-0093,2020-07-08,17:46,Wednesday,0,17,Kandy Road Descent,7.248128,80.526491,539,bus,2,head_on,27.0,male,8.0,48.0,60,0,foggy,0.0,29.0,,21.1,1006.4,mild,8.3,dry,medium,3,0,8,SLP-1039
+KDG-0232,2020-07-08,11:20,Wednesday,0,11,Queens Hotel Hairpin,7.261685,80.539114,481,car,1,vehicle_fire,44.0,male,4.0,36.0,50,0,light_rain,6.0,24.8,2.1,26.4,1008.0,sharp,12.5,very_wet,medium,3,1,8,SLP-1079
+KDG-0239,2020-07-10,12:40,Friday,0,12,Queens Hotel Hairpin,7.261146,80.539124,454,motorcycle,2,sideswipe,51.0,male,19.0,40.0,50,0,heavy_rain,46.3,23.2,0.9,6.1,1008.0,sharp,11.9,very_wet,high,2,0,13,SLP-1004
+KDG-0157,2020-07-16,23:21,Thursday,0,23,Queens Hotel Hairpin,7.261317,80.538122,451,lorry,1,fell_off_road,46.0,male,1.0,66.0,50,1,mist,0.0,23.6,0.5,19.8,1006.0,sharp,12.1,wet,high,4,1,15,SLP-1012
+KDG-0327,2020-07-19,18:26,Sunday,1,18,Dawson's Rock Viewpoint,7.260549,80.537637,536,motorcycle,1,overturn,39.0,male,11.0,55.0,60,0,mist,0.0,27.2,0.6,6.0,1010.5,mild,7.8,dry,medium,3,0,7,SLP-1074
+KDG-0331,2020-07-27,16:33,Monday,0,16,A1 Bridge Section,7.240405,80.517891,483,car,2,pedestrian_hit,30.0,male,0.0,94.0,70,1,light_rain,2.3,24.5,,9.4,1008.3,straight,1.5,wet,low,1,0,5,SLP-1067
+KDG-0457,2020-08-03,10:01,Monday,0,10,Tunnel Bend,7.250191,80.527584,680,motorcycle,2,sideswipe,35.0,male,9.0,76.0,50,1,mist,0.0,26.7,0.8,17.9,1012.1,sharp,11.4,wet,high,5,0,13,SLP-1054
+KDG-0465,2020-08-03,18:42,Monday,0,18,Tunnel Bend,7.249941,80.526734,654,lorry,1,hit_barrier,32.0,male,7.0,37.0,50,0,light_rain,2.4,27.8,1.8,12.9,1019.1,sharp,13.9,wet,medium,2,0,9,SLP-1002
+KDG-0421,2020-08-09,10:01,Sunday,1,10,A1 Bridge Section,7.238923,80.517156,453,bus,1,fell_off_road,28.0,male,8.0,93.0,70,1,clear,0.0,22.8,6.9,4.5,1009.2,straight,3.7,dry,low,1,0,4,SLP-1090
+KDG-0433,2020-08-15,09:52,Saturday,1,9,Dawson's Rock Viewpoint,7.260644,80.536812,583,motorcycle,2,pedestrian_hit,35.0,female,13.0,84.0,60,1,light_rain,3.2,26.0,1.9,5.8,1015.2,mild,9.3,wet,medium,2,0,8,SLP-1005
+KDG-0376,2020-08-26,08:38,Wednesday,0,8,Kadugannawa Town Entry,7.254846,80.53367,674,lorry,1,vehicle_fire,38.0,male,0.0,47.0,60,0,clear,0.0,25.3,8.3,27.2,1012.4,mild,5.4,oily,medium,2,0,7,SLP-1097
+KDG-0263,2020-09-02,17:14,Wednesday,0,17,Dawson's Rock Viewpoint,7.260435,80.536464,528,car,1,overturn,25.0,male,7.0,73.0,60,1,clear,0.0,24.7,9.5,19.7,1011.9,mild,7.1,dry,low,1,0,4,SLP-1014
+KDG-0271,2020-09-02,19:57,Wednesday,0,19,Sensation Rock Bend,7.253544,80.531323,511,three-wheeler,1,fell_off_road,25.0,male,1.0,50.0,50,0,clear,0.0,28.4,4.2,22.0,1015.0,sharp,13.7,dry,low,0,0,6,SLP-1038
+KDG-0254,2020-09-11,16:23,Friday,0,16,Rock Cutting Zone,7.25049,80.529592,576,car,1,vehicle_fire,42.0,male,3.0,73.0,50,1,light_rain,4.4,30.7,2.4,22.7,1011.5,sharp,13.0,wet,medium,3,0,9,SLP-1074
+KDG-0499,2020-09-13,06:37,Sunday,1,6,Rock Cutting Zone,7.252121,80.528459,570,car,3,sideswipe,18.0,male,0.0,37.0,50,0,light_rain,3.2,28.5,1.6,10.2,1015.8,sharp,12.8,wet,medium,2,1,7,SLP-1069
+KDG-0040,2020-09-15,13:02,Tuesday,0,13,Sensation Rock Bend,7.254513,80.531607,469,three-wheeler,2,rear_end,37.0,male,7.0,68.0,50,1,clear,0.0,29.8,4.6,14.1,1012.7,sharp,14.3,oily,medium,3,1,11,SLP-1069
+KDG-0023,2020-09-17,16:04,Thursday,0,16,Queens Hotel Hairpin,7.261207,80.539627,572,car,1,vehicle_fire,23.0,male,5.0,39.0,50,0,light_rain,1.4,27.0,3.4,33.0,1012.6,sharp,11.1,wet,medium,2,0,7,SLP-1078
+KDG-0402,2020-09-21,11:58,Monday,0,11,Galaboda Straight,7.24255,80.520326,664,car,1,hit_barrier,41.0,male,16.0,66.0,70,0,light_rain,2.6,29.6,,5.8,1015.2,straight,4.4,wet,low,2,0,3,SLP-1091
+KDG-0451,2020-09-22,18:06,Tuesday,0,18,Dawson's Rock Viewpoint,7.259688,80.53664,672,car,2,rear_end,26.0,male,8.0,73.0,60,1,clear,0.0,31.2,7.1,14.0,1013.0,mild,7.2,dry,low,0,0,4,SLP-1059
+KDG-0212,2020-09-22,16:50,Tuesday,0,16,Sensation Rock Bend,7.254242,80.531071,514,bus,2,pedestrian_hit,35.0,male,17.0,75.0,50,1,clear,0.0,28.6,6.1,10.7,1013.2,sharp,13.4,wet,medium,1,0,9,SLP-1045
+KDG-0250,2020-09-23,09:55,Wednesday,0,9,Kandy Road Descent,7.248594,80.526354,566,car,1,fell_off_road,32.0,male,4.0,92.0,60,1,clear,0.0,28.1,6.9,21.5,1010.9,mild,8.6,dry,low,1,0,4,SLP-1055
+KDG-0106,2020-09-23,17:20,Wednesday,0,17,Queens Hotel Hairpin,7.261175,80.539237,472,car,2,pedestrian_hit,36.0,male,18.0,48.0,50,0,heavy_rain,43.8,25.5,0.8,16.7,1011.4,sharp,12.2,wet,medium,1,0,10,SLP-1011
+KDG-0016,2020-09-25,20:15,Friday,0,20,Rock Cutting Zone,7.252396,80.529045,518,three-wheeler,1,vehicle_fire,24.0,male,5.0,47.0,50,0,mist,0.0,27.0,0.7,4.2,1012.5,sharp,15.2,very_wet,high,3,2,13,SLP-1059
+KDG-0063,2020-09-26,06:54,Saturday,1,6,Rock Cutting Zone,7.251481,80.529405,627,lorry,2,rear_end,20.0,female,2.0,85.0,50,1,light_rain,6.2,25.9,3.7,4.3,1013.3,sharp,14.9,wet,medium,2,0,11,SLP-1031
+KDG-0317,2020-09-27,20:33,Sunday,1,20,Kandy Road Descent,7.249028,80.525435,525,lorry,1,overturn,29.0,male,6.0,87.0,60,1,clear,0.0,25.4,6.9,7.5,1012.4,mild,8.6,dry,medium,2,0,8,SLP-1060
+KDG-0014,2020-09-28,08:38,Monday,0,8,Tunnel Bend,7.249719,80.528002,535,car,1,vehicle_fire,18.0,female,0.0,80.0,50,1,light_rain,7.0,30.9,3.8,15.2,,sharp,12.0,dry,medium,2,0,8,SLP-1002
+KDG-0270,2020-10-04,17:40,Sunday,1,17,Peradeniya Junction,7.23551,80.514615,453,motorcycle,1,vehicle_fire,46.0,female,10.0,103.0,70,1,light_rain,4.9,25.2,2.8,9.7,1010.1,straight,1.2,wet,medium,2,1,7,SLP-1076
+KDG-0439,2020-10-13,21:13,Tuesday,0,21,Sensation Rock Bend,7.253849,80.530514,566,car,1,fell_off_road,46.0,male,3.0,84.0,50,1,clear,0.0,25.1,,13.6,1012.3,sharp,14.1,wet,medium,1,0,10,SLP-1032
+KDG-0233,2020-10-16,10:24,Friday,0,10,Sensation Rock Bend,7.254796,80.531075,564,car,1,fell_off_road,41.0,male,0.0,45.0,50,0,clear,0.0,28.0,5.0,15.8,1010.7,sharp,15.1,wet,low,0,0,6,SLP-1098
+KDG-0306,2020-10-18,16:32,Sunday,1,16,Sensation Rock Bend,7.254975,80.531891,450,bus,1,fell_off_road,36.0,male,6.0,41.0,50,0,light_rain,4.8,25.2,3.4,18.8,1009.7,sharp,14.7,wet,medium,1,0,8,SLP-1099
+KDG-0375,2020-10-27,08:27,Tuesday,0,8,Peradeniya Junction,7.235536,80.514394,572,motorcycle,2,head_on,,male,7.0,59.0,70,0,light_rain,3.4,25.8,2.4,14.5,1011.6,straight,0.5,wet,low,0,0,5,SLP-1059
+KDG-0160,2020-11-23,07:45,Monday,0,7,Kandy Road Descent,7.247454,80.525842,556,car,1,fell_off_road,35.0,male,6.0,57.0,60,0,mist,0.0,29.7,0.6,15.0,1016.8,mild,9.6,wet,low,0,0,6,SLP-1088
+KDG-0020,2020-11-26,16:18,Thursday,0,16,Kadugannawa Town Entry,7.25546,80.534216,667,lorry,2,head_on,22.0,male,4.0,84.0,60,1,clear,0.0,28.0,8.0,,1015.7,mild,6.9,dry,low,1,0,6,SLP-1050
+KDG-0353,2020-12-02,20:51,Wednesday,0,20,Peradeniya Junction,7.235741,80.514684,612,motorcycle,2,sideswipe,,male,,69.0,70,0,mist,0.0,25.2,0.4,0.5,1010.3,straight,2.2,wet,medium,3,0,10,SLP-1007
+KDG-0074,2020-12-14,17:32,Monday,0,17,Tunnel Bend,7.249891,80.527924,466,three-wheeler,2,rear_end,34.0,male,5.0,35.0,50,0,light_rain,2.7,26.7,2.9,8.1,1013.1,sharp,11.4,very_wet,medium,1,0,9,SLP-1010
+KDG-0096,2020-12-18,15:27,Friday,0,15,Kadugannawa Town Entry,7.255512,80.534161,511,car,1,vehicle_fire,33.0,female,15.0,79.0,60,1,clear,0.0,32.1,7.1,13.3,1013.9,mild,5.9,dry,low,2,0,4,SLP-1072
+KDG-0344,2020-12-19,05:08,Saturday,1,5,Rock Cutting Zone,7.250735,80.529352,607,car,1,overturn,51.0,male,15.0,36.0,50,0,mist,0.0,24.9,0.1,5.9,1012.0,sharp,13.2,wet,high,5,0,12,SLP-1053
+KDG-0029,2021-01-14,12:22,Thursday,0,12,Rock Cutting Zone,7.251764,80.530044,626,car,2,rear_end,26.0,male,8.0,82.0,50,1,heavy_rain,21.0,27.6,0.3,6.5,1009.2,sharp,13.9,very_wet,high,3,0,14,SLP-1032
+KDG-0278,2021-01-16,22:53,Saturday,1,22,A1 Bridge Section,7.239282,80.517967,620,motorcycle,1,fell_off_road,41.0,male,7.0,59.0,70,0,heavy_rain,13.5,28.3,0.8,12.3,1010.1,straight,1.6,very_wet,medium,2,0,11,SLP-1004
+KDG-0258,2021-01-26,19:44,Tuesday,0,19,Tunnel Bend,7.249562,80.528237,649,car,1,overturn,37.0,male,7.0,49.0,50,0,light_rain,1.5,28.0,3.4,15.4,1013.1,sharp,12.0,wet,medium,1,0,7,SLP-1023
+KDG-0114,2021-02-04,10:12,Thursday,0,10,Queens Hotel Hairpin,7.261296,80.538923,658,car,2,rear_end,30.0,male,9.0,85.0,50,1,light_rain,4.7,25.1,3.0,19.2,1012.6,sharp,13.5,wet,medium,3,0,9,SLP-1031
+KDG-0452,2021-02-05,08:30,Friday,0,8,Kandy Road Descent,7.247325,80.525792,475,bus,1,hit_barrier,40.0,male,11.0,48.0,60,0,clear,0.0,27.6,6.6,14.8,1010.6,mild,9.6,dry,low,0,0,3,SLP-1023
+KDG-0414,2021-02-08,05:04,Monday,0,5,Queens Hotel Hairpin,7.26175,80.539431,453,bus,1,overturn,22.0,female,4.0,80.0,50,1,light_rain,3.8,25.5,3.4,16.5,1015.4,sharp,11.8,wet,high,3,2,12,SLP-1077
+KDG-0291,2021-02-12,18:57,Friday,0,18,Rock Cutting Zone,7.25222,80.529889,552,bus,2,head_on,23.0,male,5.0,63.0,50,1,clear,0.0,28.3,6.9,25.7,1011.0,sharp,13.9,dry,medium,1,1,8,SLP-1044
+KDG-0155,2021-02-16,10:45,Tuesday,0,10,Tunnel Bend,7.249756,80.52909,482,lorry,2,head_on,39.0,male,16.0,83.0,50,1,light_rain,7.3,26.1,3.6,25.5,1015.2,sharp,11.7,dry,medium,4,1,10,SLP-1084
+KDG-0144,2021-02-17,11:35,Wednesday,0,11,A1 Bridge Section,7.239413,80.518008,525,motorcycle,1,overturn,24.0,male,0.0,100.0,70,1,clear,0.0,25.5,4.3,3.9,1015.0,straight,1.4,dry,low,0,0,5,SLP-1082
+KDG-0493,2021-03-12,08:09,Friday,0,8,Galaboda Straight,7.242725,80.519434,606,car,2,pedestrian_hit,28.0,male,0.0,65.0,70,0,clear,0.0,26.9,4.5,8.6,1011.9,straight,4.2,dry,low,1,0,1,SLP-1031
+KDG-0222,2021-03-14,14:47,Sunday,1,14,Kadugannawa Town Entry,7.255862,80.534376,617,car,1,vehicle_fire,26.0,male,1.0,51.0,60,0,clear,0.0,27.6,7.5,25.9,1009.4,mild,6.7,dry,low,1,0,2,SLP-1057
+KDG-0034,2021-03-21,11:34,Sunday,1,11,Tunnel Bend,7.249674,80.527176,527,car,1,overturn,48.0,male,0.0,,50,1,clear,0.0,30.4,8.8,4.0,1009.9,sharp,12.2,dry,medium,2,1,7,SLP-1095
+KDG-0403,2021-03-23,07:18,Tuesday,0,7,Sensation Rock Bend,7.253272,80.530938,654,bus,2,pedestrian_hit,47.0,male,11.0,64.0,50,1,light_rain,7.3,26.2,2.7,,1008.4,sharp,15.1,wet,medium,2,1,10,SLP-1050
+KDG-0352,2021-03-26,08:11,Friday,0,8,Tunnel Bend,7.250258,80.527525,617,car,1,vehicle_fire,52.0,male,12.0,63.0,50,1,clear,0.0,27.3,5.2,9.6,1015.3,sharp,11.8,dry,medium,1,0,7,SLP-1085
+KDG-0357,2021-03-31,09:43,Wednesday,0,9,Queens Hotel Hairpin,7.260896,80.53863,452,car,2,pedestrian_hit,46.0,female,5.0,69.0,50,1,light_rain,5.8,26.5,4.0,19.8,1008.2,sharp,12.0,oily,medium,4,0,11,SLP-1097
+KDG-0292,2021-03-31,15:25,Wednesday,0,15,Sensation Rock Bend,7.254448,80.531625,604,motorcycle,1,vehicle_fire,42.0,male,10.0,75.0,50,1,light_rain,2.9,27.0,2.2,13.5,1007.2,sharp,14.2,wet,medium,1,0,11,SLP-1064
+KDG-0230,2021-04-10,17:04,Saturday,1,17,Tunnel Bend,7.250277,80.527944,634,three-wheeler,1,overturn,33.0,male,6.0,49.0,50,0,clear,0.0,26.4,9.2,16.5,1008.1,sharp,12.2,wet,medium,3,0,7,SLP-1069
+KDG-0362,2021-04-11,13:43,Sunday,1,13,Queens Hotel Hairpin,7.261007,80.539091,460,car,2,sideswipe,39.0,male,21.0,69.0,50,1,foggy,0.0,27.8,0.2,0.9,1012.9,sharp,12.0,dry,high,5,1,12,SLP-1039
+KDG-0413,2021-04-15,14:51,Thursday,0,14,Rock Cutting Zone,7.252838,80.529027,595,bus,1,hit_barrier,36.0,male,2.0,83.0,50,1,clear,0.0,25.4,4.9,22.0,1011.8,sharp,12.6,dry,medium,1,0,8,SLP-1051
+KDG-0372,2021-04-16,07:11,Friday,0,7,Kandy Road Descent,7.24709,80.526135,523,motorcycle,2,pedestrian_hit,43.0,male,8.0,90.0,60,1,mist,0.0,24.1,0.3,13.5,1007.6,mild,10.9,wet,high,2,3,12,SLP-1051
+KDG-0049,2021-04-20,05:48,Tuesday,0,5,Kadugannawa Town Entry,7.25542,80.534175,654,lorry,1,fell_off_road,25.0,male,7.0,60.0,60,0,heavy_rain,44.4,25.1,0.6,27.1,1013.4,mild,6.0,very_wet,high,4,0,12,SLP-1034
+KDG-0186,2021-04-26,13:50,Monday,0,13,Queens Hotel Hairpin,7.261561,80.538714,589,bus,1,overturn,19.0,male,0.0,72.0,50,1,clear,0.0,30.6,5.9,11.2,,sharp,12.5,dry,medium,2,0,8,SLP-1029
+KDG-0104,2021-04-28,14:48,Wednesday,0,14,Rock Cutting Zone,7.251777,80.530227,652,motorcycle,2,sideswipe,20.0,male,2.0,83.0,50,1,heavy_rain,34.5,30.3,1.1,10.3,1009.9,sharp,13.2,very_wet,high,2,0,15,SLP-1010
+KDG-0118,2021-05-09,18:37,Sunday,1,18,Kandy Road Descent,7.247489,80.526354,493,motorcycle,1,overturn,40.0,male,7.0,51.0,60,0,light_rain,4.0,27.9,3.5,10.1,1007.8,mild,10.0,wet,low,0,0,6,SLP-1097
+KDG-0477,2021-05-13,07:46,Thursday,0,7,Rock Cutting Zone,7.252327,80.529905,661,car,2,pedestrian_hit,21.0,male,0.0,61.0,50,1,foggy,0.0,25.7,0.1,16.9,1008.9,sharp,13.5,dry,high,2,0,12,SLP-1057
+KDG-0025,2021-05-16,12:21,Sunday,1,12,Rock Cutting Zone,7.252107,80.528877,649,bus,3,head_on,34.0,male,2.0,61.0,50,1,light_rain,6.8,27.8,1.5,16.7,1008.8,sharp,13.5,wet,medium,3,0,10,SLP-1031
+KDG-0238,2021-05-19,01:12,Wednesday,0,1,Kandy Road Descent,7.247871,80.526799,663,car,2,pedestrian_hit,45.0,female,9.0,50.0,60,0,clear,0.0,25.5,8.6,11.9,1012.7,mild,9.0,oily,medium,4,0,7,SLP-1083
+KDG-0298,2021-05-26,09:03,Wednesday,0,9,Tunnel Bend,7.24962,80.527137,559,lorry,1,hit_barrier,37.0,male,7.0,48.0,50,0,heavy_rain,53.0,26.8,1.0,15.8,1008.6,sharp,11.3,very_wet,high,4,1,13,SLP-1026
+KDG-0445,2021-05-31,16:23,Monday,0,16,Sensation Rock Bend,7.254273,80.532456,504,car,2,rear_end,32.0,male,1.0,63.0,50,1,clear,0.0,24.2,5.3,13.8,1012.6,sharp,14.6,dry,medium,2,0,7,SLP-1088
+KDG-0202,2021-06-01,18:30,Tuesday,0,18,Rock Cutting Zone,7.252162,80.529374,605,car,1,hit_barrier,32.0,female,14.0,45.0,50,0,heavy_rain,24.9,25.5,0.6,3.1,1013.2,sharp,13.3,very_wet,medium,3,0,11,SLP-1095
+KDG-0401,2021-06-09,20:59,Wednesday,0,20,Dawson's Rock Viewpoint,7.260193,80.537213,451,lorry,1,vehicle_fire,26.0,male,8.0,55.0,60,0,mist,0.0,23.4,0.5,23.0,1008.6,mild,7.3,wet,medium,2,0,10,SLP-1066
+KDG-0434,2021-06-14,17:12,Monday,0,17,Queens Hotel Hairpin,7.261288,80.538232,679,lorry,2,pedestrian_hit,33.0,male,7.0,47.0,50,0,clear,0.0,25.3,9.7,14.9,,sharp,11.6,dry,medium,2,0,7,SLP-1070
+KDG-0176,2021-06-19,21:33,Saturday,1,21,Sensation Rock Bend,7.253577,80.531468,585,lorry,3,rear_end,19.0,female,,77.0,50,1,light_rain,4.8,25.1,2.0,19.0,1013.5,sharp,13.9,very_wet,high,2,0,14,SLP-1031
+KDG-0024,2021-06-22,12:17,Tuesday,0,12,Queens Hotel Hairpin,7.261088,80.539257,594,car,1,vehicle_fire,29.0,male,11.0,62.0,50,1,light_rain,5.8,26.9,,13.5,1008.9,sharp,10.6,wet,medium,1,0,9,SLP-1042
+KDG-0047,2021-06-25,16:40,Friday,0,16,Rock Cutting Zone,7.252049,80.529113,566,motorcycle,2,pedestrian_hit,55.0,male,4.0,37.0,50,0,light_rain,3.9,26.0,2.3,17.5,1014.6,sharp,14.2,wet,medium,3,0,9,SLP-1079
+KDG-0351,2021-07-02,16:29,Friday,0,16,Kandy Road Descent,7.248092,80.527347,457,car,1,hit_barrier,33.0,male,3.0,74.0,60,1,light_rain,7.7,26.6,2.0,7.0,1010.8,mild,7.9,dry,low,0,0,5,SLP-1004
+KDG-0387,2021-07-10,16:03,Saturday,1,16,Dawson's Rock Viewpoint,7.259124,80.537072,571,motorcycle,1,hit_barrier,25.0,male,7.0,94.0,60,1,heavy_rain,22.1,22.7,0.4,19.3,1010.8,mild,8.1,very_wet,high,3,2,13,SLP-1090
+KDG-0046,2021-07-13,18:46,Tuesday,0,18,Kandy Road Descent,7.24826,80.526766,547,bus,1,overturn,36.0,male,8.0,81.0,60,1,heavy_rain,12.2,25.8,0.4,16.8,1012.7,mild,9.0,wet,medium,2,1,11,SLP-1042
+KDG-0227,2021-07-20,11:36,Tuesday,0,11,Sensation Rock Bend,7.253309,80.531648,630,three-wheeler,2,head_on,31.0,male,3.0,64.0,50,1,heavy_rain,33.5,25.1,0.9,15.0,1015.0,sharp,15.2,very_wet,high,4,1,14,SLP-1021
+KDG-0482,2021-07-22,05:45,Thursday,0,5,Peradeniya Junction,7.235425,80.513783,469,three-wheeler,2,pedestrian_hit,30.0,male,7.0,60.0,70,0,clear,0.0,22.1,,17.5,1014.2,straight,0.6,dry,low,0,0,4,SLP-1055
+KDG-0004,2021-07-27,18:51,Tuesday,0,18,Queens Hotel Hairpin,7.260928,80.538955,513,car,2,pedestrian_hit,27.0,male,9.0,77.0,50,1,clear,0.0,23.9,5.9,16.6,1009.5,sharp,11.6,dry,medium,2,1,7,SLP-1018
+KDG-0293,2021-08-03,15:08,Tuesday,0,15,Sensation Rock Bend,7.25435,80.531225,619,motorcycle,1,hit_barrier,38.0,male,5.0,84.0,50,1,heavy_rain,9.3,26.0,,9.4,1012.7,sharp,14.8,very_wet,high,4,0,15,SLP-1034
+KDG-0131,2021-08-12,13:40,Thursday,0,13,Rock Cutting Zone,7.252842,80.529271,465,motorcycle,1,fell_off_road,40.0,male,,64.0,50,1,mist,0.0,27.9,0.5,13.7,1010.6,sharp,14.1,wet,high,5,1,13,SLP-1090
+KDG-0012,2021-08-21,11:56,Saturday,1,11,Kadugannawa Town Entry,7.255535,80.534357,483,lorry,2,rear_end,30.0,male,0.0,79.0,60,1,clear,0.0,26.2,7.4,20.8,1009.2,mild,6.2,dry,low,0,0,6,SLP-1080
+KDG-0303,2021-08-24,20:13,Tuesday,0,20,Sensation Rock Bend,7.254376,80.53137,624,car,3,sideswipe,31.0,female,7.0,42.0,50,0,foggy,0.0,23.7,0.1,4.7,1013.6,sharp,15.4,dry,high,4,0,12,SLP-1040
+KDG-0067,2021-08-31,09:03,Tuesday,0,9,Tunnel Bend,7.24993,80.527348,450,lorry,1,overturn,27.0,male,8.0,67.0,50,1,light_rain,1.4,27.1,2.8,2.4,1010.8,sharp,11.1,wet,medium,2,0,11,SLP-1068
+KDG-0367,2021-09-04,08:01,Saturday,1,8,Queens Hotel Hairpin,7.261989,80.539393,556,three-wheeler,2,head_on,42.0,male,15.0,70.0,50,1,clear,0.0,29.1,,10.8,1008.8,sharp,12.6,dry,medium,4,0,8,SLP-1055
+KDG-0272,2021-09-06,16:05,Monday,0,16,Sensation Rock Bend,7.253983,80.531433,673,lorry,1,overturn,25.0,male,7.0,36.0,50,0,clear,0.0,29.3,7.5,13.5,1010.2,sharp,14.6,dry,medium,2,0,7,SLP-1068
+KDG-0086,2021-09-07,08:42,Tuesday,0,8,Dawson's Rock Viewpoint,7.260461,80.536435,617,car,1,hit_barrier,31.0,male,6.0,85.0,60,1,clear,0.0,26.6,6.8,17.4,1007.9,mild,8.4,dry,low,0,0,4,SLP-1083
+KDG-0007,2021-09-07,05:56,Tuesday,0,5,Kadugannawa Town Entry,7.255972,80.533218,605,car,2,head_on,44.0,female,12.0,54.0,60,0,heavy_rain,54.0,25.1,1.1,11.3,1009.3,mild,7.0,very_wet,medium,3,0,10,SLP-1086
+KDG-0102,2021-09-14,08:33,Tuesday,0,8,Tunnel Bend,7.250428,80.527353,669,bus,1,vehicle_fire,,male,0.0,61.0,50,1,heavy_rain,53.1,27.2,1.1,10.9,1014.6,sharp,12.3,wet,high,2,0,13,SLP-1022
+KDG-0438,2021-09-17,14:25,Friday,0,14,Tunnel Bend,7.250208,80.527776,561,lorry,2,pedestrian_hit,,male,8.0,46.0,50,0,heavy_rain,35.2,27.2,1.5,11.5,1014.0,sharp,11.6,very_wet,high,5,1,12,SLP-1034
+KDG-0289,2021-09-17,13:04,Friday,0,13,Sensation Rock Bend,7.255098,80.532755,579,lorry,2,pedestrian_hit,30.0,male,12.0,75.0,50,1,clear,0.0,28.6,5.7,12.7,1012.3,sharp,15.2,dry,medium,3,0,9,SLP-1046
+KDG-0083,2021-09-19,02:44,Sunday,1,2,Sensation Rock Bend,7.254107,80.531188,485,car,2,pedestrian_hit,33.0,male,5.0,77.0,50,1,clear,0.0,24.9,,13.0,1009.6,sharp,14.1,dry,medium,2,0,9,SLP-1069
+KDG-0107,2021-09-21,14:10,Tuesday,0,14,Kandy Road Descent,7.247681,80.525735,634,car,1,fell_off_road,48.0,male,5.0,89.0,60,1,clear,0.0,26.4,5.0,10.1,1009.4,mild,10.3,oily,medium,2,1,8,SLP-1043
+KDG-0177,2021-09-25,21:43,Saturday,1,21,Dawson's Rock Viewpoint,7.259939,80.536875,574,bus,1,overturn,27.0,male,9.0,54.0,60,0,heavy_rain,20.1,26.9,0.9,17.9,1012.1,mild,9.5,very_wet,medium,1,1,11,SLP-1069
+KDG-0113,2021-09-26,13:35,Sunday,1,13,Tunnel Bend,7.249716,80.527873,601,lorry,1,overturn,34.0,male,14.0,50.0,50,0,mist,0.0,29.7,0.1,8.3,1011.9,sharp,11.8,wet,high,4,1,12,SLP-1069
+KDG-0095,2021-09-29,17:25,Wednesday,0,17,Queens Hotel Hairpin,7.260712,80.539427,659,lorry,3,head_on,,female,7.0,41.0,50,0,light_rain,6.4,25.8,2.1,32.4,1012.2,sharp,11.9,very_wet,medium,2,0,10,SLP-1072
+KDG-0486,2021-09-30,17:26,Thursday,0,17,Kandy Road Descent,7.248151,80.526088,500,lorry,1,hit_barrier,18.0,male,0.0,84.0,60,1,light_rain,6.6,24.2,,7.8,1010.8,mild,9.7,very_wet,medium,3,0,9,SLP-1061
+KDG-0405,2021-10-10,16:27,Sunday,1,16,Tunnel Bend,7.249265,80.528756,459,lorry,1,fell_off_road,,female,12.0,44.0,50,0,heavy_rain,31.6,25.2,1.0,15.3,1013.5,sharp,11.1,wet,high,2,0,12,SLP-1053
+KDG-0151,2021-10-18,03:03,Monday,0,3,Dawson's Rock Viewpoint,7.260163,80.536785,672,lorry,1,hit_barrier,26.0,male,4.0,87.0,60,1,clear,0.0,24.7,7.8,17.8,1011.1,mild,7.8,dry,medium,3,0,8,SLP-1037
+KDG-0010,2021-10-20,19:04,Wednesday,0,19,Queens Hotel Hairpin,7.261182,80.539682,504,motorcycle,1,vehicle_fire,34.0,male,0.0,61.0,50,1,light_rain,1.4,22.8,3.9,19.8,1011.2,sharp,11.6,wet,medium,1,0,11,SLP-1059
+KDG-0365,2021-10-23,07:58,Saturday,1,7,Sensation Rock Bend,7.253735,80.531579,664,lorry,1,vehicle_fire,34.0,male,14.0,47.0,50,0,light_rain,4.2,28.7,3.3,26.9,1010.6,sharp,15.0,wet,medium,1,0,9,SLP-1002
+KDG-0173,2021-10-23,07:03,Saturday,1,7,Kandy Road Descent,7.247665,80.52652,510,car,1,overturn,55.0,male,4.0,95.0,60,1,heavy_rain,46.3,26.4,1.2,26.8,1012.7,mild,8.9,very_wet,medium,4,0,10,SLP-1088
+KDG-0234,2021-11-02,01:31,Tuesday,0,1,Rock Cutting Zone,7.252652,80.528669,590,lorry,1,hit_barrier,22.0,male,4.0,44.0,50,0,clear,0.0,26.4,7.5,21.9,1008.3,sharp,13.1,dry,medium,1,1,9,SLP-1086
+KDG-0318,2021-11-03,10:37,Wednesday,0,10,Sensation Rock Bend,7.254588,80.531659,566,lorry,1,fell_off_road,31.0,male,6.0,74.0,50,1,clear,0.0,25.3,5.1,14.4,1009.2,sharp,13.5,dry,medium,1,0,9,SLP-1078
+KDG-0305,2021-11-12,09:59,Friday,0,9,Rock Cutting Zone,7.251988,80.529413,660,car,1,hit_barrier,29.0,male,0.0,75.0,50,1,clear,0.0,27.9,7.8,11.4,1010.7,sharp,14.1,very_wet,medium,3,1,9,SLP-1013
+KDG-0215,2021-11-14,04:14,Sunday,1,4,Kandy Road Descent,7.246914,80.526424,556,car,2,sideswipe,41.0,male,5.0,95.0,60,1,mist,0.0,23.5,,13.4,,mild,9.5,oily,high,4,1,13,SLP-1039
+KDG-0330,2021-11-25,08:49,Thursday,0,8,Tunnel Bend,7.249899,80.527956,596,bus,1,fell_off_road,23.0,male,5.0,74.0,50,1,light_rain,6.1,30.6,2.8,21.5,1011.5,sharp,12.9,wet,medium,2,0,10,SLP-1092
+KDG-0135,2021-11-26,20:04,Friday,0,20,Sensation Rock Bend,7.254138,80.530559,596,car,1,vehicle_fire,49.0,male,12.0,38.0,50,0,mist,0.0,26.3,,10.5,1007.1,sharp,14.2,wet,high,3,0,12,SLP-1024
+KDG-0319,2021-11-28,18:06,Sunday,1,18,Queens Hotel Hairpin,7.262413,80.539116,658,car,3,pedestrian_hit,18.0,male,0.0,71.0,50,1,clear,0.0,25.0,6.8,,1013.6,sharp,13.5,dry,medium,3,0,7,SLP-1018
+KDG-0432,2021-11-28,07:03,Sunday,1,7,Sensation Rock Bend,7.253906,80.530993,540,motorcycle,1,fell_off_road,18.0,male,0.0,78.0,50,1,clear,0.0,26.6,6.1,5.2,1010.7,sharp,14.1,dry,medium,1,0,9,SLP-1079
+KDG-0341,2021-12-06,22:45,Monday,0,22,Queens Hotel Hairpin,7.262177,80.538647,680,car,2,pedestrian_hit,44.0,male,14.0,45.0,50,0,foggy,0.0,22.6,0.1,24.4,1015.9,sharp,11.8,dry,high,5,1,12,SLP-1084
+KDG-0308,2021-12-08,16:10,Wednesday,0,16,Sensation Rock Bend,7.25381,80.53132,661,lorry,1,hit_barrier,38.0,male,1.0,63.0,50,1,light_rain,2.0,28.4,2.9,17.3,1011.2,sharp,15.1,oily,high,3,0,13,SLP-1017
+KDG-0229,2021-12-29,15:39,Wednesday,0,15,Tunnel Bend,7.249884,80.528021,575,car,1,overturn,41.0,male,9.0,65.0,50,1,light_rain,3.5,25.5,2.8,23.9,,sharp,12.1,very_wet,medium,4,1,10,SLP-1029
+KDG-0054,2021-12-31,02:17,Friday,0,2,A1 Bridge Section,7.239823,80.518684,505,car,1,hit_barrier,22.0,male,0.0,56.0,70,0,clear,0.0,22.8,7.4,18.8,1013.6,straight,0.7,wet,low,1,0,4,SLP-1073
+KDG-0117,2022-01-02,17:52,Sunday,1,17,Peradeniya Junction,7.236283,80.514467,458,lorry,1,overturn,38.0,female,5.0,59.0,70,0,light_rain,6.3,26.5,2.6,27.2,1007.4,straight,0.5,very_wet,low,1,0,6,SLP-1031
+KDG-0454,2022-01-03,13:10,Monday,0,13,Rock Cutting Zone,7.252949,80.529026,511,car,1,vehicle_fire,39.0,male,4.0,,50,0,clear,0.0,26.0,4.6,19.3,1007.1,sharp,12.9,oily,medium,1,0,8,SLP-1061
+KDG-0128,2022-01-05,17:07,Wednesday,0,17,Rock Cutting Zone,7.251674,80.529258,595,car,1,overturn,33.0,male,15.0,45.0,50,0,light_rain,2.9,26.9,2.9,17.0,1012.3,sharp,12.9,wet,medium,1,0,7,SLP-1006
+KDG-0198,2022-01-07,07:47,Friday,0,7,Kandy Road Descent,7.247192,80.526582,477,motorcycle,2,rear_end,23.0,male,5.0,58.0,60,0,light_rain,2.4,26.2,2.0,8.3,1011.5,mild,10.2,wet,medium,3,0,7,SLP-1006
+KDG-0423,2022-01-18,22:33,Tuesday,0,22,Queens Hotel Hairpin,7.26106,80.538418,572,three-wheeler,1,hit_barrier,36.0,female,13.0,38.0,50,0,heavy_rain,10.6,25.4,1.5,8.9,1016.4,sharp,12.8,very_wet,high,4,0,13,SLP-1014
+KDG-0366,2022-01-24,07:22,Monday,0,7,Tunnel Bend,7.249441,80.528173,626,lorry,1,vehicle_fire,32.0,male,9.0,49.0,50,0,mist,0.0,27.1,0.6,13.6,1011.2,sharp,12.3,wet,medium,3,1,11,SLP-1048
+KDG-0243,2022-01-25,07:39,Tuesday,0,7,Kadugannawa Town Entry,7.255927,80.534334,588,car,2,rear_end,36.0,male,6.0,56.0,60,0,light_rain,4.8,29.5,3.5,14.7,1011.8,mild,6.2,very_wet,low,0,0,5,SLP-1007
+KDG-0085,2022-01-25,09:36,Tuesday,0,9,Kandy Road Descent,7.247829,80.525814,515,bus,1,hit_barrier,43.0,male,14.0,76.0,60,1,mist,0.0,25.0,0.6,8.6,1008.2,mild,10.7,wet,medium,1,0,10,SLP-1076
+KDG-0345,2022-01-27,07:33,Thursday,0,7,Galaboda Straight,7.241867,80.520025,596,bus,2,rear_end,22.0,male,4.0,103.0,70,1,heavy_rain,18.6,27.4,0.8,10.8,1011.5,straight,2.6,wet,medium,4,0,9,SLP-1043
+KDG-0076,2022-01-29,07:19,Saturday,1,7,Kandy Road Descent,7.248378,80.525539,671,car,2,sideswipe,26.0,female,1.0,59.0,60,0,light_rain,5.1,29.1,3.1,23.5,1012.0,mild,10.8,dry,low,1,0,4,SLP-1099
+KDG-0136,2022-01-31,08:56,Monday,0,8,Sensation Rock Bend,7.253926,80.531025,654,lorry,1,overturn,44.0,female,9.0,80.0,50,1,light_rain,5.5,26.9,2.7,28.5,1012.0,sharp,14.8,wet,medium,4,0,11,SLP-1046
+KDG-0153,2022-02-01,11:24,Tuesday,0,11,Rock Cutting Zone,7.251663,80.529639,593,bus,2,pedestrian_hit,40.0,male,10.0,79.0,50,1,clear,0.0,26.0,7.7,29.0,1008.0,sharp,13.6,wet,medium,1,1,9,SLP-1082
+KDG-0453,2022-02-04,13:31,Friday,0,13,Kadugannawa Town Entry,7.255307,80.533958,675,car,1,fell_off_road,18.0,male,0.0,,60,1,clear,0.0,29.7,4.7,20.3,1007.6,mild,6.8,dry,low,1,0,4,SLP-1089
+KDG-0458,2022-02-05,09:02,Saturday,1,9,Kadugannawa Town Entry,7.255804,80.533057,487,lorry,1,fell_off_road,37.0,male,9.0,74.0,60,1,light_rain,1.9,27.8,3.5,29.5,1010.1,mild,5.9,oily,medium,2,0,10,SLP-1038
+KDG-0354,2022-02-21,18:54,Monday,0,18,Galaboda Straight,7.242074,80.520952,545,lorry,2,pedestrian_hit,18.0,male,0.0,94.0,70,1,clear,0.0,29.7,8.7,13.6,1013.4,straight,2.9,wet,low,1,0,6,SLP-1064
+KDG-0407,2022-02-21,19:06,Monday,0,19,Queens Hotel Hairpin,7.261314,80.537971,640,car,1,hit_barrier,37.0,male,8.0,76.0,50,1,clear,0.0,28.6,8.0,16.1,1012.6,sharp,12.6,wet,medium,1,0,8,SLP-1014
+KDG-0180,2022-02-27,17:28,Sunday,1,17,Queens Hotel Hairpin,7.26163,80.538608,677,motorcycle,2,rear_end,38.0,female,11.0,85.0,50,1,clear,0.0,27.2,8.5,16.0,1010.4,sharp,13.1,dry,medium,2,0,9,SLP-1016
+KDG-0483,2022-03-05,07:20,Saturday,1,7,Kandy Road Descent,7.247302,80.526296,601,bus,1,hit_barrier,33.0,male,6.0,54.0,60,0,foggy,0.0,26.2,0.1,12.6,1009.9,mild,8.7,dry,medium,4,0,8,SLP-1075
+KDG-0386,2022-03-06,07:42,Sunday,1,7,Rock Cutting Zone,7.2526,80.52957,524,motorcycle,2,head_on,33.0,male,14.0,72.0,50,1,clear,0.0,24.0,8.1,6.2,1010.5,sharp,13.6,dry,medium,3,0,9,SLP-1094
+KDG-0011,2022-03-14,11:46,Monday,0,11,Peradeniya Junction,7.23539,80.514679,578,lorry,3,rear_end,43.0,male,9.0,96.0,70,1,light_rain,2.1,30.2,2.9,10.4,1009.0,straight,1.1,wet,medium,3,0,7,SLP-1009
+KDG-0490,2022-03-25,08:28,Friday,0,8,Tunnel Bend,7.250305,80.527378,493,car,1,fell_off_road,43.0,female,7.0,49.0,50,0,heavy_rain,36.5,24.8,0.6,13.4,1010.8,sharp,12.5,very_wet,medium,1,0,11,SLP-1004
+KDG-0371,2022-03-27,17:14,Sunday,1,17,Rock Cutting Zone,7.251588,80.529196,532,car,1,fell_off_road,,male,5.0,50.0,50,0,clear,0.0,26.5,8.0,6.6,1014.1,sharp,13.2,dry,low,0,0,5,SLP-1019
+KDG-0003,2022-03-31,22:54,Thursday,0,22,Tunnel Bend,7.249294,80.527957,493,car,1,fell_off_road,34.0,male,0.0,67.0,50,1,clear,0.0,22.9,6.2,4.1,1014.7,sharp,11.9,dry,medium,3,0,9,SLP-1008
+KDG-0145,2022-04-10,22:30,Sunday,1,22,Rock Cutting Zone,7.251681,80.528838,517,car,1,overturn,43.0,male,6.0,42.0,50,0,clear,0.0,27.5,4.5,21.1,1009.3,sharp,15.2,dry,medium,1,0,7,SLP-1013
+KDG-0411,2022-04-10,03:09,Sunday,1,3,Dawson's Rock Viewpoint,7.259669,80.537015,544,car,1,hit_barrier,30.0,male,6.0,52.0,60,0,clear,0.0,20.6,9.9,20.1,1007.1,mild,9.0,dry,low,0,0,4,SLP-1008
+KDG-0485,2022-04-15,19:21,Friday,0,19,Tunnel Bend,7.249251,80.527062,579,motorcycle,2,pedestrian_hit,18.0,male,,39.0,50,0,clear,0.0,26.2,4.7,22.3,1013.4,sharp,12.3,dry,medium,3,0,7,SLP-1017
+KDG-0143,2022-04-22,01:16,Friday,0,1,Peradeniya Junction,7.236095,80.513886,457,car,1,overturn,32.0,male,8.0,65.0,70,0,clear,0.0,25.6,7.3,18.9,1010.3,straight,2.6,dry,low,0,0,3,SLP-1027
+KDG-0071,2022-04-25,09:38,Monday,0,9,A1 Bridge Section,7.239645,80.519038,621,car,2,head_on,18.0,male,0.0,91.0,70,1,clear,0.0,29.1,9.5,11.7,1014.0,straight,1.8,dry,low,2,0,3,SLP-1019
+KDG-0480,2022-04-26,10:25,Tuesday,0,10,Sensation Rock Bend,7.254618,80.530489,563,car,1,hit_barrier,,male,6.0,74.0,50,1,clear,0.0,25.8,8.6,11.2,1014.1,sharp,14.8,wet,medium,2,0,8,SLP-1028
+KDG-0450,2022-04-28,16:22,Thursday,0,16,Kadugannawa Town Entry,7.256952,80.53336,498,motorcycle,2,sideswipe,37.0,male,6.0,80.0,60,1,light_rain,6.1,29.8,3.9,22.0,1008.6,mild,7.3,very_wet,medium,3,0,9,SLP-1059
+KDG-0235,2022-05-07,09:05,Saturday,1,9,Sensation Rock Bend,7.253946,80.53159,459,bus,2,rear_end,18.0,male,0.0,41.0,50,0,clear,0.0,29.9,8.1,23.8,1009.6,sharp,14.3,dry,low,1,0,6,SLP-1071
+KDG-0422,2022-05-11,12:46,Wednesday,0,12,Queens Hotel Hairpin,7.2614,80.538966,624,motorcycle,2,sideswipe,18.0,male,0.0,74.0,50,1,light_rain,3.0,27.4,,5.6,1014.6,sharp,13.2,very_wet,high,5,0,12,SLP-1021
+KDG-0207,2022-05-12,00:27,Thursday,0,0,Rock Cutting Zone,7.252594,80.530795,506,lorry,1,hit_barrier,37.0,male,6.0,,50,0,heavy_rain,16.9,25.5,0.5,16.3,1011.5,sharp,13.1,very_wet,high,3,1,15,SLP-1035
+KDG-0461,2022-05-18,09:19,Wednesday,0,9,Kadugannawa Town Entry,7.25524,80.533903,569,lorry,1,overturn,58.0,male,9.0,46.0,60,0,light_rain,3.6,27.8,1.8,22.6,1012.5,mild,5.8,very_wet,medium,4,0,7,SLP-1099
+KDG-0466,2022-05-25,03:41,Wednesday,0,3,Dawson's Rock Viewpoint,7.260598,80.537852,578,lorry,1,fell_off_road,38.0,male,13.0,,60,0,clear,0.0,21.6,6.8,1.5,1009.4,mild,8.3,very_wet,medium,2,0,8,SLP-1044
+KDG-0098,2022-05-26,21:00,Thursday,0,21,Tunnel Bend,7.249436,80.527676,522,car,1,vehicle_fire,37.0,male,11.0,39.0,50,0,heavy_rain,43.5,24.4,1.1,18.3,1011.4,sharp,11.0,very_wet,high,4,2,13,SLP-1093
+KDG-0283,2022-05-29,12:47,Sunday,1,12,Galaboda Straight,7.242543,80.51989,626,car,1,overturn,46.0,male,2.0,80.0,70,1,clear,0.0,22.8,9.0,,1012.1,straight,3.5,dry,low,1,0,3,SLP-1047
+KDG-0253,2022-05-30,17:36,Monday,0,17,Tunnel Bend,7.249668,80.526798,650,lorry,1,hit_barrier,47.0,male,1.0,46.0,50,0,light_rain,5.0,28.6,3.3,5.3,1011.1,sharp,12.3,dry,medium,1,0,8,SLP-1023
+KDG-0115,2022-06-04,07:23,Saturday,1,7,A1 Bridge Section,7.239625,80.518789,575,lorry,1,overturn,29.0,male,8.0,65.0,70,0,light_rain,2.0,25.8,3.1,16.0,1012.5,straight,2.2,wet,low,2,0,5,SLP-1002
+KDG-0033,2022-06-04,14:03,Saturday,1,14,Kandy Road Descent,7.248633,80.525646,602,motorcycle,2,pedestrian_hit,18.0,male,,71.0,60,1,mist,0.0,26.8,0.2,19.4,1008.7,mild,9.3,wet,medium,1,0,11,SLP-1034
+KDG-0159,2022-06-07,07:52,Tuesday,0,7,Sensation Rock Bend,7.254185,80.530493,492,three-wheeler,1,fell_off_road,44.0,male,,85.0,50,1,light_rain,4.6,25.8,3.2,7.7,1009.2,sharp,15.5,very_wet,medium,1,0,11,SLP-1065
+KDG-0030,2022-06-08,16:23,Wednesday,0,16,Galaboda Straight,7.242123,80.519774,587,lorry,1,vehicle_fire,27.0,male,9.0,102.0,70,1,light_rain,6.2,29.9,2.2,18.4,1005.9,straight,3.3,wet,medium,1,0,7,SLP-1098
+KDG-0370,2022-06-19,08:27,Sunday,1,8,Rock Cutting Zone,7.252233,80.530261,639,lorry,2,rear_end,45.0,male,2.0,64.0,50,1,clear,0.0,24.3,,26.2,1013.3,sharp,13.2,oily,high,4,3,12,SLP-1083
+KDG-0139,2022-06-19,07:02,Sunday,1,7,Sensation Rock Bend,7.254654,80.53068,532,car,2,rear_end,32.0,male,9.0,46.0,50,0,light_rain,4.7,27.1,2.0,6.6,1009.4,sharp,16.0,very_wet,medium,3,1,8,SLP-1010
+KDG-0316,2022-06-24,19:38,Friday,0,19,Sensation Rock Bend,7.254188,80.532693,607,lorry,1,vehicle_fire,38.0,male,,37.0,50,0,heavy_rain,31.0,26.7,,11.8,1013.3,sharp,14.9,very_wet,high,4,1,13,SLP-1092
+KDG-0346,2022-06-27,05:40,Monday,0,5,Sensation Rock Bend,7.254415,80.530798,535,bus,2,pedestrian_hit,33.0,female,10.0,67.0,50,1,mist,0.0,24.6,0.3,9.6,1011.6,sharp,15.2,dry,high,5,1,14,SLP-1075
+KDG-0472,2022-07-02,11:03,Saturday,1,11,Kadugannawa Town Entry,7.256132,80.533824,502,motorcycle,2,rear_end,18.0,male,0.0,93.0,60,1,light_rain,7.6,27.8,1.6,10.5,1009.0,mild,5.9,dry,medium,1,0,7,SLP-1073
+KDG-0174,2022-07-04,21:03,Monday,0,21,Sensation Rock Bend,7.254471,80.53135,604,car,1,overturn,38.0,male,4.0,44.0,50,0,heavy_rain,48.9,25.3,1.1,24.9,1011.1,sharp,13.9,very_wet,high,3,0,13,SLP-1066
+KDG-0018,2022-07-08,12:32,Friday,0,12,Sensation Rock Bend,7.253708,80.531039,560,motorcycle,2,rear_end,18.0,male,0.0,40.0,50,0,clear,0.0,27.5,7.1,5.4,1011.6,sharp,15.5,dry,medium,3,0,7,SLP-1040
+KDG-0192,2022-07-17,11:06,Sunday,1,11,Tunnel Bend,7.249556,80.52724,573,lorry,1,hit_barrier,29.0,male,0.0,35.0,50,0,clear,0.0,26.3,6.2,1.6,1011.8,sharp,12.0,wet,medium,3,0,8,SLP-1018
+KDG-0337,2022-07-23,11:05,Saturday,1,11,Sensation Rock Bend,7.254478,80.531506,456,car,1,vehicle_fire,37.0,male,15.0,69.0,50,1,clear,0.0,24.2,4.5,12.3,1010.9,sharp,14.4,dry,medium,3,0,7,SLP-1016
+KDG-0228,2022-07-24,05:34,Sunday,1,5,Dawson's Rock Viewpoint,7.259024,80.53664,678,car,2,rear_end,31.0,male,4.0,93.0,60,1,light_rain,7.2,22.6,,7.1,1010.7,mild,7.9,oily,medium,1,0,10,SLP-1079
+KDG-0035,2022-08-13,15:01,Saturday,1,15,Sensation Rock Bend,7.254682,80.531205,616,three-wheeler,2,pedestrian_hit,34.0,male,6.0,42.0,50,0,heavy_rain,52.7,24.2,0.6,17.2,1011.5,sharp,14.0,very_wet,high,6,0,12,SLP-1053
+KDG-0059,2022-08-16,18:40,Tuesday,0,18,Queens Hotel Hairpin,7.261144,80.53879,523,bus,1,vehicle_fire,31.0,male,0.0,48.0,50,0,light_rain,5.4,27.1,,19.3,1009.7,sharp,11.3,wet,medium,2,1,8,SLP-1095
+KDG-0213,2022-08-18,17:17,Thursday,0,17,Rock Cutting Zone,7.2515,80.529161,637,lorry,1,fell_off_road,40.0,male,13.0,50.0,50,0,heavy_rain,33.0,26.9,0.9,15.3,1011.9,sharp,13.8,very_wet,high,3,0,13,SLP-1069
+KDG-0369,2022-08-21,22:44,Sunday,1,22,Queens Hotel Hairpin,7.261362,80.538326,599,three-wheeler,2,rear_end,46.0,male,11.0,43.0,50,0,heavy_rain,16.2,23.2,1.5,6.9,1010.5,sharp,10.5,dry,medium,1,0,11,SLP-1016
+KDG-0154,2022-08-24,18:16,Wednesday,0,18,Kandy Road Descent,7.247907,80.525935,485,three-wheeler,1,vehicle_fire,28.0,male,1.0,90.0,60,1,light_rain,2.3,26.1,1.6,13.0,1013.4,mild,11.1,wet,medium,2,0,8,SLP-1075
+KDG-0277,2022-08-29,12:42,Monday,0,12,A1 Bridge Section,7.239343,80.518,462,motorcycle,1,fell_off_road,29.0,male,9.0,,70,0,light_rain,3.1,23.7,1.9,18.2,1013.2,straight,1.7,very_wet,low,1,0,6,SLP-1037
+KDG-0492,2022-09-01,07:21,Thursday,0,7,Tunnel Bend,7.24921,80.527886,665,lorry,2,rear_end,34.0,male,9.0,80.0,50,1,light_rain,6.4,28.7,3.8,24.7,1013.2,sharp,12.7,wet,medium,1,0,11,SLP-1029
+KDG-0070,2022-09-21,08:51,Wednesday,0,8,Queens Hotel Hairpin,7.261784,80.539027,636,motorcycle,2,sideswipe,37.0,male,5.0,37.0,50,0,light_rain,7.3,28.1,2.7,11.1,1009.8,sharp,11.5,very_wet,medium,2,0,10,SLP-1085
+KDG-0036,2022-09-27,09:06,Tuesday,0,9,Rock Cutting Zone,7.252057,80.529831,553,car,1,vehicle_fire,32.0,male,10.0,60.0,50,1,light_rain,3.0,30.4,2.9,5.3,1016.3,sharp,11.8,oily,medium,1,0,11,SLP-1080
+KDG-0497,2022-09-27,19:49,Tuesday,0,19,Rock Cutting Zone,7.253008,80.530145,545,car,1,overturn,37.0,male,8.0,44.0,50,0,clear,0.0,26.8,,6.3,1011.9,sharp,13.5,dry,low,0,0,5,SLP-1003
+KDG-0417,2022-09-28,07:59,Wednesday,0,7,Dawson's Rock Viewpoint,7.259554,80.537417,523,car,1,hit_barrier,47.0,male,1.0,57.0,60,0,clear,0.0,29.1,,3.2,1015.0,mild,8.3,dry,low,2,0,2,SLP-1092
+KDG-0220,2022-10-01,10:52,Saturday,1,10,Queens Hotel Hairpin,7.260873,80.537985,531,three-wheeler,2,head_on,50.0,male,14.0,64.0,50,1,clear,0.0,28.4,9.1,23.6,1010.7,sharp,12.6,dry,medium,1,0,8,SLP-1051
+KDG-0088,2022-10-04,09:41,Tuesday,0,9,Kadugannawa Town Entry,7.255963,80.533474,638,bus,2,head_on,26.0,male,0.0,,60,0,heavy_rain,30.0,29.2,0.4,12.7,1009.7,mild,7.3,wet,medium,2,0,9,SLP-1052
+KDG-0142,2022-10-07,12:16,Friday,0,12,Tunnel Bend,7.249768,80.527964,539,lorry,2,head_on,,female,12.0,63.0,50,1,clear,0.0,28.1,4.3,17.0,1015.0,sharp,12.5,very_wet,medium,1,0,11,SLP-1005
+KDG-0052,2022-10-20,18:25,Thursday,0,18,Queens Hotel Hairpin,7.26126,80.539157,639,car,2,sideswipe,37.0,male,4.0,46.0,50,0,clear,0.0,28.8,4.9,6.1,1007.2,sharp,12.8,dry,low,1,0,5,SLP-1053
+KDG-0240,2022-10-21,22:40,Friday,0,22,Kadugannawa Town Entry,7.256119,80.53435,674,car,1,hit_barrier,32.0,female,5.0,46.0,60,0,light_rain,2.3,21.3,2.3,10.2,1009.0,mild,6.0,dry,low,0,0,5,SLP-1048
+KDG-0105,2022-10-27,15:39,Thursday,0,15,Peradeniya Junction,7.234998,80.514116,619,bus,2,rear_end,43.0,male,6.0,61.0,70,0,light_rain,1.2,27.4,2.7,15.6,1014.9,straight,0.7,wet,low,0,0,4,SLP-1049
+KDG-0168,2022-10-28,10:03,Friday,0,10,Rock Cutting Zone,7.251693,80.529349,540,motorcycle,1,overturn,38.0,male,13.0,85.0,50,1,clear,0.0,26.8,8.3,15.2,1011.4,sharp,13.4,dry,medium,1,0,9,SLP-1018
+KDG-0209,2022-11-01,11:50,Tuesday,0,11,Rock Cutting Zone,7.252648,80.529489,499,three-wheeler,2,rear_end,31.0,male,6.0,68.0,50,1,clear,0.0,25.7,9.1,10.5,1013.1,sharp,13.8,dry,medium,4,0,8,SLP-1050
+KDG-0084,2022-11-03,13:43,Thursday,0,13,Rock Cutting Zone,7.251644,80.529553,523,motorcycle,1,hit_barrier,46.0,male,0.0,82.0,50,1,light_rain,5.9,27.0,2.1,24.5,1004.4,sharp,14.3,wet,medium,2,1,11,SLP-1093
+KDG-0121,2022-11-08,19:48,Tuesday,0,19,Sensation Rock Bend,7.254421,80.531865,483,car,3,sideswipe,27.0,male,9.0,69.0,50,1,light_rain,4.2,27.9,2.6,19.0,1010.8,sharp,15.7,wet,medium,1,0,9,SLP-1011
+KDG-0294,2022-11-08,18:34,Tuesday,0,18,Kadugannawa Town Entry,7.254723,80.534649,670,three-wheeler,1,hit_barrier,44.0,male,11.0,92.0,60,1,clear,0.0,26.6,6.3,8.0,,mild,6.2,dry,low,1,0,5,SLP-1063
+KDG-0255,2022-11-14,05:16,Monday,0,5,Rock Cutting Zone,7.252238,80.529753,487,car,2,pedestrian_hit,33.0,male,0.0,73.0,50,1,clear,0.0,26.4,8.5,33.3,1012.0,sharp,13.0,dry,medium,2,0,9,SLP-1068
+KDG-0166,2022-11-17,16:41,Thursday,0,16,Queens Hotel Hairpin,7.261228,80.539165,575,motorcycle,1,fell_off_road,24.0,female,6.0,40.0,50,0,light_rain,7.9,27.4,1.9,17.4,1011.2,sharp,10.2,dry,medium,2,0,8,SLP-1031
+KDG-0409,2022-11-23,19:28,Wednesday,0,19,Kandy Road Descent,7.248333,80.526971,594,car,1,overturn,31.0,male,3.0,54.0,60,0,clear,0.0,25.9,9.7,11.4,1011.6,mild,9.8,dry,low,0,0,2,SLP-1097
+KDG-0494,2022-11-29,12:42,Tuesday,0,12,Peradeniya Junction,7.235294,80.514957,675,motorcycle,3,sideswipe,39.0,male,3.0,104.0,70,1,heavy_rain,39.4,28.5,1.0,17.0,1010.3,straight,0.5,wet,medium,1,0,10,SLP-1023
+KDG-0017,2022-12-03,09:50,Saturday,1,9,Rock Cutting Zone,7.25205,80.529248,534,car,1,hit_barrier,24.0,female,6.0,63.0,50,1,light_rain,3.8,24.7,3.4,14.5,1008.3,sharp,13.8,very_wet,medium,1,0,10,SLP-1045
+KDG-0428,2022-12-18,06:11,Sunday,1,6,A1 Bridge Section,7.23992,80.518104,523,bus,1,hit_barrier,38.0,male,10.0,66.0,70,0,foggy,0.0,25.2,0.2,,1009.5,straight,2.0,dry,medium,2,0,7,SLP-1065
+KDG-0053,2022-12-19,18:48,Monday,0,18,Queens Hotel Hairpin,7.261976,80.538958,592,motorcycle,2,rear_end,31.0,male,12.0,42.0,50,0,clear,0.0,29.6,4.6,14.5,1016.2,sharp,13.2,dry,medium,2,0,7,SLP-1089
+KDG-0237,2022-12-20,20:39,Tuesday,0,20,Kadugannawa Town Entry,7.255563,80.534093,480,lorry,3,pedestrian_hit,33.0,male,6.0,76.0,60,1,light_rain,4.4,25.5,3.3,14.0,1009.9,mild,6.4,wet,medium,1,0,10,SLP-1082
+KDG-0134,2022-12-28,11:03,Wednesday,0,11,Kandy Road Descent,7.247819,80.52544,453,car,2,sideswipe,33.0,male,10.0,53.0,60,0,foggy,0.0,25.2,0.3,22.1,1009.8,mild,9.6,dry,medium,3,1,7,SLP-1011
+KDG-0476,2023-01-02,19:54,Monday,0,19,Tunnel Bend,7.249106,80.527,680,lorry,1,fell_off_road,34.0,male,0.0,35.0,50,0,heavy_rain,21.8,25.3,0.5,15.1,1008.8,sharp,12.5,wet,high,5,1,12,SLP-1040
+KDG-0343,2023-01-05,08:52,Thursday,0,8,Kandy Road Descent,7.247832,80.526171,660,car,2,pedestrian_hit,34.0,female,10.0,73.0,60,1,light_rain,2.6,30.3,2.2,,1012.0,mild,9.7,wet,low,0,0,6,SLP-1025
+KDG-0042,2023-01-08,10:09,Sunday,1,10,Tunnel Bend,7.250112,80.528114,613,bus,2,pedestrian_hit,43.0,male,7.0,42.0,50,0,light_rain,2.3,27.5,2.5,7.7,1011.2,sharp,11.6,wet,medium,4,0,8,SLP-1021
+KDG-0394,2023-01-10,08:46,Tuesday,0,8,Kandy Road Descent,7.248216,80.526235,468,car,2,head_on,42.0,female,6.0,78.0,60,1,clear,0.0,26.2,,9.0,1010.7,mild,8.6,dry,low,1,0,4,SLP-1073
+KDG-0225,2023-01-15,18:01,Sunday,1,18,Tunnel Bend,7.24972,80.528136,567,motorcycle,1,hit_barrier,44.0,male,8.0,82.0,50,1,clear,0.0,27.9,8.3,8.7,1010.2,sharp,11.5,dry,medium,2,0,9,SLP-1021
+KDG-0420,2023-01-21,00:54,Saturday,1,0,Sensation Rock Bend,7.254314,80.531239,668,lorry,2,rear_end,38.0,male,3.0,73.0,50,1,foggy,0.0,23.4,0.1,12.8,1011.2,sharp,12.8,dry,high,5,0,16,SLP-1090
+KDG-0045,2023-02-03,17:05,Friday,0,17,Dawson's Rock Viewpoint,7.260529,80.53692,573,car,1,overturn,37.0,male,3.0,79.0,60,1,clear,0.0,27.5,9.3,7.0,1011.0,mild,7.6,oily,medium,2,0,7,SLP-1097
+KDG-0109,2023-02-04,07:36,Saturday,1,7,Tunnel Bend,7.249494,80.527606,667,three-wheeler,1,hit_barrier,32.0,male,4.0,73.0,50,1,clear,0.0,28.0,8.4,16.3,1012.6,sharp,13.7,dry,medium,1,0,8,SLP-1092
+KDG-0219,2023-02-12,19:15,Sunday,1,19,Tunnel Bend,7.249336,80.527919,597,motorcycle,1,vehicle_fire,18.0,male,0.0,63.0,50,1,clear,0.0,29.3,8.4,17.5,1011.5,sharp,12.9,dry,medium,1,0,9,SLP-1099
+KDG-0082,2023-02-17,09:07,Friday,0,9,Peradeniya Junction,7.235385,80.514848,634,lorry,2,pedestrian_hit,59.0,male,8.0,55.0,70,0,light_rain,6.1,30.8,2.7,21.9,1010.3,straight,0.6,wet,low,0,0,5,SLP-1088
+KDG-0381,2023-02-18,12:43,Saturday,1,12,Kandy Road Descent,7.248305,80.526078,533,bus,1,overturn,45.0,male,6.0,77.0,60,1,clear,0.0,26.4,9.7,15.6,1012.8,mild,7.7,wet,low,0,0,6,SLP-1061
+KDG-0120,2023-02-20,12:31,Monday,0,12,Queens Hotel Hairpin,7.260574,80.539622,559,car,2,sideswipe,39.0,male,10.0,75.0,50,1,light_rain,6.1,27.4,3.2,21.8,1011.9,sharp,12.2,wet,medium,2,0,9,SLP-1063
+KDG-0249,2023-02-21,19:03,Tuesday,0,19,Sensation Rock Bend,7.254577,80.531457,561,lorry,1,vehicle_fire,42.0,male,11.0,81.0,50,1,mist,0.0,28.8,,17.6,1009.4,sharp,14.8,wet,high,5,0,13,SLP-1054
+KDG-0333,2023-02-21,20:07,Tuesday,0,20,Kandy Road Descent,7.247454,80.526445,486,bus,2,sideswipe,39.0,male,3.0,83.0,60,1,clear,0.0,24.8,,17.9,1008.1,mild,8.6,wet,medium,1,0,8,SLP-1063
+KDG-0491,2023-02-22,08:36,Wednesday,0,8,Queens Hotel Hairpin,7.262128,80.539012,485,bus,3,rear_end,43.0,male,10.0,83.0,50,1,clear,0.0,26.9,8.3,2.7,1010.3,sharp,11.5,dry,medium,3,0,8,SLP-1010
+KDG-0380,2023-02-27,16:21,Monday,0,16,Peradeniya Junction,7.235727,80.514009,635,motorcycle,1,hit_barrier,24.0,male,6.0,84.0,70,1,heavy_rain,25.8,27.6,0.6,17.1,1010.1,straight,1.6,very_wet,medium,4,0,11,SLP-1032
+KDG-0194,2023-02-27,06:02,Monday,0,6,A1 Bridge Section,7.239199,80.518234,667,three-wheeler,1,fell_off_road,32.0,male,6.0,105.0,70,1,clear,0.0,25.7,9.8,16.1,1012.9,straight,3.1,dry,low,1,0,4,SLP-1087
+KDG-0122,2023-03-04,16:41,Saturday,1,16,Tunnel Bend,7.24978,80.527085,624,bus,2,pedestrian_hit,29.0,male,0.0,50.0,50,0,clear,0.0,27.7,7.9,9.2,1013.1,sharp,11.6,dry,low,1,0,6,SLP-1062
+KDG-0132,2023-03-06,12:47,Monday,0,12,Sensation Rock Bend,7.254838,80.53189,655,car,1,overturn,28.0,male,4.0,40.0,50,0,clear,0.0,26.4,7.4,16.8,1012.2,sharp,14.7,dry,low,2,0,5,SLP-1018
+KDG-0008,2023-03-10,12:33,Friday,0,12,Queens Hotel Hairpin,7.26078,80.538745,534,car,1,fell_off_road,22.0,male,2.0,43.0,50,0,clear,0.0,28.1,7.5,20.8,1009.8,sharp,11.7,dry,low,1,0,5,SLP-1074
+KDG-0140,2023-03-11,16:42,Saturday,1,16,Queens Hotel Hairpin,7.261635,80.539148,627,car,1,fell_off_road,36.0,male,13.0,79.0,50,1,clear,0.0,27.8,9.7,16.6,1017.0,sharp,11.8,oily,medium,2,0,10,SLP-1038
+KDG-0066,2023-03-16,08:20,Thursday,0,8,Dawson's Rock Viewpoint,7.259265,80.537272,451,motorcycle,2,pedestrian_hit,18.0,male,0.0,70.0,60,1,clear,0.0,26.3,5.7,18.0,1009.1,mild,6.4,dry,low,0,0,6,SLP-1037
+KDG-0390,2023-03-18,17:50,Saturday,1,17,Kandy Road Descent,7.24785,80.525395,580,car,2,head_on,44.0,male,16.0,45.0,60,0,clear,0.0,28.2,7.8,15.8,1010.5,mild,8.7,dry,low,0,0,2,SLP-1083
+KDG-0471,2023-03-21,19:36,Tuesday,0,19,Sensation Rock Bend,7.254261,80.531194,630,motorcycle,1,fell_off_road,24.0,female,6.0,45.0,50,0,clear,0.0,26.0,7.6,19.8,1011.6,sharp,14.5,dry,medium,3,1,7,SLP-1065
+KDG-0389,2023-03-23,21:27,Thursday,0,21,Kandy Road Descent,7.247635,80.526181,634,car,1,hit_barrier,22.0,male,4.0,59.0,60,0,clear,0.0,22.2,9.7,,1012.1,mild,7.8,dry,low,1,0,4,SLP-1023
+KDG-0373,2023-03-28,07:28,Tuesday,0,7,Queens Hotel Hairpin,7.261832,80.538477,587,lorry,1,vehicle_fire,41.0,male,9.0,45.0,50,0,clear,0.0,28.5,6.9,15.4,1011.7,sharp,12.8,dry,medium,1,0,7,SLP-1062
+KDG-0440,2023-03-29,17:42,Wednesday,0,17,Sensation Rock Bend,7.254956,80.530326,496,car,2,head_on,46.0,female,0.0,35.0,50,0,clear,0.0,28.3,9.2,17.3,1009.0,sharp,14.8,dry,low,0,0,5,SLP-1063
+KDG-0396,2023-03-31,21:50,Friday,0,21,Dawson's Rock Viewpoint,7.259797,80.537228,679,car,1,hit_barrier,30.0,female,8.0,50.0,60,0,light_rain,3.1,23.7,2.8,9.1,1008.1,mild,6.4,wet,low,1,0,6,SLP-1087
+KDG-0290,2023-04-04,11:32,Tuesday,0,11,Tunnel Bend,7.249915,80.528049,479,car,1,vehicle_fire,28.0,male,2.0,36.0,50,0,mist,0.0,28.7,0.5,17.0,1013.1,sharp,11.6,wet,medium,1,0,9,SLP-1055
+KDG-0449,2023-04-04,08:10,Tuesday,0,8,Dawson's Rock Viewpoint,7.260136,80.536353,511,lorry,1,vehicle_fire,44.0,male,11.0,91.0,60,1,clear,0.0,26.2,7.5,7.6,1014.1,mild,7.5,dry,low,0,0,6,SLP-1034
+KDG-0041,2023-04-06,21:40,Thursday,0,21,A1 Bridge Section,7.239548,80.518298,612,motorcycle,2,rear_end,45.0,male,11.0,83.0,70,1,mist,0.0,23.0,0.6,28.6,1008.5,straight,1.1,dry,medium,1,0,10,SLP-1038
+KDG-0108,2023-04-06,18:21,Thursday,0,18,Queens Hotel Hairpin,7.260784,80.539136,531,bus,2,sideswipe,49.0,female,16.0,35.0,50,0,light_rain,5.6,26.5,3.0,18.4,1011.5,sharp,10.6,wet,medium,2,0,8,SLP-1051
+KDG-0340,2023-04-07,23:53,Friday,0,23,Kandy Road Descent,7.24825,80.5253,521,lorry,3,sideswipe,28.0,male,8.0,76.0,60,1,clear,0.0,25.2,7.4,0.7,1012.6,mild,10.0,dry,medium,3,1,8,SLP-1082
+KDG-0191,2023-04-11,10:51,Tuesday,0,10,A1 Bridge Section,7.240111,80.518291,498,motorcycle,1,overturn,52.0,male,15.0,70.0,70,0,light_rain,1.7,27.1,2.1,7.3,,straight,3.0,wet,low,0,0,5,SLP-1027
+KDG-0310,2023-04-20,16:47,Thursday,0,16,Kandy Road Descent,7.247607,80.525309,657,car,1,vehicle_fire,20.0,male,2.0,52.0,60,0,clear,0.0,28.0,6.8,19.1,1010.4,mild,10.5,wet,low,1,0,4,SLP-1017
+KDG-0061,2023-05-06,11:21,Saturday,1,11,Kandy Road Descent,7.247936,80.525522,488,car,1,vehicle_fire,27.0,female,2.0,56.0,60,0,light_rain,3.3,24.6,2.5,15.4,1009.1,mild,8.2,wet,low,0,0,4,SLP-1091
+KDG-0214,2023-05-07,08:43,Sunday,1,8,Galaboda Straight,7.242305,80.519979,501,lorry,2,pedestrian_hit,45.0,male,7.0,64.0,70,0,light_rain,3.3,28.7,2.8,27.3,1010.7,straight,2.4,very_wet,low,1,0,6,SLP-1068
+KDG-0427,2023-05-07,08:39,Sunday,1,8,Kandy Road Descent,7.247889,80.527023,577,three-wheeler,1,overturn,,male,7.0,50.0,60,0,light_rain,8.0,26.3,3.4,11.2,1016.0,mild,8.6,very_wet,low,0,0,6,SLP-1047
+KDG-0205,2023-05-16,09:15,Tuesday,0,9,A1 Bridge Section,7.239178,80.518515,519,bus,2,head_on,54.0,female,2.0,84.0,70,1,clear,0.0,26.9,4.2,11.2,1008.6,straight,2.4,very_wet,low,1,0,6,SLP-1059
+KDG-0323,2023-05-18,21:53,Thursday,0,21,Dawson's Rock Viewpoint,7.260832,80.537498,490,lorry,3,pedestrian_hit,33.0,male,14.0,73.0,60,1,light_rain,4.3,25.0,2.0,26.3,1011.9,mild,8.1,wet,medium,2,0,10,SLP-1007
+KDG-0260,2023-05-19,08:44,Friday,0,8,Queens Hotel Hairpin,7.261244,80.538999,548,bus,2,sideswipe,32.0,male,5.0,,50,1,clear,0.0,26.4,6.9,11.8,1012.5,sharp,12.8,dry,medium,2,0,8,SLP-1008
+KDG-0363,2023-05-21,15:51,Sunday,1,15,Rock Cutting Zone,7.250958,80.530362,676,bus,1,overturn,28.0,female,,68.0,50,1,clear,0.0,27.0,6.3,16.0,1010.9,sharp,13.1,dry,medium,3,0,8,SLP-1028
+KDG-0360,2023-05-21,22:13,Sunday,1,22,Dawson's Rock Viewpoint,7.259056,80.536708,661,car,1,vehicle_fire,36.0,male,7.0,,60,1,light_rain,4.3,24.4,3.1,7.6,1008.7,mild,7.3,wet,medium,1,0,8,SLP-1085
+KDG-0388,2023-06-01,06:20,Thursday,0,6,Rock Cutting Zone,7.252521,80.529792,505,lorry,1,overturn,50.0,male,13.0,66.0,50,1,mist,0.0,25.8,0.6,18.1,1009.2,sharp,14.1,wet,high,4,3,13,SLP-1019
+KDG-0332,2023-06-06,18:37,Tuesday,0,18,Galaboda Straight,7.242108,80.520551,630,bus,1,vehicle_fire,27.0,male,9.0,96.0,70,1,light_rain,7.5,24.4,3.6,24.6,1012.3,straight,4.0,wet,low,0,0,6,SLP-1021
+KDG-0231,2023-06-09,22:02,Friday,0,22,Kadugannawa Town Entry,7.255736,80.533159,463,lorry,2,rear_end,46.0,male,3.0,74.0,60,1,heavy_rain,21.7,22.0,1.3,14.6,1011.4,mild,5.7,very_wet,high,5,0,14,SLP-1075
+KDG-0437,2023-06-10,00:23,Saturday,1,0,Rock Cutting Zone,7.251538,80.528701,456,lorry,1,hit_barrier,39.0,female,,39.0,50,0,light_rain,5.6,22.4,3.8,12.5,1012.2,sharp,13.0,dry,medium,2,1,10,SLP-1056
+KDG-0185,2023-06-14,10:00,Wednesday,0,10,Kandy Road Descent,7.247933,80.526007,638,motorcycle,2,head_on,25.0,male,5.0,81.0,60,1,heavy_rain,15.8,24.6,0.4,18.5,1010.7,mild,9.6,oily,high,2,0,14,SLP-1006
+KDG-0078,2023-06-22,07:23,Thursday,0,7,Kadugannawa Town Entry,7.255855,80.534463,680,car,2,head_on,52.0,female,14.0,50.0,60,0,light_rain,1.9,26.9,1.6,,1009.0,mild,6.9,oily,low,1,0,6,SLP-1064
+KDG-0111,2023-06-25,21:21,Sunday,1,21,Peradeniya Junction,7.236763,80.514235,600,bus,1,overturn,39.0,male,6.0,84.0,70,1,clear,0.0,22.1,7.1,21.3,1012.7,straight,3.0,wet,medium,1,1,7,SLP-1011
+KDG-0164,2023-06-28,21:17,Wednesday,0,21,Rock Cutting Zone,7.252268,80.529051,601,lorry,1,vehicle_fire,33.0,male,12.0,78.0,50,1,light_rain,4.0,23.1,1.8,13.9,1013.7,sharp,13.8,wet,high,5,1,13,SLP-1088
+KDG-0130,2023-07-01,05:29,Saturday,1,5,Rock Cutting Zone,7.2522,80.529824,576,motorcycle,2,head_on,36.0,male,13.0,84.0,50,1,light_rain,1.6,22.1,2.2,25.0,1007.9,sharp,12.2,wet,high,3,2,13,SLP-1004
+KDG-0081,2023-07-03,13:02,Monday,0,13,Sensation Rock Bend,7.253932,80.532035,665,lorry,1,vehicle_fire,18.0,male,0.0,40.0,50,0,heavy_rain,15.0,25.5,,,1010.4,sharp,14.3,very_wet,high,5,0,13,SLP-1003
+KDG-0149,2023-07-04,03:56,Tuesday,0,3,Dawson's Rock Viewpoint,7.259605,80.53747,625,lorry,3,pedestrian_hit,35.0,male,1.0,53.0,60,0,clear,0.0,21.2,6.2,12.4,1012.4,mild,7.0,very_wet,medium,3,0,8,SLP-1094
+KDG-0196,2023-07-13,14:16,Thursday,0,14,Tunnel Bend,7.249789,80.527426,563,lorry,1,hit_barrier,34.0,male,10.0,78.0,50,1,light_rain,4.5,21.6,2.8,20.2,1012.8,sharp,11.9,wet,medium,4,0,11,SLP-1059
+KDG-0057,2023-07-15,16:26,Saturday,1,16,Tunnel Bend,7.249543,80.52727,552,bus,2,head_on,28.0,female,4.0,72.0,50,1,mist,0.0,25.9,0.4,20.7,1008.5,sharp,12.5,wet,high,3,0,13,SLP-1066
+KDG-0279,2023-07-16,20:49,Sunday,1,20,Sensation Rock Bend,7.253775,80.531861,596,bus,2,pedestrian_hit,27.0,male,9.0,85.0,50,1,light_rain,1.0,25.6,2.3,9.8,1006.3,sharp,15.3,oily,high,3,0,14,SLP-1062
+KDG-0246,2023-07-20,18:50,Thursday,0,18,Sensation Rock Bend,7.254073,80.531343,503,lorry,3,sideswipe,32.0,male,7.0,78.0,50,1,clear,0.0,26.9,7.5,18.5,1012.4,sharp,14.6,dry,medium,2,0,9,SLP-1085
+KDG-0048,2023-07-30,20:17,Sunday,1,20,Sensation Rock Bend,7.254536,80.531292,498,bus,1,overturn,18.0,male,0.0,74.0,50,1,light_rain,7.7,26.9,,8.3,1008.9,sharp,14.0,wet,high,2,0,12,SLP-1017
+KDG-0019,2023-07-31,09:44,Monday,0,9,Tunnel Bend,7.24993,80.528191,560,car,1,vehicle_fire,36.0,male,9.0,79.0,50,1,light_rain,7.6,23.8,3.0,4.8,1012.3,sharp,12.3,wet,medium,3,0,9,SLP-1095
+KDG-0481,2023-08-01,05:05,Tuesday,0,5,Tunnel Bend,7.249493,80.527445,608,lorry,1,vehicle_fire,44.0,male,5.0,67.0,50,1,clear,0.0,24.8,8.6,4.4,1015.0,sharp,12.8,dry,medium,2,0,11,SLP-1092
+KDG-0169,2023-08-04,07:39,Friday,0,7,Tunnel Bend,7.250275,80.527058,481,car,2,head_on,22.0,male,0.0,74.0,50,1,mist,0.0,21.4,0.1,20.5,1007.6,sharp,11.9,wet,high,6,0,12,SLP-1095
+KDG-0335,2023-08-05,11:57,Saturday,1,11,Queens Hotel Hairpin,7.26133,80.538631,593,lorry,1,overturn,34.0,male,6.0,80.0,50,1,mist,0.0,24.2,0.5,0.3,1011.9,sharp,10.5,very_wet,high,6,1,14,SLP-1097
+KDG-0119,2023-08-13,20:17,Sunday,1,20,Rock Cutting Zone,7.252923,80.528965,556,car,2,rear_end,31.0,male,9.0,48.0,50,0,mist,0.0,20.3,0.4,9.2,1010.9,sharp,13.6,wet,high,4,1,12,SLP-1089
+KDG-0097,2023-08-18,21:35,Friday,0,21,Kadugannawa Town Entry,7.255487,80.535006,604,bus,2,head_on,40.0,male,0.0,72.0,60,1,clear,0.0,24.3,,10.1,1012.6,mild,7.3,dry,medium,2,1,7,SLP-1043
+KDG-0208,2023-08-19,07:04,Saturday,1,7,Tunnel Bend,7.249884,80.528459,476,car,2,head_on,18.0,male,0.0,46.0,50,0,light_rain,5.3,24.2,2.0,22.0,1014.3,sharp,12.0,wet,medium,1,0,7,SLP-1028
+KDG-0299,2023-08-25,11:39,Friday,0,11,Kadugannawa Town Entry,7.255816,80.533721,518,lorry,2,pedestrian_hit,18.0,male,0.0,87.0,60,1,light_rain,7.2,25.6,,7.5,1013.2,mild,7.3,oily,medium,4,0,10,SLP-1008
+KDG-0265,2023-08-28,07:23,Monday,0,7,Kadugannawa Town Entry,7.25582,80.533599,495,bus,2,pedestrian_hit,18.0,male,0.0,92.0,60,1,mist,0.0,27.3,0.1,10.4,1010.4,mild,5.7,dry,medium,3,0,9,SLP-1061
+KDG-0092,2023-08-29,12:03,Tuesday,0,12,Kadugannawa Town Entry,7.25553,80.533711,465,lorry,1,hit_barrier,44.0,female,10.0,72.0,60,1,clear,0.0,26.4,4.0,7.2,1012.0,mild,5.1,dry,low,1,0,6,SLP-1099
+KDG-0077,2023-09-03,15:01,Sunday,1,15,Galaboda Straight,7.241211,80.520848,573,lorry,1,hit_barrier,58.0,male,8.0,90.0,70,1,clear,0.0,28.7,8.8,13.6,1011.7,straight,2.3,dry,low,1,0,5,SLP-1045
+KDG-0150,2023-09-04,15:05,Monday,0,15,Tunnel Bend,7.249499,80.52796,484,car,1,fell_off_road,36.0,female,14.0,76.0,50,1,heavy_rain,43.7,24.6,0.9,17.1,,sharp,12.5,very_wet,high,5,0,13,SLP-1008
+KDG-0462,2023-09-21,06:08,Thursday,0,6,Kandy Road Descent,7.248638,80.525924,451,car,1,overturn,42.0,female,6.0,94.0,60,1,clear,0.0,28.5,7.3,19.9,1014.0,mild,10.1,dry,low,0,0,5,SLP-1035
+KDG-0322,2023-09-25,14:35,Monday,0,14,Sensation Rock Bend,7.254529,80.531083,538,motorcycle,2,pedestrian_hit,60.0,male,2.0,43.0,50,0,clear,0.0,27.6,9.6,3.9,1010.3,sharp,14.5,dry,medium,1,0,7,SLP-1092
+KDG-0002,2023-09-28,10:09,Thursday,0,10,Tunnel Bend,7.249565,80.528071,470,motorcycle,2,head_on,,male,0.0,80.0,50,1,clear,0.0,26.7,6.1,10.7,1011.6,sharp,10.6,oily,high,5,0,12,SLP-1030
+KDG-0110,2023-09-30,17:04,Saturday,1,17,Queens Hotel Hairpin,7.26051,80.538535,602,lorry,1,hit_barrier,33.0,male,13.0,62.0,50,1,light_rain,4.7,27.4,2.5,26.6,1009.7,sharp,12.0,very_wet,high,3,1,12,SLP-1073
+KDG-0399,2023-10-03,16:59,Tuesday,0,16,A1 Bridge Section,7.23911,80.518665,629,bus,2,rear_end,29.0,male,11.0,91.0,70,1,light_rain,8.0,25.3,2.5,20.3,1013.2,straight,3.6,very_wet,medium,2,1,7,SLP-1087
+KDG-0419,2023-10-03,12:26,Tuesday,0,12,Kandy Road Descent,7.247518,80.526814,471,lorry,2,head_on,28.0,male,6.0,83.0,60,1,clear,0.0,27.0,6.3,25.1,,mild,9.2,dry,low,1,0,6,SLP-1031
+KDG-0496,2023-10-08,11:58,Sunday,1,11,Sensation Rock Bend,7.253734,80.532145,607,bus,1,overturn,37.0,male,0.0,64.0,50,1,clear,0.0,27.6,6.7,19.4,1009.5,sharp,14.8,dry,medium,3,0,8,SLP-1091
+KDG-0435,2023-10-11,13:48,Wednesday,0,13,Queens Hotel Hairpin,7.261226,80.53837,629,three-wheeler,2,rear_end,45.0,female,14.0,63.0,50,1,light_rain,3.6,26.2,2.6,,1013.4,sharp,10.1,wet,medium,1,0,10,SLP-1053
+KDG-0089,2023-10-18,13:05,Wednesday,0,13,Queens Hotel Hairpin,7.260422,80.539203,596,car,1,overturn,36.0,male,7.0,39.0,50,0,mist,0.0,25.2,0.3,26.3,1005.8,sharp,13.2,wet,medium,2,0,10,SLP-1088
+KDG-0455,2023-10-19,09:11,Thursday,0,9,Peradeniya Junction,7.235382,80.514872,454,motorcycle,1,fell_off_road,32.0,female,,89.0,70,1,clear,0.0,28.3,6.1,15.9,1010.2,straight,1.8,dry,low,1,0,5,SLP-1013
+KDG-0183,2023-10-21,07:20,Saturday,1,7,Tunnel Bend,7.250177,80.527991,591,car,2,head_on,31.0,female,3.0,48.0,50,0,heavy_rain,47.5,29.8,1.3,18.7,1010.7,sharp,11.1,very_wet,medium,3,0,11,SLP-1094
+KDG-0309,2023-11-02,18:38,Thursday,0,18,Tunnel Bend,7.250235,80.528244,599,motorcycle,1,hit_barrier,44.0,male,19.0,,50,1,light_rain,2.3,26.1,1.6,14.3,1012.7,sharp,11.9,wet,medium,4,0,11,SLP-1028
+KDG-0391,2023-11-12,09:08,Sunday,1,9,Sensation Rock Bend,7.253858,80.530894,582,car,2,rear_end,18.0,male,0.0,77.0,50,1,heavy_rain,16.7,28.4,0.9,11.5,1010.7,sharp,15.1,very_wet,high,5,0,13,SLP-1085
+KDG-0006,2023-11-16,07:00,Thursday,0,7,Peradeniya Junction,7.235869,80.514586,645,motorcycle,1,overturn,29.0,male,,70.0,70,0,clear,0.0,27.3,9.5,11.9,1007.3,straight,0.9,dry,low,2,0,3,SLP-1040
+KDG-0206,2023-11-17,13:40,Friday,0,13,Kadugannawa Town Entry,7.255812,80.534806,484,motorcycle,2,pedestrian_hit,32.0,male,12.0,45.0,60,0,clear,0.0,27.4,5.8,17.2,1008.3,mild,6.8,wet,low,2,0,5,SLP-1062
+KDG-0446,2023-11-18,09:20,Saturday,1,9,Tunnel Bend,7.249916,80.527422,454,car,2,sideswipe,36.0,female,13.0,78.0,50,1,clear,0.0,23.6,4.7,22.4,1013.4,sharp,12.1,dry,medium,1,1,7,SLP-1005
+KDG-0072,2023-11-30,03:04,Thursday,0,3,Tunnel Bend,7.248865,80.527624,543,lorry,1,fell_off_road,42.0,male,0.0,42.0,50,0,clear,0.0,24.5,4.9,25.7,1011.8,sharp,11.9,dry,medium,2,0,9,SLP-1072
+KDG-0259,2023-12-10,05:59,Sunday,1,5,Tunnel Bend,7.249933,80.527509,468,bus,1,vehicle_fire,43.0,male,14.0,68.0,50,1,light_rain,1.8,20.1,3.0,,1014.6,sharp,12.8,dry,medium,1,0,11,SLP-1005
+KDG-0329,2023-12-17,16:56,Sunday,1,16,Rock Cutting Zone,7.252205,80.529069,504,lorry,2,head_on,36.0,male,,41.0,50,0,light_rain,7.2,30.0,2.5,18.9,1009.9,sharp,13.0,wet,medium,1,1,9,SLP-1070
+KDG-0124,2023-12-18,18:05,Monday,0,18,Dawson's Rock Viewpoint,7.260098,80.536421,634,car,1,hit_barrier,36.0,female,0.0,94.0,60,1,clear,0.0,30.2,6.6,20.1,1010.4,mild,7.8,dry,low,0,0,4,SLP-1078
+KDG-0210,2023-12-20,08:02,Wednesday,0,8,Tunnel Bend,7.249604,80.527339,590,motorcycle,1,hit_barrier,43.0,male,5.0,68.0,50,1,clear,0.0,30.4,6.3,11.7,1014.0,sharp,13.3,wet,medium,3,1,10,SLP-1028
+KDG-0051,2023-12-22,05:05,Friday,0,5,Queens Hotel Hairpin,7.260403,80.5386,653,car,2,head_on,23.0,male,5.0,80.0,50,1,clear,0.0,24.5,8.3,14.3,1009.9,sharp,12.3,dry,medium,2,1,9,SLP-1053
+KDG-0064,2023-12-25,15:48,Monday,0,15,Rock Cutting Zone,7.251675,80.529256,522,bus,3,head_on,36.0,male,7.0,76.0,50,1,light_rain,3.2,26.4,3.6,8.0,1011.1,sharp,12.7,wet,medium,3,0,10,SLP-1033
+KDG-0349,2023-12-27,07:08,Wednesday,0,7,Rock Cutting Zone,7.251756,80.529324,537,car,2,head_on,39.0,male,5.0,50.0,50,0,clear,0.0,26.1,8.5,4.9,1009.9,sharp,13.5,dry,low,0,0,5,SLP-1065
+KDG-0221,2023-12-31,17:36,Sunday,1,17,Galaboda Straight,7.24292,80.520471,648,car,2,pedestrian_hit,55.0,male,7.0,104.0,70,1,clear,0.0,27.6,4.5,2.8,1010.4,straight,2.5,dry,low,0,0,3,SLP-1074
+KDG-0339,2024-01-01,06:40,Monday,0,6,Galaboda Straight,7.242225,80.520623,662,motorcycle,1,vehicle_fire,25.0,female,7.0,,70,1,clear,0.0,27.8,5.5,14.2,1010.1,straight,4.5,wet,low,0,0,6,SLP-1033
+KDG-0203,2024-01-05,19:24,Friday,0,19,Kandy Road Descent,7.248149,80.525624,537,bus,2,pedestrian_hit,43.0,male,4.0,50.0,60,0,mist,0.0,26.7,0.4,22.0,1011.3,mild,8.1,dry,medium,1,0,7,SLP-1047
+KDG-0488,2024-01-13,19:40,Saturday,1,19,Queens Hotel Hairpin,7.261897,80.539255,601,motorcycle,1,vehicle_fire,50.0,male,3.0,81.0,50,1,clear,0.0,28.3,5.1,16.7,1009.6,sharp,11.7,very_wet,medium,1,0,11,SLP-1036
+KDG-0147,2024-01-14,07:10,Sunday,1,7,Peradeniya Junction,7.235797,80.514927,656,motorcycle,2,sideswipe,26.0,male,6.0,58.0,70,0,clear,0.0,28.9,6.6,,1011.3,straight,1.4,oily,low,1,0,6,SLP-1002
+KDG-0075,2024-01-18,12:33,Thursday,0,12,Queens Hotel Hairpin,7.261439,80.539067,492,motorcycle,3,sideswipe,29.0,male,9.0,43.0,50,0,light_rain,5.5,29.4,2.6,10.4,1010.3,sharp,11.0,wet,medium,3,0,9,SLP-1082
+KDG-0429,2024-01-18,08:56,Thursday,0,8,Peradeniya Junction,7.234612,80.515032,668,car,2,sideswipe,38.0,female,14.0,58.0,70,0,mist,0.0,28.0,0.2,23.7,1012.1,straight,2.4,wet,low,1,0,6,SLP-1083
+KDG-0251,2024-01-18,11:14,Thursday,0,11,Tunnel Bend,7.249462,80.527728,630,lorry,1,hit_barrier,34.0,female,3.0,,50,0,light_rain,6.9,26.1,2.5,11.8,1006.3,sharp,12.3,wet,medium,2,0,9,SLP-1079
+KDG-0171,2024-01-29,18:08,Monday,0,18,Queens Hotel Hairpin,7.261192,80.53919,524,lorry,2,head_on,33.0,male,3.0,81.0,50,1,light_rain,3.1,27.7,3.3,7.2,1014.0,sharp,11.7,wet,medium,2,0,11,SLP-1042
+KDG-0467,2024-02-26,16:50,Monday,0,16,Sensation Rock Bend,7.2535,80.530042,579,motorcycle,2,sideswipe,41.0,male,7.0,76.0,50,1,clear,0.0,29.0,9.0,8.2,1006.0,sharp,14.6,wet,medium,2,0,10,SLP-1009
+KDG-0028,2024-02-27,16:27,Tuesday,0,16,Tunnel Bend,7.249414,80.527682,472,lorry,1,vehicle_fire,40.0,male,0.0,36.0,50,0,clear,0.0,26.6,8.6,14.6,1016.8,sharp,10.6,dry,medium,2,0,7,SLP-1042
+KDG-0200,2024-02-28,09:00,Wednesday,0,9,Sensation Rock Bend,7.254318,80.531652,577,car,1,vehicle_fire,34.0,male,4.0,37.0,50,0,clear,0.0,23.2,5.6,,1012.5,sharp,16.1,dry,low,0,0,5,SLP-1024
+KDG-0182,2024-03-04,16:04,Monday,0,16,Tunnel Bend,7.250419,80.527811,531,car,1,fell_off_road,39.0,male,0.0,70.0,50,1,clear,0.0,28.1,6.0,25.9,1011.6,sharp,14.2,oily,medium,2,0,10,SLP-1041
+KDG-0094,2024-03-11,16:34,Monday,0,16,Queens Hotel Hairpin,7.261459,80.538537,676,bus,1,overturn,24.0,male,1.0,67.0,50,1,clear,0.0,27.8,,8.7,1009.5,sharp,10.7,dry,medium,2,0,8,SLP-1007
+KDG-0301,2024-03-16,12:27,Saturday,1,12,Queens Hotel Hairpin,7.260839,80.538988,650,motorcycle,1,overturn,21.0,male,3.0,48.0,50,0,clear,0.0,26.5,8.7,12.1,1015.2,sharp,12.9,wet,medium,4,0,8,SLP-1047
+KDG-0495,2024-03-18,21:42,Monday,0,21,Sensation Rock Bend,7.255192,80.531485,677,lorry,2,sideswipe,45.0,male,8.0,73.0,50,1,light_rain,6.4,23.5,2.7,9.7,1010.8,sharp,14.3,wet,high,4,0,13,SLP-1057
+KDG-0069,2024-03-18,22:30,Monday,0,22,Kandy Road Descent,7.246764,80.525602,658,motorcycle,2,sideswipe,34.0,male,7.0,78.0,60,1,clear,0.0,25.5,5.8,12.6,,mild,8.8,dry,medium,2,0,8,SLP-1084
+KDG-0356,2024-03-20,13:21,Wednesday,0,13,Queens Hotel Hairpin,7.261348,80.538142,665,bus,2,head_on,28.0,male,3.0,77.0,50,1,clear,0.0,30.2,6.3,5.8,1011.5,sharp,10.9,dry,medium,1,0,8,SLP-1005
+KDG-0245,2024-03-21,12:14,Thursday,0,12,Sensation Rock Bend,7.253647,80.530873,478,motorcycle,1,hit_barrier,44.0,female,9.0,36.0,50,0,clear,0.0,26.4,9.5,23.6,1005.7,sharp,17.0,dry,medium,2,0,7,SLP-1014
+KDG-0443,2024-03-28,17:31,Thursday,0,17,Queens Hotel Hairpin,7.261539,80.538494,492,three-wheeler,2,pedestrian_hit,42.0,male,2.0,83.0,50,1,heavy_rain,17.3,27.4,1.5,12.9,1011.8,sharp,13.0,very_wet,high,4,0,13,SLP-1041
+KDG-0099,2024-04-07,17:20,Sunday,1,17,Dawson's Rock Viewpoint,7.26038,80.53754,534,bus,2,sideswipe,38.0,male,9.0,53.0,60,0,clear,0.0,29.0,4.9,17.2,1010.8,mild,6.5,dry,low,0,0,3,SLP-1063
+KDG-0189,2024-04-14,18:10,Sunday,1,18,Tunnel Bend,7.249715,80.527573,467,bus,1,vehicle_fire,22.0,male,4.0,38.0,50,0,clear,0.0,28.8,7.7,20.7,1011.2,sharp,13.3,dry,low,1,0,6,SLP-1078
+KDG-0321,2024-04-15,01:28,Monday,0,1,Kadugannawa Town Entry,7.255293,80.534143,602,car,1,vehicle_fire,24.0,male,6.0,79.0,60,1,light_rain,6.8,22.8,3.1,15.8,1008.8,mild,6.2,very_wet,medium,1,0,9,SLP-1003
+KDG-0009,2024-04-20,08:30,Saturday,1,8,Rock Cutting Zone,7.252406,80.530178,536,car,1,vehicle_fire,37.0,male,15.0,63.0,50,1,clear,0.0,27.4,6.8,21.0,1011.9,sharp,12.9,dry,medium,1,0,7,SLP-1060
+KDG-0355,2024-04-24,08:25,Wednesday,0,8,Kandy Road Descent,7.248781,80.525863,665,motorcycle,1,vehicle_fire,56.0,male,7.0,58.0,60,0,light_rain,2.5,27.1,2.1,11.9,1015.8,mild,10.6,wet,medium,2,0,7,SLP-1006
+KDG-0336,2024-05-03,13:01,Friday,0,13,Sensation Rock Bend,7.25444,80.531049,552,three-wheeler,1,vehicle_fire,38.0,female,0.0,75.0,50,1,clear,0.0,26.9,5.5,19.1,1011.8,sharp,14.8,dry,medium,1,0,8,SLP-1068
+KDG-0032,2024-05-10,07:04,Friday,0,7,Queens Hotel Hairpin,7.262083,80.539102,652,car,1,vehicle_fire,18.0,male,0.0,84.0,50,1,heavy_rain,15.0,25.2,1.5,20.4,1016.3,sharp,12.6,very_wet,high,3,1,12,SLP-1055
+KDG-0188,2024-05-16,08:10,Thursday,0,8,Kandy Road Descent,7.249031,80.526604,582,bus,2,sideswipe,25.0,female,7.0,89.0,60,1,clear,0.0,29.3,4.8,18.1,1012.9,mild,8.9,oily,medium,4,0,8,SLP-1078
+KDG-0137,2024-05-18,13:31,Saturday,1,13,Queens Hotel Hairpin,7.26107,80.538802,541,lorry,1,fell_off_road,41.0,female,7.0,67.0,50,1,clear,0.0,27.4,7.6,13.7,1012.8,sharp,11.8,dry,medium,1,0,9,SLP-1095
+KDG-0284,2024-05-22,14:55,Wednesday,0,14,Tunnel Bend,7.25014,80.528396,627,lorry,1,hit_barrier,,male,5.0,45.0,50,0,mist,0.0,24.3,0.5,16.2,1009.7,sharp,12.0,wet,medium,1,0,11,SLP-1082
+KDG-0199,2024-05-29,10:20,Wednesday,0,10,Galaboda Straight,7.242314,80.520447,654,three-wheeler,1,fell_off_road,23.0,male,0.0,,70,0,heavy_rain,31.1,27.8,0.6,11.4,1008.9,straight,3.3,wet,medium,2,0,7,SLP-1067
+KDG-0269,2024-06-07,05:27,Friday,0,5,Sensation Rock Bend,7.253988,80.531945,465,three-wheeler,1,fell_off_road,32.0,female,14.0,47.0,50,0,light_rain,3.7,20.1,3.1,8.2,1010.7,sharp,13.2,wet,medium,3,0,10,SLP-1038
+KDG-0116,2024-06-07,07:52,Friday,0,7,Queens Hotel Hairpin,7.261737,80.538387,458,lorry,1,vehicle_fire,28.0,male,9.0,41.0,50,0,heavy_rain,31.1,26.2,0.4,9.1,1014.0,sharp,10.6,wet,high,4,0,13,SLP-1015
+KDG-0313,2024-06-10,12:07,Monday,0,12,Rock Cutting Zone,7.251861,80.52936,599,motorcycle,2,pedestrian_hit,30.0,male,4.0,60.0,50,1,clear,0.0,27.4,5.1,16.4,1012.4,sharp,14.2,dry,medium,4,0,9,SLP-1064
+KDG-0039,2024-06-28,18:28,Friday,0,18,Kadugannawa Town Entry,7.25579,80.534159,461,car,2,pedestrian_hit,31.0,male,13.0,45.0,60,0,light_rain,4.8,28.3,2.0,9.9,1012.4,mild,6.3,very_wet,low,2,0,5,SLP-1084
+KDG-0100,2024-07-02,12:46,Tuesday,0,12,Rock Cutting Zone,7.252136,80.528862,621,car,2,head_on,34.0,male,8.0,50.0,50,0,light_rain,4.4,24.1,3.1,21.4,1010.9,sharp,13.9,oily,medium,1,0,9,SLP-1028
+KDG-0364,2024-07-14,11:48,Sunday,1,11,Kadugannawa Town Entry,7.255041,80.534475,627,three-wheeler,2,head_on,28.0,male,9.0,84.0,60,1,clear,0.0,25.3,6.0,6.1,1009.9,mild,7.5,dry,low,0,0,5,SLP-1002
+KDG-0021,2024-07-17,11:09,Wednesday,0,11,Kandy Road Descent,7.247513,80.526394,667,car,2,sideswipe,42.0,male,17.0,,60,0,heavy_rain,13.0,28.1,1.4,8.3,1013.4,mild,9.6,wet,medium,4,1,7,SLP-1079
+KDG-0162,2024-07-26,19:44,Friday,0,19,Dawson's Rock Viewpoint,7.259548,80.535924,475,car,3,sideswipe,34.0,male,7.0,90.0,60,1,clear,0.0,26.7,9.0,31.5,1011.0,mild,8.5,wet,low,0,0,5,SLP-1007
+KDG-0038,2024-08-03,20:18,Saturday,1,20,Galaboda Straight,7.24255,80.520254,520,car,2,sideswipe,41.0,male,11.0,93.0,70,1,mist,0.0,24.5,0.5,18.4,1008.9,straight,2.8,very_wet,medium,3,0,10,SLP-1039
+KDG-0037,2024-08-03,15:48,Saturday,1,15,Sensation Rock Bend,7.25424,80.530889,453,car,2,rear_end,37.0,male,4.0,62.0,50,1,clear,0.0,25.6,6.9,10.5,1009.5,sharp,15.2,dry,medium,2,0,7,SLP-1020
+KDG-0398,2024-08-19,09:27,Monday,0,9,Kadugannawa Town Entry,7.255067,80.533849,511,lorry,1,hit_barrier,22.0,male,4.0,75.0,60,1,heavy_rain,37.9,27.8,1.2,17.6,1013.4,mild,6.9,wet,medium,2,0,11,SLP-1002
+KDG-0090,2024-08-20,20:56,Tuesday,0,20,A1 Bridge Section,7.239228,80.5182,556,car,2,head_on,30.0,male,7.0,95.0,70,1,clear,0.0,22.9,7.7,21.7,1011.3,straight,2.2,dry,low,1,0,5,SLP-1088
+KDG-0022,2024-08-29,11:58,Thursday,0,11,Kadugannawa Town Entry,7.255677,80.533723,469,motorcycle,1,overturn,36.0,male,12.0,77.0,60,1,light_rain,4.3,24.4,3.1,8.3,1010.8,mild,6.8,wet,medium,1,0,8,SLP-1089
+KDG-0217,2024-08-29,10:10,Thursday,0,10,Kadugannawa Town Entry,7.255984,80.535019,511,lorry,2,sideswipe,41.0,male,0.0,76.0,60,1,heavy_rain,33.9,25.6,0.7,11.6,1011.0,mild,6.3,very_wet,high,3,0,12,SLP-1051
+KDG-0101,2024-09-02,12:03,Monday,0,12,Kandy Road Descent,7.248469,80.525742,454,lorry,2,head_on,36.0,male,5.0,92.0,60,1,light_rain,4.4,27.7,2.9,10.8,1009.9,mild,9.1,oily,medium,1,0,10,SLP-1020
+KDG-0500,2024-09-06,08:01,Friday,0,8,Peradeniya Junction,7.234512,80.514876,477,motorcycle,2,rear_end,50.0,male,9.0,90.0,70,1,mist,0.0,23.8,,14.2,1005.8,straight,1.2,wet,medium,1,0,9,SLP-1063
+KDG-0068,2024-09-09,17:32,Monday,0,17,Kadugannawa Town Entry,7.25537,80.533908,647,bus,1,hit_barrier,39.0,male,15.0,94.0,60,1,light_rain,5.4,29.3,1.5,10.0,1013.1,mild,5.6,wet,medium,3,0,7,SLP-1088
+KDG-0267,2024-09-09,08:49,Monday,0,8,Kandy Road Descent,7.248358,80.526359,543,car,2,pedestrian_hit,30.0,male,5.0,47.0,60,0,clear,0.0,28.3,9.1,14.1,1012.7,mild,9.8,dry,low,0,0,2,SLP-1095
+KDG-0410,2024-09-17,11:49,Tuesday,0,11,Queens Hotel Hairpin,7.261641,80.539261,516,lorry,1,overturn,34.0,male,10.0,43.0,50,0,clear,0.0,25.9,7.6,23.5,1013.9,sharp,11.9,wet,medium,1,0,8,SLP-1031
+KDG-0125,2024-09-18,07:25,Wednesday,0,7,Tunnel Bend,7.249676,80.527459,531,car,2,pedestrian_hit,28.0,male,10.0,37.0,50,0,mist,0.0,25.7,0.5,12.0,1015.5,sharp,12.6,oily,medium,4,0,11,SLP-1003
+KDG-0005,2024-09-18,12:48,Wednesday,0,12,Sensation Rock Bend,7.254093,80.530671,452,car,1,hit_barrier,20.0,male,2.0,63.0,50,1,light_rain,6.5,29.0,,,1011.5,sharp,12.9,very_wet,medium,3,0,10,SLP-1038
+KDG-0395,2024-09-25,15:26,Wednesday,0,15,Rock Cutting Zone,7.250547,80.529313,472,car,1,fell_off_road,47.0,male,9.0,40.0,50,0,heavy_rain,53.3,25.6,0.9,2.6,1007.9,sharp,13.5,very_wet,medium,1,0,11,SLP-1029
+KDG-0281,2024-09-26,20:58,Thursday,0,20,Kandy Road Descent,7.248053,80.526292,677,bus,1,vehicle_fire,25.0,male,1.0,47.0,60,0,heavy_rain,26.1,28.1,0.6,3.1,1015.0,mild,9.4,wet,medium,3,0,10,SLP-1076
+KDG-0288,2024-10-04,15:30,Friday,0,15,Sensation Rock Bend,7.254309,80.531901,473,car,1,fell_off_road,30.0,female,9.0,42.0,50,0,clear,0.0,28.7,8.7,3.5,1013.6,sharp,13.7,dry,low,2,0,5,SLP-1094
+KDG-0297,2024-10-09,19:17,Wednesday,0,19,Sensation Rock Bend,7.253542,80.531818,657,bus,1,vehicle_fire,45.0,male,15.0,70.0,50,1,clear,0.0,27.2,5.9,10.2,1011.4,sharp,14.9,dry,medium,1,0,8,SLP-1010
+KDG-0079,2024-10-09,12:56,Wednesday,0,12,Queens Hotel Hairpin,7.261997,80.538644,570,car,1,hit_barrier,18.0,female,0.0,50.0,50,0,mist,0.0,25.7,0.4,13.1,1011.1,sharp,12.7,wet,medium,3,0,10,SLP-1047
+KDG-0187,2024-10-16,11:52,Wednesday,0,11,Rock Cutting Zone,7.251237,80.530131,542,bus,1,hit_barrier,49.0,male,18.0,,50,1,light_rain,5.2,26.5,1.9,31.9,1009.6,sharp,13.5,wet,medium,3,0,10,SLP-1062
+KDG-0312,2024-10-18,09:57,Friday,0,9,Tunnel Bend,7.249813,80.52684,570,motorcycle,3,pedestrian_hit,21.0,male,3.0,36.0,50,0,light_rain,7.7,27.5,3.1,9.2,1009.8,sharp,13.3,wet,medium,1,0,9,SLP-1091
+KDG-0393,2024-10-28,19:18,Monday,0,19,Kandy Road Descent,7.248476,80.525489,510,bus,2,head_on,33.0,male,4.0,56.0,60,0,light_rain,5.9,28.4,2.4,12.1,1013.1,mild,7.6,very_wet,low,1,0,6,SLP-1028
+KDG-0204,2024-11-03,21:26,Sunday,1,21,Tunnel Bend,7.250737,80.52834,571,motorcycle,1,overturn,38.0,male,3.0,60.0,50,1,clear,0.0,23.7,8.5,23.0,1011.2,sharp,12.8,oily,high,2,1,14,SLP-1011
+KDG-0300,2024-11-09,08:29,Saturday,1,8,Sensation Rock Bend,7.253352,80.530875,615,car,1,fell_off_road,36.0,male,8.0,43.0,50,0,light_rain,3.1,27.3,3.6,3.9,1008.7,sharp,13.7,very_wet,medium,1,0,8,SLP-1040
+KDG-0148,2024-11-10,17:07,Sunday,1,17,Queens Hotel Hairpin,7.260354,80.538851,555,car,1,fell_off_road,43.0,male,0.0,35.0,50,0,light_rain,6.3,25.7,2.9,6.3,1011.4,sharp,12.9,wet,medium,1,0,7,SLP-1078
+KDG-0287,2024-11-12,17:21,Tuesday,0,17,Tunnel Bend,7.249501,80.528511,645,car,1,vehicle_fire,25.0,male,7.0,62.0,50,1,light_rain,1.8,30.6,3.2,20.9,1011.2,sharp,11.5,wet,medium,1,0,9,SLP-1085
+KDG-0224,2024-11-13,17:35,Wednesday,0,17,Galaboda Straight,7.242141,80.519371,608,motorcycle,1,vehicle_fire,18.0,male,0.0,56.0,70,0,clear,0.0,26.9,7.5,8.7,1011.8,straight,4.3,wet,low,1,0,4,SLP-1085
+KDG-0400,2024-11-14,19:11,Thursday,0,19,Sensation Rock Bend,7.255241,80.530891,646,motorcycle,1,fell_off_road,30.0,male,10.0,69.0,50,1,light_rain,7.7,24.7,2.4,0.8,1012.8,sharp,13.0,wet,medium,1,0,11,SLP-1051
+KDG-0361,2024-11-17,05:03,Sunday,1,5,Queens Hotel Hairpin,7.260081,80.53784,502,car,2,pedestrian_hit,28.0,male,10.0,44.0,50,0,clear,0.0,23.4,9.9,17.2,1004.1,sharp,11.4,oily,medium,1,0,10,SLP-1040
+KDG-0031,2024-11-18,15:06,Monday,0,15,Rock Cutting Zone,7.251604,80.529443,642,car,1,vehicle_fire,29.0,male,4.0,60.0,50,1,clear,0.0,28.4,4.8,20.1,1008.0,sharp,13.1,dry,medium,2,1,7,SLP-1033
+KDG-0406,2024-11-20,09:40,Wednesday,0,9,Peradeniya Junction,7.235506,80.515934,679,car,2,sideswipe,38.0,male,4.0,69.0,70,0,clear,0.0,24.5,4.3,21.4,1010.6,straight,2.1,dry,low,0,0,1,SLP-1061
+KDG-0498,2024-11-26,06:25,Tuesday,0,6,Rock Cutting Zone,7.252253,80.530224,659,car,1,vehicle_fire,,female,2.0,68.0,50,1,clear,0.0,28.5,,6.7,1014.4,sharp,14.7,dry,medium,1,0,7,SLP-1070
+KDG-0275,2024-11-27,18:30,Wednesday,0,18,A1 Bridge Section,7.240512,80.517318,567,lorry,1,overturn,27.0,female,9.0,58.0,70,0,light_rain,3.0,27.8,3.9,,1012.1,straight,2.1,very_wet,low,0,0,6,SLP-1036
+KDG-0397,2024-12-17,14:56,Tuesday,0,14,Rock Cutting Zone,7.251952,80.529292,544,bus,1,vehicle_fire,23.0,male,4.0,67.0,50,1,clear,0.0,25.8,4.9,18.3,1007.7,sharp,14.0,wet,medium,1,1,9,SLP-1060
+KDG-0178,2024-12-24,00:04,Tuesday,0,0,Tunnel Bend,7.249829,80.527934,468,lorry,2,rear_end,30.0,male,3.0,64.0,50,1,clear,0.0,27.3,5.2,17.6,1012.3,sharp,13.0,wet,high,2,0,12,SLP-1033
+KDG-0447,2024-12-25,20:02,Wednesday,0,20,Queens Hotel Hairpin,7.261312,80.539352,462,car,2,rear_end,21.0,male,3.0,36.0,50,0,light_rain,6.8,24.0,2.3,23.2,,sharp,12.0,wet,medium,3,1,9,SLP-1014
+KDG-0474,2024-12-28,15:24,Saturday,1,15,Kandy Road Descent,7.248232,80.525725,544,motorcycle,1,fell_off_road,39.0,male,5.0,50.0,60,0,light_rain,1.4,28.1,2.6,7.8,1011.5,mild,10.3,very_wet,medium,1,0,8,SLP-1053
+KDG-0430,2024-12-31,19:29,Tuesday,0,19,Sensation Rock Bend,7.254361,80.531151,639,car,1,vehicle_fire,21.0,male,3.0,,50,1,clear,0.0,31.6,6.6,20.2,1012.4,sharp,13.5,dry,medium,1,0,7,SLP-1073

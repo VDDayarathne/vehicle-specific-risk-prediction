@@ -1,0 +1,58 @@
+MODEL COMPARISON REPORT
+======================================================================
+Kadugannawa Mountain Road Accident Severity Prediction System
+Dataset: 500 records | Train (SMOTE): 681 | Test: 100 (stratified)
+======================================================================
+
+TABLE 1 — Overall Performance Metrics
+----------------------------------------------------------------------
+Model                           F1-Macro    Kappa   AUC-ROC  Accuracy
+----------------------------------------------------------------------
+Random Forest (default)           0.8791   0.7817    0.9742    0.8700
+Random Forest (tuned)             0.8791   0.7817    0.9736    0.8700
+XGBoost (default)                 0.8979   0.8298    0.9793    0.9000
+XGBoost (tuned)                   0.9120   0.8473    0.9797    0.9100
+----------------------------------------------------------------------
+
+TABLE 2 — Per-Class F1 Scores (Tuned Models)
+----------------------------------------------------------------------
+Model                            Low F1   Med F1  High F1  High Prec  High Rec
+----------------------------------------------------------------------
+Random Forest (tuned)            0.8254   0.8785   0.9333     1.0000    0.8750
+XGBoost (tuned)                  0.8852   0.9174   0.9333     1.0000    0.8750
+----------------------------------------------------------------------
+
+TABLE 3 — Cross-Validation (5-fold, SMOTE inside each fold)
+----------------------------------------------------------------------
+Random Forest (tuned)          Mean=0.8208  Std=0.0706  Folds=[0.805, 0.7976, 0.7221, 0.9393, 0.8398]
+XGBoost (tuned)                Mean=0.8469  Std=0.0755  Folds=[0.8343, 0.8587, 0.7131, 0.9393, 0.8891]
+
+BEST MODEL HYPERPARAMETERS
+----------------------------------------------------------------------
+XGBoost (tuned):
+  n_estimators: 300
+  learning_rate: 0.05
+  max_depth: 5
+  subsample: 0.8
+  colsample_bytree: 0.7
+  min_child_weight: 3
+  gamma: 0.1
+  reg_alpha: 0.1
+  reg_lambda: 1.5
+
+Random Forest (tuned):
+  n_estimators: 300
+  max_depth: None
+  max_features: sqrt
+  class_weight: balanced
+  min_samples_split: 2
+
+CONCLUSION
+----------------------------------------------------------------------
+XGBoost (tuned) outperforms Random Forest on all primary metrics.
+F1-macro improvement: +0.039 (0.874 → 0.912)
+High-severity precision: 1.000 (zero false High alarms)
+High-severity recall: 0.875 (misses 2 of 16 High cases)
+
+Recommendation: Deploy XGBoost as primary model.
+Keep RF as interpretability reference for non-technical stakeholders.

@@ -1,0 +1,114 @@
+PREPROCESSING PIPELINE REPORT
+  ==============================
+  Generated : 2026-04-22 20:50:23
+
+  Source files
+  ------------
+  Accidents  : kadugannawa_accidents_mock.csv
+  Weather    : export.xlsx
+  OSM roads  : kadugannawa_road_segments.csv
+
+  Dataset sizes
+  -------------
+  Training (post-SMOTE) : 681 rows × 64 features
+  Test (held-out)       : 100 rows × 64 features
+  Test size             : 20%
+
+  Class distribution
+  ------------------
+  Training (after SMOTE):
+    Low    (0) : 227
+    Medium (1) : 227
+    High   (2) : 227
+  Test (original):
+    Low    (0) : 27
+    Medium (1) : 57
+    High   (2) : 16
+
+  Features (64 total)
+  --------
+    is_weekend
+hour
+elevation_m
+num_vehicles
+driver_age
+driving_exp_yrs
+estimated_speed_kmh
+speed_limit_kmh
+speeding
+precipitation_mm
+temp_avg_c
+visibility_km
+wind_speed_kmh
+pressure_hpa
+road_slope_deg
+wx_tavg
+wx_tmin
+wx_tmax
+wx_prcp
+wx_wspd
+wx_pres
+wx_temp_range
+wx_is_rainy
+wx_heavy_rain
+wx_rain_3day
+wx_pressure_drop
+vehicle_risk_weight
+is_heavy_vehicle
+speed_excess_kmh
+speed_ratio
+is_morning_peak
+is_evening_peak
+is_night
+hour_sin
+hour_cos
+month
+is_monsoon
+season_enc
+slope_cat_enc
+is_sharp_curve
+high_risk_combo
+young_driver
+inexperienced
+exp_ratio
+rain_intensity_num
+visibility_cls_enc
+road_curvature_enc
+surface_enc
+weather_enc
+veh_bus
+veh_car
+veh_lorry
+veh_motorcycle
+veh_three-wheeler
+acc_fell_off_road
+acc_head_on
+acc_hit_barrier
+acc_overturn
+acc_pedestrian_hit
+acc_rear_end
+acc_sideswipe
+acc_vehicle_fire
+gen_female
+gen_male
+
+  Leakage prevention
+  ------------------
+  Dropped columns : ['injuries', 'fatalities', 'risk_score']
+  SMOTE applied   : training set ONLY (before: imbalanced, after: balanced)
+  Scaler fitted   : training set ONLY (test transformed with train fit)
+
+  Artifacts saved
+  ---------------
+  pipeline_output/X_train.csv       — Training features (SMOTE + scaled)
+  pipeline_output/X_test.csv        — Test features (scaled, no leakage)
+  pipeline_output/y_train.csv       — Training labels
+  pipeline_output/y_test.csv        — Test labels
+  pipeline_output/feature_names.csv — Ordered feature list
+  pipeline_output/scaler.pkl        — Fitted StandardScaler
+  pipeline_output/knn_imp.pkl       — Fitted KNN imputer (for inference)
+  pipeline_output/med_imp.pkl       — Fitted median imputer (for inference)
+
+  Next step
+  ---------
+  python train_model.py
