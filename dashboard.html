@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kadugannawa Pass — Vehicle Alert System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  /* ── Reset & base ─────────────────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:        #0a0c10;
+    --surface:   #111318;
+    --card:      #161922;
+    --border:    #232834;
+    --text:      #e8eaf0;
+    --muted:     #6b7280;
+    --accent:    #f59e0b;
+    --green:     #10b981;
+    --yellow:    #f59e0b;
+    --orange:    #f97316;
+    --red:       #ef4444;
+    --red-dark:  #991b1b;
+    --font-head: 'Bebas Neue', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  html { font-size: 16px; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── Topbar ───────────────────────────────────────────────────────────── */
+  header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .logo {
+    font-family: var(--font-head);
+    font-size: 1.5rem;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+  }
+  .logo span { color: var(--text); font-size: 1rem; font-family: var(--font-body); font-weight: 300; }
+  .status-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 8px var(--green);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+  #clock {
+    font-family: var(--font-mono);
+    font-size: .85rem;
+    color: var(--muted);
+  }
+
+  /* ── Layout ───────────────────────────────────────────────────────────── */
+  main {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 1.5rem;
+  }
+  @media (max-width: 900px) {
+    main { grid-template-columns: 1fr; }
+  }
+
+  /* ── Section title ────────────────────────────────────────────────────── */
+  .section-title {
+    font-family: var(--font-head);
+    font-size: 1.1rem;
+    letter-spacing: .12em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  /* ── Card ─────────────────────────────────────────────────────────────── */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.4rem;
+  }
+
+  /* ── Weather widget ───────────────────────────────────────────────────── */
+  #weather-card {
+    background: linear-gradient(135deg, #161922 60%, #1a1f2e);
+  }
+  .weather-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.2rem;
+  }
+  .weather-temp {
+    font-family: var(--font-head);
+    font-size: 3.8rem;
+    line-height: 1;
+    color: var(--text);
+  }
+  .weather-temp small { font-size: 1.6rem; color: var(--muted); }
+  .weather-icon { font-size: 3rem; }
+  .weather-condition {
+    font-size: .85rem;
+    color: var(--accent);
+    font-weight: 500;
+    letter-spacing: .04em;
+    margin-bottom: .8rem;
+    text-transform: uppercase;
+  }
+  .weather-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .6rem;
+  }
+  .wx-item {
+    background: var(--surface);
+    border-radius: 8px;
+    padding: .6rem .8rem;
+    display: flex;
+    flex-direction: column;
+    gap: .1rem;
+  }
+  .wx-label { font-size: .7rem; color: var(--muted); text-transform: uppercase; letter-spacing:.06em; }
+  .wx-value { font-family: var(--font-mono); font-size: .95rem; font-weight: 700; }
+
+  /* ── Risk score bar ───────────────────────────────────────────────────── */
+  .risk-bar-wrap {
+    margin: 1.2rem 0 0;
+  }
+  .risk-label-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .4rem;
+    font-size: .78rem;
+    color: var(--muted);
+  }
+  .risk-bar-track {
+    height: 8px;
+    background: var(--surface);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+  .risk-bar-fill {
+    height: 100%;
+    border-radius: 999px;
+    transition: width .6s ease, background .4s;
+  }
+
+  /* ── Prediction form ──────────────────────────────────────────────────── */
+  .right-col { display: flex; flex-direction: column; gap: 1.5rem; }
+
+  #predict-card {}
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .9rem;
+    margin-bottom: 1.2rem;
+  }
+  @media (max-width: 600px) { .form-grid { grid-template-columns: 1fr; } }
+
+  .field { display: flex; flex-direction: column; gap: .3rem; }
+  label { font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+  select, input[type="number"] {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 8px;
+    padding: .55rem .8rem;
+    font-family: var(--font-body);
+    font-size: .9rem;
+    width: 100%;
+    outline: none;
+    transition: border .2s;
+  }
+  select:focus, input[type="number"]:focus { border-color: var(--accent); }
+
+  .toggle-row {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    margin-bottom: 1.2rem;
+    font-size: .85rem;
+    color: var(--muted);
+  }
+  .toggle { position:relative; width:40px; height:22px; }
+  .toggle input { opacity:0; width:0; height:0; }
+  .toggle-slider {
+    position:absolute; inset:0;
+    background: var(--border);
+    border-radius:999px;
+    cursor:pointer;
+    transition:.3s;
+  }
+  .toggle-slider::before {
+    content:''; position:absolute;
+    width:16px; height:16px; top:3px; left:3px;
+    background:#fff; border-radius:50%;
+    transition:.3s;
+  }
+  .toggle input:checked + .toggle-slider { background: var(--accent); }
+  .toggle input:checked + .toggle-slider::before { transform: translateX(18px); }
+
+  .btn-predict {
+    width: 100%;
+    padding: .85rem;
+    background: var(--accent);
+    color: #000;
+    font-family: var(--font-head);
+    font-size: 1.25rem;
+    letter-spacing: .08em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: opacity .2s, transform .1s;
+  }
+  .btn-predict:hover { opacity: .88; }
+  .btn-predict:active { transform: scale(.98); }
+  .btn-predict:disabled { opacity: .4; cursor: not-allowed; }
+
+  /* ── Result panel ────────────────────────────────────────────────────── */
+  #result-panel {
+    display: none;
+    animation: slideIn .3s ease;
+  }
+  @keyframes slideIn { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:none} }
+
+  .severity-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .4rem 1rem;
+    border-radius: 999px;
+    font-family: var(--font-head);
+    font-size: 1.4rem;
+    letter-spacing: .1em;
+    margin-bottom: 1rem;
+  }
+  .severity-low    { background: #064e3b22; color: var(--green); border:1px solid #10b98140; }
+  .severity-medium { background: #78350f22; color: var(--yellow); border:1px solid #f59e0b40; }
+  .severity-high   { background: #7f1d1d22; color: var(--red); border:1px solid #ef444440; }
+
+  .prob-bars { display: flex; flex-direction: column; gap: .5rem; margin-bottom: 1.2rem; }
+  .prob-row { display: flex; align-items: center; gap: .7rem; font-size: .82rem; }
+  .prob-name { width: 56px; color: var(--muted); }
+  .prob-track { flex:1; height:6px; background:var(--surface); border-radius:999px; overflow:hidden; }
+  .prob-fill { height:100%; border-radius:999px; transition: width .7s ease; }
+  .prob-pct { width: 38px; text-align:right; font-family:var(--font-mono); font-size:.78rem; color:var(--muted); }
+
+  .alert-box {
+    border-radius: 10px;
+    padding: 1rem 1.1rem;
+    border-left: 4px solid;
+    margin-bottom: .8rem;
+  }
+  .alert-level { font-family: var(--font-head); font-size: 1.1rem; letter-spacing:.06em; margin-bottom: .3rem; }
+  .alert-msg { font-size: .88rem; line-height: 1.5; }
+
+  .meta-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: .8rem;
+  }
+  .meta-chip {
+    background: var(--surface);
+    border-radius: 6px;
+    padding: .3rem .7rem;
+    font-family: var(--font-mono);
+    font-size: .75rem;
+    color: var(--muted);
+  }
+
+  /* ── Forecast strip ──────────────────────────────────────────────────── */
+  #forecast-strip {
+    overflow-x: auto;
+    display: flex;
+    gap: .5rem;
+    padding-bottom: .5rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+  .fc-item {
+    flex: 0 0 72px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: .6rem .4rem;
+    text-align: center;
+    font-size: .72rem;
+    cursor: default;
+    transition: border-color .2s;
+  }
+  .fc-item:hover { border-color: var(--accent); }
+  .fc-time { color: var(--muted); margin-bottom: .25rem; font-family: var(--font-mono); }
+  .fc-icon { font-size: 1.3rem; margin: .2rem 0; }
+  .fc-temp { font-weight: 700; margin-bottom: .2rem; }
+  .fc-risk {
+    display: inline-block;
+    padding: .15rem .35rem;
+    border-radius: 4px;
+    font-weight: 700;
+    font-family: var(--font-mono);
+  }
+  .risk-0 { background:#064e3b33; color:var(--green); }
+  .risk-1 { background:#78350f33; color:var(--yellow); }
+  .risk-2 { background:#78350f44; color:var(--orange); }
+  .risk-3,.risk-4,.risk-5,.risk-6 { background:#7f1d1d44; color:var(--red); }
+
+  /* ── All-vehicle alerts table ────────────────────────────────────────── */
+  .veh-table { width:100%; border-collapse:collapse; font-size:.86rem; }
+  .veh-table th { color:var(--muted); font-weight:500; text-align:left; padding:.4rem .6rem;
+                  border-bottom:1px solid var(--border); font-size:.75rem; text-transform:uppercase; }
+  .veh-table td { padding:.55rem .6rem; border-bottom:1px solid #1a1f2a; }
+  .veh-table tr:last-child td { border-bottom:none; }
+  .veh-name { font-weight:600; }
+  .alert-pill {
+    display:inline-block; padding:.2rem .6rem; border-radius:5px;
+    font-size:.72rem; font-weight:700; letter-spacing:.04em;
+  }
+
+  /* ── Speed rec ───────────────────────────────────────────────────────── */
+  .speed-rec {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: .9rem;
+  }
+
+  /* ── Footer ──────────────────────────────────────────────────────────── */
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: .75rem;
+    padding: 2rem;
+    border-top: 1px solid var(--border);
+    margin-top: 3rem;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    ⛰ KADUGUARD <span>/ Kadugannawa Pass Alert System</span>
+  </div>
+  <div style="display:flex;align-items:center;gap:.8rem">
+    <div class="status-dot"></div>
+    <div id="clock">--:--:--</div>
+  </div>
+</header>
+
+<main>
+  <!-- LEFT COLUMN -->
+  <div style="display:flex;flex-direction:column;gap:1.5rem">
+
+    <!-- Weather card -->
+    <div class="card" id="weather-card">
+      <div class="section-title">Live Conditions — Kadugannawa</div>
+      <div class="weather-top">
+        <div>
+          <div class="weather-temp" id="wx-temp">--<small>°C</small></div>
+          <div class="weather-condition" id="wx-condition">Loading...</div>
+        </div>
+        <div class="weather-icon" id="wx-icon">🌤</div>
+      </div>
+      <div class="weather-grid">
+        <div class="wx-item">
+          <div class="wx-label">🌧 Rain</div>
+          <div class="wx-value" id="wx-rain">-- mm</div>
+        </div>
+        <div class="wx-item">
+          <div class="wx-label">👁 Visibility</div>
+          <div class="wx-value" id="wx-vis">-- km</div>
+        </div>
+        <div class="wx-item">
+          <div class="wx-label">💨 Wind</div>
+          <div class="wx-value" id="wx-wind">-- km/h</div>
+        </div>
+        <div class="wx-item">
+          <div class="wx-label">💧 Humidity</div>
+          <div class="wx-value" id="wx-humid">-- %</div>
+        </div>
+        <div class="wx-item">
+          <div class="wx-label">🌡 Pressure</div>
+          <div class="wx-value" id="wx-pres">-- hPa</div>
+        </div>
+        <div class="wx-item">
+          <div class="wx-label">☁ Cloud</div>
+          <div class="wx-value" id="wx-cloud">-- %</div>
+        </div>
+      </div>
+      <div class="risk-bar-wrap">
+        <div class="risk-label-row">
+          <span>Pass Risk Score</span>
+          <span id="wx-risk-text">0 / 6</span>
+        </div>
+        <div class="risk-bar-track">
+          <div class="risk-bar-fill" id="wx-risk-bar" style="width:0%;background:var(--green)"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- All-vehicle quick alerts -->
+    <div class="card">
+      <div class="section-title">All Vehicle Alerts</div>
+      <table class="veh-table" id="veh-table">
+        <thead>
+          <tr><th>Vehicle</th><th>Alert</th><th>Max Speed</th></tr>
+        </thead>
+        <tbody id="veh-body">
+          <tr><td colspan="3" style="color:var(--muted);padding:1rem">Loading...</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 7-day forecast -->
+    <div class="card">
+      <div class="section-title">48-Hour Forecast</div>
+      <div id="forecast-strip">
+        <div style="color:var(--muted);font-size:.85rem;padding:.5rem">Loading forecast...</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RIGHT COLUMN -->
+  <div class="right-col">
+
+    <!-- Prediction form -->
+    <div class="card" id="predict-card">
+      <div class="section-title">ML Severity Prediction</div>
+
+      <div class="toggle-row">
+        <label class="toggle">
+          <input type="checkbox" id="toggle-live" checked>
+          <span class="toggle-slider"></span>
+        </label>
+        <span>Use live weather (auto-fetches current conditions)</span>
+      </div>
+
+      <div class="form-grid">
+        <div class="field">
+          <label>Vehicle Type</label>
+          <select id="f-vehicle">
+            <option value="car">🚗  Car</option>
+            <option value="motorcycle">🏍  Motorcycle</option>
+            <option value="bus">🚌  Bus</option>
+            <option value="lorry">🚛  Lorry</option>
+            <option value="three-wheeler">🛺  Three-wheeler</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Road Curvature</label>
+          <select id="f-curve">
+            <option value="straight">Straight</option>
+            <option value="mild" selected>Mild curve</option>
+            <option value="sharp">Sharp curve</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Surface Condition</label>
+          <select id="f-surface">
+            <option value="dry" selected>Dry</option>
+            <option value="wet">Wet</option>
+            <option value="very_wet">Very wet</option>
+            <option value="oily">Oily</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Weather Condition</label>
+          <select id="f-weather" class="weather-manual">
+            <option value="clear" selected>Clear</option>
+            <option value="light_rain">Light rain</option>
+            <option value="mist">Mist</option>
+            <option value="foggy">Foggy</option>
+            <option value="heavy_rain">Heavy rain</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Speed (km/h)</label>
+          <input type="number" id="f-speed" value="55" min="0" max="150">
+        </div>
+        <div class="field">
+          <label>Speed Limit (km/h)</label>
+          <input type="number" id="f-limit" value="50" min="20" max="100">
+        </div>
+        <div class="field">
+          <label>Road Slope (°)</label>
+          <input type="number" id="f-slope" value="5" min="0" max="20" step=".5">
+        </div>
+        <div class="field">
+          <label>Driver Age</label>
+          <input type="number" id="f-age" value="30" min="16" max="80">
+        </div>
+        <div class="field">
+          <label>Driving Experience (yrs)</label>
+          <input type="number" id="f-exp" value="5" min="0" max="50">
+        </div>
+        <div class="field">
+          <label>Hour of Day (0–23)</label>
+          <input type="number" id="f-hour" value="14" min="0" max="23">
+        </div>
+        <div class="field weather-manual">
+          <label>Rain (mm)</label>
+          <input type="number" id="f-rain" value="0" min="0" step=".5">
+        </div>
+        <div class="field weather-manual">
+          <label>Visibility (km)</label>
+          <input type="number" id="f-vis" value="8" min="0.1" max="20" step=".1">
+        </div>
+      </div>
+
+      <button class="btn-predict" id="btn-predict" onclick="runPrediction()">
+        ▶ PREDICT SEVERITY
+      </button>
+    </div>
+
+    <!-- Result panel -->
+    <div class="card" id="result-panel">
+      <div class="section-title">Prediction Result</div>
+
+      <div id="severity-badge-wrap"></div>
+
+      <div class="prob-bars">
+        <div class="prob-row">
+          <span class="prob-name" style="color:var(--green)">Low</span>
+          <div class="prob-track"><div class="prob-fill" id="pb-low" style="background:var(--green);width:0%"></div></div>
+          <span class="prob-pct" id="pp-low">0%</span>
+        </div>
+        <div class="prob-row">
+          <span class="prob-name" style="color:var(--yellow)">Med</span>
+          <div class="prob-track"><div class="prob-fill" id="pb-med" style="background:var(--yellow);width:0%"></div></div>
+          <span class="prob-pct" id="pp-med">0%</span>
+        </div>
+        <div class="prob-row">
+          <span class="prob-name" style="color:var(--red)">High</span>
+          <div class="prob-track"><div class="prob-fill" id="pb-high" style="background:var(--red);width:0%"></div></div>
+          <span class="prob-pct" id="pp-high">0%</span>
+        </div>
+      </div>
+
+      <div id="alert-box-wrap"></div>
+
+      <div class="meta-row" id="meta-row"></div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  Kadugannawa Mountain Road Vehicle Alert System — Research Prototype v1.0 &nbsp;|&nbsp;
+  A1 Highway, Sri Lanka &nbsp;|&nbsp; Weather: Open-Meteo API &nbsp;|&nbsp;
+  Model: Random Forest / XGBoost · Not for operational use.
+</footer>
+
+<script>
+const API = '';   // empty = same origin; change to 'http://localhost:8000' for dev
+
+// ── Clock ──────────────────────────────────────────────────────────────────
+function updateClock() {
+  const now = new Date();
+  document.getElementById('clock').textContent =
+    now.toLocaleTimeString('en-LK', {hour:'2-digit',minute:'2-digit',second:'2-digit'});
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+// ── Toggle live weather ────────────────────────────────────────────────────
+document.getElementById('toggle-live').addEventListener('change', e => {
+  const manual = document.querySelectorAll('.weather-manual');
+  manual.forEach(el => el.style.opacity = e.target.checked ? '0.35' : '1');
+  manual.forEach(el => {
+    const inp = el.querySelector('input,select');
+    if (inp) inp.disabled = e.target.checked;
+  });
+});
+// init
+document.querySelectorAll('.weather-manual').forEach(el => {
+  el.style.opacity = '0.35';
+  const inp = el.querySelector('input,select');
+  if (inp) inp.disabled = true;
+});
+
+// ── Weather icons ──────────────────────────────────────────────────────────
+function condIcon(cond) {
+  return {clear:'☀️',light_rain:'🌦',mist:'🌫',foggy:'🌁',heavy_rain:'⛈'}[cond] || '🌤';
+}
+function riskColor(score) {
+  if (score === 0) return 'var(--green)';
+  if (score <= 1)  return 'var(--yellow)';
+  if (score <= 3)  return 'var(--orange)';
+  return 'var(--red)';
+}
+function riskClass(score) {
+  return `risk-${Math.min(score, 6)}`;
+}
+
+// ── Load current weather ───────────────────────────────────────────────────
+async function loadWeather() {
+  try {
+    const r = await fetch(`${API}/weather/current`);
+    const d = await r.json();
+    document.getElementById('wx-temp').innerHTML = `${d.temperature_c}<small>°C</small>`;
+    document.getElementById('wx-condition').textContent = d.wmo_description;
+    document.getElementById('wx-icon').textContent = condIcon(d.weather_condition);
+    document.getElementById('wx-rain').textContent  = `${d.precipitation_mm} mm`;
+    document.getElementById('wx-vis').textContent   = `${d.visibility_km} km`;
+    document.getElementById('wx-wind').textContent  = `${d.wind_speed_kmh} km/h`;
+    document.getElementById('wx-humid').textContent = `${d.humidity_pct} %`;
+    document.getElementById('wx-pres').textContent  = `${d.pressure_hpa} hPa`;
+    document.getElementById('wx-cloud').textContent = `${d.cloud_cover_pct} %`;
+
+    const pct = Math.round((d.weather_risk_score / 6) * 100);
+    document.getElementById('wx-risk-text').textContent = `${d.weather_risk_score} / 6`;
+    const bar = document.getElementById('wx-risk-bar');
+    bar.style.width = `${pct}%`;
+    bar.style.background = riskColor(d.weather_risk_score);
+  } catch(e) {
+    document.getElementById('wx-condition').textContent = 'Weather unavailable';
+  }
+}
+
+// ── All-vehicle alerts ─────────────────────────────────────────────────────
+const VEH_ICONS = {
+  car:'🚗', motorcycle:'🏍', bus:'🚌', lorry:'🚛', 'three-wheeler':'🛺'
+};
+const ALERT_STYLE = {
+  'LOW RISK':       'background:#064e3b33;color:#10b981',
+  'CAUTION':        'background:#78350f33;color:#f59e0b',
+  'MODERATE RISK':  'background:#78350f44;color:#f97316',
+  'HIGH RISK':      'background:#7f1d1d44;color:#ef4444',
+  'EXTREME DANGER': 'background:#7f1d1d88;color:#fca5a5',
+};
+
+async function loadAllAlerts() {
+  try {
+    const r = await fetch(`${API}/alert`);
+    const d = await r.json();
+    const tbody = document.getElementById('veh-body');
+    tbody.innerHTML = '';
+    for (const [vt, al] of Object.entries(d.alerts)) {
+      const style = ALERT_STYLE[al.alert_level] || '';
+      const speed = al.recommended_speed_kmh != null
+        ? `<span class="speed-rec">${al.recommended_speed_kmh} km/h</span>`
+        : '<span style="color:var(--green)">Normal</span>';
+      tbody.innerHTML += `
+        <tr>
+          <td class="veh-name">${VEH_ICONS[vt]||''} ${vt}</td>
+          <td><span class="alert-pill" style="${style}">${al.alert_level}</span></td>
+          <td>${speed}</td>
+        </tr>`;
+    }
+  } catch(e) {
+    document.getElementById('veh-body').innerHTML =
+      '<tr><td colspan="3" style="color:var(--muted)">Could not load alerts</td></tr>';
+  }
+}
+
+// ── Forecast strip ─────────────────────────────────────────────────────────
+async function loadForecast() {
+  try {
+    const r = await fetch(`${API}/weather/forecast?days=2`);
+    const d = await r.json();
+    const strip = document.getElementById('forecast-strip');
+    strip.innerHTML = '';
+    for (const row of d.forecast) {
+      const h = String(row.hour).padStart(2,'0');
+      const date = row.date.slice(5);  // MM-DD
+      strip.innerHTML += `
+        <div class="fc-item">
+          <div class="fc-time">${date}<br>${h}:00</div>
+          <div class="fc-icon">${condIcon(row.weather_condition)}</div>
+          <div class="fc-temp">${row.temperature_c}°</div>
+          <div class="fc-risk ${riskClass(row.risk_score)}">${row.risk_score}</div>
+        </div>`;
+    }
+  } catch(e) {
+    document.getElementById('forecast-strip').innerHTML =
+      '<div style="color:var(--muted);font-size:.85rem;padding:.5rem">Forecast unavailable</div>';
+  }
+}
+
+// ── Prediction ─────────────────────────────────────────────────────────────
+async function runPrediction() {
+  const btn = document.getElementById('btn-predict');
+  btn.disabled = true;
+  btn.textContent = 'Predicting...';
+
+  const useLive = document.getElementById('toggle-live').checked;
+  const now = new Date();
+
+  const body = {
+    vehicle_type:        document.getElementById('f-vehicle').value,
+    road_curvature:      document.getElementById('f-curve').value,
+    surface_condition:   document.getElementById('f-surface').value,
+    weather_condition:   document.getElementById('f-weather').value,
+    estimated_speed_kmh: parseFloat(document.getElementById('f-speed').value),
+    speed_limit_kmh:     parseInt(document.getElementById('f-limit').value),
+    road_slope_deg:      parseFloat(document.getElementById('f-slope').value),
+    driver_age:          parseFloat(document.getElementById('f-age').value),
+    driving_exp_yrs:     parseFloat(document.getElementById('f-exp').value),
+    hour:                parseInt(document.getElementById('f-hour').value),
+    month:               now.getMonth() + 1,
+    is_weekend:          [0,6].includes(now.getDay()),
+    num_vehicles:        1,
+    elevation_m:         478,
+    temp_avg_c:          26.0,
+    precipitation_mm:    parseFloat(document.getElementById('f-rain').value),
+    visibility_km:       parseFloat(document.getElementById('f-vis').value),
+    wind_speed_kmh:      10.0,
+    pressure_hpa:        1010.0,
+    use_live_weather:    useLive,
+  };
+
+  try {
+    const r = await fetch(`${API}/predict`, {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify(body),
+    });
+    if (!r.ok) {
+      const err = await r.json();
+      throw new Error(err.detail || 'API error');
+    }
+    const d = await r.json();
+    renderResult(d);
+  } catch(e) {
+    alert(`Prediction failed: ${e.message}\n\nMake sure the FastAPI server is running.`);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = '▶ PREDICT SEVERITY';
+  }
+}
+
+function renderResult(d) {
+  const panel = document.getElementById('result-panel');
+  panel.style.display = 'block';
+
+  // Badge
+  const cls = {'Low':'severity-low','Medium':'severity-medium','High':'severity-high'}[d.severity];
+  const em  = {'Low':'🟢','Medium':'🟡','High':'🔴'}[d.severity];
+  document.getElementById('severity-badge-wrap').innerHTML =
+    `<div class="severity-badge ${cls}">${em} ${d.severity.toUpperCase()} SEVERITY</div>
+     <p style="color:var(--muted);font-size:.8rem;margin-bottom:1rem">
+       Confidence: <strong style="color:var(--text)">${(d.confidence*100).toFixed(1)}%</strong>
+     </p>`;
+
+  // Probability bars
+  const p = d.probabilities;
+  const set = (id, fill, val) => {
+    document.getElementById(id).style.width = `${val*100}%`;
+    document.getElementById(fill).textContent = `${(val*100).toFixed(1)}%`;
+  };
+  set('pb-low',  'pp-low',  p.Low);
+  set('pb-med',  'pp-med',  p.Medium);
+  set('pb-high', 'pp-high', p.High);
+
+  // Alert box
+  const al = d.alert;
+  const colors = {
+    'LOW RISK':       {bg:'#064e3b22',border:'#10b981',text:'#10b981'},
+    'CAUTION':        {bg:'#78350f22',border:'#f59e0b',text:'#f59e0b'},
+    'MODERATE RISK':  {bg:'#78350f44',border:'#f97316',text:'#f97316'},
+    'HIGH RISK':      {bg:'#7f1d1d44',border:'#ef4444',text:'#ef4444'},
+    'EXTREME DANGER': {bg:'#7f1d1d88',border:'#fca5a5',text:'#fca5a5'},
+  };
+  const c = colors[al.alert_level] || colors['LOW RISK'];
+  const speed = al.recommended_speed_kmh != null
+    ? `Max speed: <strong>${al.recommended_speed_kmh} km/h</strong>`
+    : 'No speed restriction';
+
+  document.getElementById('alert-box-wrap').innerHTML = `
+    <div class="alert-box" style="background:${c.bg};border-color:${c.border}">
+      <div class="alert-level" style="color:${c.text}">${al.alert_level}</div>
+      <div class="alert-msg">${al.message}</div>
+      <div style="margin-top:.5rem;font-size:.78rem;color:var(--muted)">${speed}</div>
+    </div>
+    <div style="font-size:.78rem;color:var(--muted)">${al.conditions_summary}</div>
+  `;
+
+  // Meta chips
+  document.getElementById('meta-row').innerHTML = `
+    <span class="meta-chip">Model: ${d.model_name}</span>
+    <span class="meta-chip">Inference: ${d.inference_time_ms}ms</span>
+    <span class="meta-chip">${d.timestamp.replace('T',' ')}</span>
+  `;
+
+  panel.scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+
+// ── Auto-refresh every 10 minutes ─────────────────────────────────────────
+async function refresh() {
+  await Promise.all([loadWeather(), loadAllAlerts(), loadForecast()]);
+}
+refresh();
+setInterval(refresh, 600_000);
+</script>
+</body>
+</html>

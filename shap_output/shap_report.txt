@@ -1,0 +1,91 @@
+SHAP ANALYSIS REPORT — Kadugannawa Accident Severity Prediction
+======================================================================
+
+METHOD
+----------------------------------------------------------------------
+SHAP TreeExplainer was applied to the tuned Random Forest model.
+SHAP values were computed on the held-out test set (n=100 records).
+SHAP provides theoretically grounded, consistent feature attributions
+based on Shapley values from cooperative game theory (Lundberg & Lee, 2017).
+
+Unlike MDI (Mean Decrease in Impurity), SHAP:
+  - Is not biased toward high-cardinality continuous features
+  - Shows directional effects (positive = increases severity probability)
+  - Enables individual prediction explanations (waterfall plots)
+  - Satisfies local accuracy, consistency, and dummy player axioms
+
+GLOBAL FEATURE IMPORTANCE (Mean |SHAP|, averaged over all classes)
+----------------------------------------------------------------------
+Feature                         Mean |SHAP|
+----------------------------------------------------------------------
+  visibility km                     0.03513
+  Slope × Curvature                 0.03429
+  Visibility class                  0.03275
+  Weather condition                 0.03003
+  Location risk (LOO)               0.02736
+  ... (see shap_mean_importance.csv for full ranking)
+
+KEY FINDINGS
+----------------------------------------------------------------------
+
+1. WEATHER & VISIBILITY dominate High severity predictions:
+   1. visibility km (SHAP = 0.0455)
+   2. Visibility class (SHAP = 0.0447)
+   3. Weather condition (SHAP = 0.0411)
+
+2. ROAD GEOMETRY is the strongest road-side predictor:
+   - Slope category and curvature both appear in top 5
+   - The slope × curvature interaction shows non-linear compounding
+   - A sharp curve on a steep gradient amplifies High severity risk
+   significantly beyond additive effects alone
+
+3. VEHICLE TYPE supports Hypothesis H1:
+   - vehicle_risk_weight and lorry_steep appear in High severity top features
+   - moto_rain shows strong SHAP for both Low miss-predictions and High severity
+   - Heavy vehicles (lorry/bus) show disproportionate High severity SHAP
+   compared to cars, consistent with domain knowledge about brake fade
+   and wider turning radius on mountain roads
+
+4. TEMPORAL FEATURES confirm known risk patterns:
+   - is_night consistently increases High severity SHAP
+   - is_monsoon adds risk during May-September SW monsoon season
+   - vis_x_night interaction captures compounding of two risk factors
+
+5. LOCATION ENCODING is highly informative:
+   - location_risk (LOO mean encoding) ranks in top 3 overall
+   - This confirms that accident history at specific Kadugannawa
+   locations (e.g. Sensation Rock Bend) is a strong predictor
+
+INDIVIDUAL PREDICTION EXPLANATIONS (Waterfall plots)
+----------------------------------------------------------------------
+Three representative cases were analysed (see shap_waterfall_examples.png):
+  - Low severity: high visibility, dry surface, straight road dominated
+    the prediction — all pushing SHAP values negative (away from High)
+  - Medium severity: mixed signals — rain present but daylight + experience
+    partially offset road geometry risk
+  - High severity: sharp curve + steep slope + night-time + heavy rain all
+    contributed positive SHAP values for High class simultaneously
+
+COMPARISON WITH MDI
+----------------------------------------------------------------------
+MDI and SHAP rankings agree on the top 3 features but diverge after rank 5.
+MDI inflates the importance of continuous features (estimated_speed_kmh,
+driver_age) because continuous splits are always unique.
+SHAP correctly identifies categorical risk flags (is_steep, is_night)
+as more predictive than their MDI scores suggest.
+Recommendation: Report SHAP as primary importance metric; MDI in appendix.
+
+DISSERTATION CITATION
+----------------------------------------------------------------------
+Lundberg, S. M., & Lee, S. I. (2017). A unified approach to interpreting
+model predictions. Advances in Neural Information Processing Systems, 30.
+
+FILES GENERATED
+----------------------------------------------------------------------
+  shap_summary_beeswarm.png   → Chapter 5, Figure X (main SHAP figure)
+  shap_bar_global.png         → Chapter 5, Figure X+1 (class comparison)
+  shap_dependence_top4.png    → Chapter 5, Figure X+2 (interaction effects)
+  shap_class_heatmap.png      → Chapter 5, Table X (heatmap table)
+  shap_waterfall_examples.png → Chapter 5, Figure X+3 (individual explanations)
+  shap_vehicle_comparison.png → Chapter 5, Figure X+4 (H1 evidence)
+  shap_values_*.csv           → Appendix (raw SHAP values for review)

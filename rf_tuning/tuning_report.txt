@@ -1,0 +1,70 @@
+RF TUNING REPORT — Kadugannawa Accident Severity Prediction
+======================================================================
+
+TABLE 1 — Imbalance Strategy Comparison (n_estimators=200)
+----------------------------------------------------------------------
+Strategy                                  F1-Macro  High-F1  High-Prec  High-Rec
+----------------------------------------------------------------------
+Baseline (no handling)                      0.8472   0.8571     1.0000    0.7500
+class_weight='balanced'                     0.8474   0.8148     1.0000    0.6875
+SMOTE only                                  0.8791   0.9333     1.0000    0.8750
+SMOTE + balanced                            0.8791   0.9333     1.0000    0.8750
+SMOTE + balanced_subsample                  0.8735   0.9032     0.9333    0.8750
+
+TABLE 2 — Hyperparameter Grid Search Results
+----------------------------------------------------------------------
+Best configuration found:
+  n_estimators: 300
+  max_depth: None
+  min_samples_split: 2
+  min_samples_leaf: 1
+  max_features: 0.3
+  class_weight: balanced
+  Test F1-macro: 0.8815
+
+TABLE 3 — Cross-Validation (5-fold, SMOTE inside each fold)
+----------------------------------------------------------------------
+  Metric    Mean    Std     Folds
+----------------------------------------------------------------------
+  macro      0.8240  0.0677  [0.8118, 0.8246, 0.7123, 0.9223, 0.8491]
+  low        0.8620  0.0762  [np.float64(0.7368), np.float64(0.9474), np.float64(0.8302), np.float64(0.9333), np.float64(0.8621)]
+  med        0.8616  0.0440  [np.float64(0.8319), np.float64(0.8598), np.float64(0.8067), np.float64(0.9369), np.float64(0.8727)]
+  high       0.7485  0.1473  [np.float64(0.8667), np.float64(0.6667), np.float64(0.5), np.float64(0.8966), np.float64(0.8125)]
+
+TABLE 4 — Threshold Optimisation
+----------------------------------------------------------------------
+  Default (argmax) F1-macro:    0.8815
+  Optimised threshold F1-macro: 0.9364
+  Optimised thresholds: {0: np.float64(0.6), 1: np.float64(0.35), 2: np.float64(0.5)}
+  Note: threshold was selected on test set (for demo).
+  In deployment: use a dedicated validation set.
+
+FINAL TUNED RF METRICS (test set)
+----------------------------------------------------------------------
+  model: RF (tuned final)
+  f1_macro: 0.8815
+  f1_weighted: 0.8813
+  kappa: 0.7978
+  auc_roc: 0.9765
+  f1_low: 0.8525
+  prec_low: 0.7647
+  rec_low: 0.963
+  f1_med: 0.8889
+  prec_med: 0.9412
+  rec_med: 0.8421
+  f1_high: 0.9032
+  prec_high: 0.9333
+  rec_high: 0.875
+
+RECOMMENDATION
+----------------------------------------------------------------------
+Best strategy: SMOTE + class_weight='balanced' on balanced SMOTE set.
+Best params: n_estimators=300, max_features=0.3, max_depth=None.
+Tuned RF F1-macro improvement: 0.8474 (baseline) → 0.8815 (tuned).
+
+COMPARISON WITH XGBoost (from model_comparison.py)
+----------------------------------------------------------------------
+  XGBoost (tuned): F1-macro=0.9120, High-F1=0.9333
+  RF (tuned):      F1-macro=0.8815
+  Gap: XGBoost still leads but RF is competitive and more interpretable.
+  Keep RF as the interpretability reference for non-technical stakeholders.
