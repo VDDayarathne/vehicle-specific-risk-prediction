@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="KaduGuard — Real-time vehicle-specific accident risk prediction for Kadugannawa hill-country roads, Sri Lanka." />
+  <title>KaduGuard — Prediction Tool</title>
+
+  <!-- Global + component styles -->
+  <link rel="stylesheet" href="../src/styles/global.css" />
+  <link rel="stylesheet" href="../src/styles/components.css" />
+
+  <style>
+    /* Page-specific layout */
+    body { padding: 1.5rem; max-width: 680px; margin: 0 auto; }
+
+    .page-header { margin-bottom: 1.5rem; }
+    .page-header h1 { font-family: var(--font-head); font-size: 1.6rem; font-weight: 800; }
+    .page-header p  { color: var(--muted); font-size: 0.82rem; margin-top: 0.3rem; }
+
+    /* Weather strip */
+    .weather-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.4rem;
+    }
+    .weather-strip small { color: var(--muted); font-size: 0.68rem; }
+
+    /* Form grid */
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin: 1.2rem 0;
+    }
+    .form-grid.full { grid-template-columns: 1fr; }
+
+    .field { display: flex; flex-direction: column; gap: 0.3rem; }
+    .field label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); font-weight: 600; }
+    .field input, .field select {
+      background: var(--card2);
+      border: 1px solid var(--border2);
+      border-radius: var(--r-sm);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      padding: 0.55rem 0.75rem;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .field input:focus, .field select:focus { border-color: var(--accent); }
+
+    /* Vehicle selector */
+    .veh-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 0.4rem; }
+    .veh-opt  {
+      display: flex; flex-direction: column; align-items: center; gap: 0.2rem;
+      padding: 0.6rem 0.2rem;
+      background: var(--card); border: 2px solid var(--border); border-radius: 10px;
+      cursor: pointer; transition: all 0.15s; font-size: 1.3rem;
+    }
+    .veh-opt span { font-size: 0.6rem; color: var(--muted2); font-weight: 500; }
+    .veh-opt:has(input:checked) { border-color: var(--accent); background: rgba(0,212,170,0.08); }
+    .veh-opt:has(input:checked) span { color: var(--accent); }
+    .veh-opt input { display: none; }
+
+    /* Risk card container */
+    #risk-card-container { margin-top: 1.2rem; }
+
+    /* Nav links */
+    .page-nav { display: flex; gap: 1rem; margin-bottom: 1.2rem; }
+    .page-nav a { font-size: 0.78rem; font-weight: 600; color: var(--muted2); padding: 0.25rem 0.65rem; border-radius: 6px; border: 1px solid var(--border); }
+    .page-nav a.active, .page-nav a:hover { color: var(--accent); border-color: var(--accent); background: rgba(0,212,170,0.06); }
+
+    .weather-strip-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .weather-refresh-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--accent);
+      font-size: 0.85rem;
+      padding: 0;
+    }
+    .predict-alert-space { margin-top: 1rem; }
+    .section-gap-top { margin-top: 1.1rem; }
+    .section-gap-top-sm { margin-top: 1.2rem; }
+    .predict-submit {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+
+    /* Prediction alert banner */
+    .prediction-alert {
+      background: linear-gradient(180deg, rgba(17,24,32,0.98), rgba(10,15,20,0.98));
+      border: 1px solid var(--border2);
+      border-left: 4px solid var(--accent);
+      border-radius: 14px;
+      padding: 0.95rem 1rem;
+      box-shadow: 0 14px 34px rgba(0,0,0,0.22);
+    }
+    .prediction-alert--low { border-left-color: var(--ok); }
+    .prediction-alert--medium { border-left-color: var(--orange); }
+    .prediction-alert--high { border-left-color: var(--danger); }
+    .prediction-alert__head {
+      display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;
+      margin-bottom: 0.45rem;
+    }
+    .prediction-alert__pill {
+      font-size: 0.68rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em;
+      padding: 0.22rem 0.5rem; border-radius: 999px; background: rgba(0,212,170,0.1); color: var(--accent);
+    }
+    .prediction-alert--low .prediction-alert__pill { background: rgba(46,213,115,0.12); color: var(--ok); }
+    .prediction-alert--medium .prediction-alert__pill { background: rgba(255,140,66,0.12); color: var(--orange); }
+    .prediction-alert--high .prediction-alert__pill { background: rgba(255,71,87,0.12); color: var(--danger); }
+    .prediction-alert__score { font-family: var(--font-mono); color: var(--text); font-weight: 700; }
+    .prediction-alert__msg { color: var(--text); font-size: 0.9rem; line-height: 1.5; margin-bottom: 0.55rem; }
+    .prediction-alert__meta {
+      display: flex; flex-wrap: wrap; gap: 0.75rem 1rem; color: var(--muted2); font-size: 0.76rem; margin-bottom: 0.4rem;
+    }
+    .prediction-alert__action { color: var(--muted); font-size: 0.78rem; }
+  </style>
+</head>
+<body>
+
+  <nav class="page-nav">
+    <a href="dashboard.html">🗺 Live Map</a>
+    <a href="predict.html" class="active">🔍 Predict</a>
+  </nav>
+
+  <header class="page-header">
+    <h1>🔍 Risk Prediction</h1>
+    <p>Enter current road and vehicle conditions to get an accident risk assessment.</p>
+  </header>
+
+  <!-- Live weather -->
+  <div class="weather-strip">
+    <span class="section-label">Live Conditions — Kadugannawa</span>
+    <div class="weather-strip-actions">
+      <small id="weather-time">Loading...</small>
+      <button id="btn-refresh-weather" class="weather-refresh-btn" title="Refresh weather">⟳</button>
+    </div>
+  </div>
+  <div id="weather-container"></div>
+
+  <!-- Prediction alert banner -->
+  <div id="prediction-alert" class="predict-alert-space"></div>
+
+  <!-- Prediction form -->
+  <form id="predict-form" autocomplete="off">
+
+    <!-- Vehicle selector -->
+    <p class="section-label section-gap-top-sm">Vehicle Type</p>
+    <div class="veh-grid">
+      <label class="veh-opt"><input type="radio" name="vehicle_type" value="car" checked />🚗<span>Car</span></label>
+      <label class="veh-opt"><input type="radio" name="vehicle_type" value="motorcycle" />🏍<span>Moto</span></label>
+      <label class="veh-opt"><input type="radio" name="vehicle_type" value="bus" />🚌<span>Bus</span></label>
+      <label class="veh-opt"><input type="radio" name="vehicle_type" value="lorry" />🚛<span>Lorry</span></label>
+      <label class="veh-opt"><input type="radio" name="vehicle_type" value="three-wheeler" />🛺<span>3-Wheeler</span></label>
+    </div>
+
+    <!-- Weather fields (auto-filled) -->
+    <p class="section-label section-gap-top">Weather Inputs</p>
+    <div class="form-grid">
+      <div class="field"><label for="f-temp">Temperature (°C)</label><input type="number" id="f-temp" name="temperature_c" step="0.1" value="25" min="-10" max="50" /></div>
+      <div class="field"><label for="f-humidity">Humidity (%)</label><input type="number" id="f-humidity" name="humidity_pct" step="1" value="70" min="0" max="100" /></div>
+      <div class="field"><label for="f-rainfall">Rainfall (mm)</label><input type="number" id="f-rainfall" name="rainfall_mm" step="0.1" value="0" min="0" max="500" /></div>
+      <div class="field"><label for="f-wind">Wind Speed (km/h)</label><input type="number" id="f-wind" name="wind_speed_kmh" step="0.1" value="10" min="0" max="200" /></div>
+      <div class="field"><label for="f-visibility">Visibility (km)</label><input type="number" id="f-visibility" name="visibility_km" step="0.1" value="10" min="0" max="50" /></div>
+    </div>
+
+    <!-- Road fields -->
+    <p class="section-label">Road Conditions</p>
+    <div class="form-grid">
+      <div class="field"><label for="f-gradient">Gradient (%)</label><input type="number" id="f-gradient" name="gradient_pct" step="0.1" value="5" min="-30" max="30" /></div>
+      <div class="field"><label for="f-curvature">Curvature (0–1)</label><input type="number" id="f-curvature" name="curvature" step="0.01" value="0.3" min="0" max="1" /></div>
+      <div class="field">
+        <label for="f-surface">Road Surface</label>
+        <select id="f-surface" name="road_surface">
+          <option value="asphalt">Asphalt</option>
+          <option value="gravel">Gravel</option>
+          <option value="dirt">Dirt</option>
+        </select>
+      </div>
+      <div class="field"><label for="f-lanes">Lanes</label><input type="number" id="f-lanes" name="lane_count" step="1" value="2" min="1" max="6" /></div>
+      <div class="field"><label for="f-traffic">Traffic Density (0–1)</label><input type="number" id="f-traffic" name="traffic_density" step="0.05" value="0.5" min="0" max="1" /></div>
+    </div>
+
+    <button type="submit" id="btn-submit" class="btn-primary predict-submit">
+      🔍 Predict Risk
+    </button>
+  </form>
+
+  <!-- Result -->
+  <div id="risk-card-container"></div>
+
+  <!-- Configure API endpoint before loading modules -->
+  <script>
+    window.KADUGUARD_API_URL = 'http://localhost:8000';
+  </script>
+
+  <!-- ES module — no build step needed -->
+  <script type="module" src="../src/pages/predict.js"></script>
+</body>
+</html>

@@ -19,7 +19,7 @@ GLOBAL FEATURE IMPORTANCE (Mean |SHAP|, averaged over all classes)
 Feature                         Mean |SHAP|
 ----------------------------------------------------------------------
   visibility km                     0.03513
-  Slope × Curvature                 0.03429
+  Slope x Curvature                 0.03429
   Visibility class                  0.03275
   Weather condition                 0.03003
   Location risk (LOO)               0.02736
@@ -35,7 +35,7 @@ KEY FINDINGS
 
 2. ROAD GEOMETRY is the strongest road-side predictor:
    - Slope category and curvature both appear in top 5
-   - The slope × curvature interaction shows non-linear compounding
+   - The slope x curvature interaction shows non-linear compounding
    - A sharp curve on a steep gradient amplifies High severity risk
    significantly beyond additive effects alone
 
@@ -82,10 +82,10 @@ model predictions. Advances in Neural Information Processing Systems, 30.
 
 FILES GENERATED
 ----------------------------------------------------------------------
-  shap_summary_beeswarm.png   → Chapter 5, Figure X (main SHAP figure)
-  shap_bar_global.png         → Chapter 5, Figure X+1 (class comparison)
-  shap_dependence_top4.png    → Chapter 5, Figure X+2 (interaction effects)
-  shap_class_heatmap.png      → Chapter 5, Table X (heatmap table)
-  shap_waterfall_examples.png → Chapter 5, Figure X+3 (individual explanations)
-  shap_vehicle_comparison.png → Chapter 5, Figure X+4 (H1 evidence)
-  shap_values_*.csv           → Appendix (raw SHAP values for review)
+  shap_summary_beeswarm.png   -> Chapter 5, Figure X (main SHAP figure)
+  shap_bar_global.png         -> Chapter 5, Figure X+1 (class comparison)
+  shap_dependence_top4.png    -> Chapter 5, Figure X+2 (interaction effects)
+  shap_class_heatmap.png      -> Chapter 5, Table X (heatmap table)
+  shap_waterfall_examples.png -> Chapter 5, Figure X+3 (individual explanations)
+  shap_vehicle_comparison.png -> Chapter 5, Figure X+4 (H1 evidence)
+  shap_values_*.csv           -> Appendix (raw SHAP values for review)

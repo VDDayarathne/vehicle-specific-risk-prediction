@@ -1,0 +1,841 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Research Progress Document - Vehicle Type-Based Alert System</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 18mm 16mm;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: #1f2933;
+      background: #ffffff;
+      font-family: "Segoe UI", Arial, sans-serif;
+      font-size: 11.2pt;
+      line-height: 1.52;
+    }
+
+    h1, h2, h3 {
+      color: #12324a;
+      line-height: 1.2;
+      margin: 0 0 8px;
+    }
+
+    h1 {
+      font-size: 25pt;
+      margin-top: 22mm;
+    }
+
+    h2 {
+      font-size: 17pt;
+      border-bottom: 2px solid #d9e2ec;
+      padding-bottom: 5px;
+      margin-top: 24px;
+      break-after: avoid;
+    }
+
+    h3 {
+      font-size: 13pt;
+      margin-top: 17px;
+      break-after: avoid;
+    }
+
+    p {
+      margin: 0 0 9px;
+    }
+
+    ul, ol {
+      margin: 4px 0 12px 20px;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 10px 0 14px;
+      font-size: 9.8pt;
+      break-inside: avoid;
+    }
+
+    th, td {
+      border: 1px solid #c9d6e2;
+      padding: 6px 7px;
+      vertical-align: top;
+    }
+
+    th {
+      background: #e8f1f8;
+      color: #12324a;
+      font-weight: 700;
+    }
+
+    .cover {
+      min-height: 245mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      page-break-after: always;
+    }
+
+    .subtitle {
+      font-size: 15pt;
+      color: #486581;
+      margin: 8px 0 28px;
+      max-width: 680px;
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: 42mm 1fr;
+      gap: 6px 10px;
+      width: 100%;
+      max-width: 680px;
+      margin-top: 22px;
+      font-size: 11.5pt;
+    }
+
+    .meta div:nth-child(odd) {
+      font-weight: 700;
+      color: #334e68;
+    }
+
+    .tagline {
+      border-left: 5px solid #2f80a7;
+      background: #f2f7fb;
+      padding: 12px 14px;
+      margin-top: 26px;
+      max-width: 690px;
+      font-size: 11.5pt;
+    }
+
+    .small {
+      color: #52616f;
+      font-size: 9.8pt;
+    }
+
+    .note {
+      background: #fff7e6;
+      border-left: 4px solid #d97706;
+      padding: 9px 11px;
+      margin: 10px 0 14px;
+    }
+
+    .good {
+      background: #edf7ed;
+      border-left: 4px solid #2e7d32;
+      padding: 9px 11px;
+      margin: 10px 0 14px;
+    }
+
+    .grid2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 10px 0 14px;
+    }
+
+    .box {
+      border: 1px solid #c9d6e2;
+      padding: 10px 11px;
+      break-inside: avoid;
+    }
+
+    .box strong {
+      color: #12324a;
+    }
+
+    .figure {
+      margin: 13px 0 17px;
+      break-inside: avoid;
+      text-align: center;
+    }
+
+    .figure img {
+      max-width: 100%;
+      max-height: 165mm;
+      border: 1px solid #d9e2ec;
+    }
+
+    .caption {
+      text-align: left;
+      color: #52616f;
+      font-size: 9.6pt;
+      margin-top: 5px;
+    }
+
+    .toc {
+      columns: 2;
+      column-gap: 24px;
+      margin-top: 10px;
+    }
+
+    .toc p {
+      margin-bottom: 5px;
+    }
+
+    .page-break {
+      page-break-before: always;
+    }
+
+    .pipeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 7px;
+      margin: 10px 0 15px;
+    }
+
+    .step {
+      border: 1px solid #b9cad7;
+      background: #f7fbff;
+      padding: 8px;
+      min-height: 54px;
+      font-size: 9.5pt;
+    }
+
+    code {
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 9.5pt;
+      color: #0f4c5c;
+    }
+  </style>
+</head>
+<body>
+  <section class="cover">
+    <div>
+      <h1>Vehicle Type-Based Alert System for Hazardous Pathways</h1>
+      <p class="subtitle">A Machine Learning-Based Real-Time Accident Prediction System for Hill Country Roads</p>
+      <div class="meta">
+        <div>Student</div><div>H.G.V.D. Dayarathne</div>
+        <div>Index Number</div><div>20APSE4843</div>
+        <div>Supervisor</div><div>Mrs. K.G.L. Chathumini</div>
+        <div>Degree Module</div><div>SE 8101 Research Project in Software Engineering</div>
+        <div>Focus Area</div><div>Kadugannawa, Kandy District, Sri Lanka</div>
+        <div>Document Purpose</div><div>Supervisor meeting progress document</div>
+        <div>Prepared On</div><div>7 May 2026</div>
+      </div>
+      <div class="tagline">
+        This document summarises the submitted research proposal and the implementation progress completed so far:
+        data collection, preprocessing, feature engineering, model training, explainability, and prototype system development.
+      </div>
+    </div>
+    <p class="small">Source basis: submitted proposal PDF, project README, processed datasets, preprocessing report, model comparison report, RF tuning report, SMOTE outputs, SHAP report, and generated visualisations.</p>
+  </section>
+
+  <h2>Table of Contents</h2>
+  <div class="toc">
+    <p>1. Executive Summary</p>
+    <p>2. Proposal Alignment</p>
+    <p>3. Research Problem and Questions</p>
+    <p>4. Research Objectives</p>
+    <p>5. Methodology</p>
+    <p>6. Data Sources and Dataset Status</p>
+    <p>7. Preprocessing and Integration</p>
+    <p>8. Feature Engineering</p>
+    <p>9. Model Development and Evaluation</p>
+    <p>10. Explainability and Findings</p>
+    <p>11. System Prototype</p>
+    <p>12. Risks and Mitigation</p>
+    <p>13. Work Completed and Next Steps</p>
+    <p>14. Supervisor Discussion Points</p>
+  </div>
+
+  <h2>1. Executive Summary</h2>
+  <p>
+    The project aims to develop a vehicle-specific real-time accident risk prediction and alert system for mountainous
+    roads, with Kadugannawa selected as the primary study area. The core idea is that cars, buses, lorries, motorcycles,
+    vans, three-wheelers, and pick-ups do not experience the same risk under the same road and weather conditions.
+    A steep sharp bend during rain is more hazardous for a loaded lorry or motorcycle than for a small car, so the alert
+    system must consider vehicle type together with weather, road geometry, time, driver, and telemetry conditions.
+  </p>
+  <p>
+    The proposal originally positioned Random Forest as the primary machine learning model because it can model non-linear
+    patterns, handle mixed feature types, and provide interpretable feature importance. The implementation has now expanded
+    the modelling stage to include Random Forest tuning, SMOTE-based imbalance handling, XGBoost comparison, and SHAP
+    explainability. This strengthens the academic contribution because it allows the final study to report both the proposed
+    model and a stronger comparative baseline.
+  </p>
+  <div class="good">
+    <strong>Current status:</strong> A complete research prototype pipeline exists. It includes mock police accident records,
+    real weather data, OpenMeteo API integration, OpenStreetMap road geometry extraction, preprocessing, feature engineering,
+    Random Forest and XGBoost training, model evaluation, SHAP explanation, backend API structure, frontend dashboard pages,
+    and an edge-device telemetry simulator.
+  </div>
+
+  <h2>2. Alignment with Submitted Proposal</h2>
+  <table>
+    <tr>
+      <th>Proposal Component</th>
+      <th>Proposal Requirement</th>
+      <th>Implementation Completed So Far</th>
+    </tr>
+    <tr>
+      <td>Research topic</td>
+      <td>Vehicle type-based alert system for hazardous pathways using ML for hill country roads.</td>
+      <td>Project structure and implementation are built around Kadugannawa mountain-road accident risk prediction.</td>
+    </tr>
+    <tr>
+      <td>Historical data</td>
+      <td>Police or insurance accident records containing date/time, vehicle type, location, weather, and accident cause.</td>
+      <td>Created 500-row mock police accident dataset and included <code>Police.records.data.Kadugannawa.csv</code> with the same structure for later real-data replacement.</td>
+    </tr>
+    <tr>
+      <td>Real-time weather</td>
+      <td>Weather API for current environmental conditions.</td>
+      <td>Implemented OpenMeteo collection scripts and generated historical and forecast CSV files for Kadugannawa.</td>
+    </tr>
+    <tr>
+      <td>Topographical data</td>
+      <td>Road gradient, elevation, and curve sharpness.</td>
+      <td>Implemented OpenStreetMap road geometry extraction and produced Kadugannawa road segment features.</td>
+    </tr>
+    <tr>
+      <td>Machine learning</td>
+      <td>Random Forest classifier with train-test split, cross-validation, and tuning.</td>
+      <td>Implemented RF baseline, RF + SMOTE, tuned RF, XGBoost comparison, cross-validation, and threshold analysis.</td>
+    </tr>
+    <tr>
+      <td>Evaluation</td>
+      <td>Accuracy, precision, recall, F1-score, confusion matrix, and feature importance.</td>
+      <td>Generated comparison reports, ROC curves, confusion-matrix outputs, feature importance plots, and SHAP explanations.</td>
+    </tr>
+    <tr>
+      <td>System development</td>
+      <td>Backend prediction engine and frontend/mobile dashboard for real-time alerts.</td>
+      <td>Backend FastAPI-style modules, frontend dashboard pages, weather API endpoints, prediction endpoint, and edge telemetry simulator have been scaffolded.</td>
+    </tr>
+  </table>
+
+  <h2>3. Research Problem and Research Questions</h2>
+  <h3>Problem Statement</h3>
+  <p>
+    Mountainous roads such as Kadugannawa contain steep gradients, sharp curves, sudden weather changes, and visibility
+    limitations. Existing accident prediction systems are mainly designed for urban or highway environments, often treat all
+    vehicles equally, and rarely combine historical accident patterns with real-time weather and terrain conditions. Therefore,
+    there is a need for a vehicle-specific, terrain-aware machine learning model that can provide early accident risk alerts.
+  </p>
+  <h3>Research Questions</h3>
+  <ol>
+    <li>What machine learning algorithms have been used for early road accident prediction?</li>
+    <li>What road-safety factors in mountainous areas and vehicle-specific factors influence accident risk?</li>
+    <li>How can an accurate machine learning algorithm be developed to identify accident risk in advance within mountainous environments?</li>
+    <li>How can the algorithm be evaluated to ensure it supports safer driving through early warnings?</li>
+  </ol>
+
+  <h2>4. Research Goal and Objectives</h2>
+  <p>
+    The main objective is to develop a vehicle-specific real-time accident risk prediction and alert system for mountainous
+    roads so that drivers can receive early warnings and make safer decisions.
+  </p>
+  <table>
+    <tr>
+      <th>Objective</th>
+      <th>Description</th>
+      <th>Current Progress</th>
+    </tr>
+    <tr>
+      <td>RO1</td>
+      <td>Review ML accident prediction algorithms and identify mountain-road and vehicle-specific risk factors.</td>
+      <td>Proposal literature review completed; feature set now reflects weather, road geometry, vehicle, time, driver, and telemetry risk factors.</td>
+    </tr>
+    <tr>
+      <td>RO2</td>
+      <td>Develop an accurate ML algorithm using historical data to identify accident risk in advance.</td>
+      <td>Random Forest, tuned Random Forest, SMOTE variants, and XGBoost comparison implemented.</td>
+    </tr>
+    <tr>
+      <td>RO3</td>
+      <td>Evaluate the accuracy and performance of the developed algorithm using real-time data.</td>
+      <td>Hold-out evaluation, cross-validation, ROC-AUC, F1-macro, class-wise F1, SHAP, and feature importance outputs generated. Live API integration is partially implemented and needs real deployment validation.</td>
+    </tr>
+  </table>
+
+  <h2>5. Methodology</h2>
+  <p>
+    The methodology follows the proposal workflow but has been converted into an executable Python project. The current
+    implementation uses a modular pipeline so each stage can be replaced or improved independently when real police records
+    become available.
+  </p>
+  <div class="pipeline">
+    <div class="step"><strong>1. Data Collection</strong><br>Accident, weather, road, and telemetry data.</div>
+    <div class="step"><strong>2. Preprocessing</strong><br>Cleaning, merging, missing-value handling, and leakage prevention.</div>
+    <div class="step"><strong>3. Feature Engineering</strong><br>Vehicle, weather, road, time, speed, and interaction features.</div>
+    <div class="step"><strong>4. Modelling</strong><br>RF, RF + SMOTE, tuned RF, and XGBoost.</div>
+    <div class="step"><strong>5. Evaluation</strong><br>F1-macro, class-wise F1, recall, precision, kappa, AUC-ROC.</div>
+    <div class="step"><strong>6. Explainability</strong><br>Feature importance and SHAP interpretation.</div>
+    <div class="step"><strong>7. System Prototype</strong><br>Backend API, dashboard, and device telemetry simulator.</div>
+    <div class="step"><strong>8. Validation</strong><br>Real police data replacement and field-style testing next.</div>
+  </div>
+
+  <h2>6. Data Sources and Dataset Status</h2>
+  <table>
+    <tr>
+      <th>Dataset</th>
+      <th>File / Source</th>
+      <th>Status</th>
+      <th>Purpose</th>
+    </tr>
+    <tr>
+      <td>Mock accident records</td>
+      <td><code>data/raw/kadugannawa_accidents_mock.csv</code></td>
+      <td>500 records generated</td>
+      <td>Prototype training while waiting for official police data.</td>
+    </tr>
+    <tr>
+      <td>Police data placeholder</td>
+      <td><code>data/raw/Police.records.data.Kadugannawa.csv</code></td>
+      <td>Available in project</td>
+      <td>Structured so future real police records can replace mock data with minimal pipeline change.</td>
+    </tr>
+    <tr>
+      <td>Weather export</td>
+      <td><code>data/raw/export.xlsx</code></td>
+      <td>Available</td>
+      <td>Historical Kadugannawa weather attributes such as temperature, precipitation, wind, and pressure.</td>
+    </tr>
+    <tr>
+      <td>OpenMeteo weather</td>
+      <td><code>data/external/kadugannawa_historical_daily.csv</code>, <code>kadugannawa_forecast_7d.csv</code></td>
+      <td>Generated</td>
+      <td>Historical and forecast weather support for training and real-time alerts.</td>
+    </tr>
+    <tr>
+      <td>OpenStreetMap geometry</td>
+      <td><code>data/raw/kadugannawa_road_segments.csv</code></td>
+      <td>Generated</td>
+      <td>Road curvature, speed limit, slope, and location-based road segment features.</td>
+    </tr>
+    <tr>
+      <td>Telemetry sample</td>
+      <td><code>data/raw/telemetry/telemetry_raw.csv</code></td>
+      <td>Generated</td>
+      <td>Prototype speed, heading, acceleration, RPM, and GPS input for real-time risk scoring.</td>
+    </tr>
+  </table>
+
+  <h2>7. Data Preprocessing and Integration</h2>
+  <p>
+    The preprocessing pipeline merges accident, weather, road geometry, and telemetry-related features into a model-ready
+    dataset. A key issue handled in the implementation is date alignment: accident dates and weather dates must be normalised
+    before merging to prevent silent join failures. The pipeline also avoids leakage by removing outcome-derived columns such
+    as injuries, fatalities, and manually generated risk scores before modelling.
+  </p>
+  <table>
+    <tr>
+      <th>Preprocessing Area</th>
+      <th>Implementation</th>
+    </tr>
+    <tr>
+      <td>Train-test split</td>
+      <td>Held-out test set retained before oversampling to avoid synthetic sample leakage.</td>
+    </tr>
+    <tr>
+      <td>Class imbalance</td>
+      <td>SMOTE applied to training data only. Final post-SMOTE training set in the preprocessing report: 510 rows, balanced as 170 Low, 170 Medium, 170 High.</td>
+    </tr>
+    <tr>
+      <td>Missing values</td>
+      <td>KNN and median imputers created for model features and stored for inference reuse.</td>
+    </tr>
+    <tr>
+      <td>Scaling</td>
+      <td>Scaler fitted only on training data; test set transformed using the fitted training scaler.</td>
+    </tr>
+    <tr>
+      <td>Output artifacts</td>
+      <td><code>X_train.csv</code>, <code>X_test.csv</code>, <code>y_train.csv</code>, <code>y_test.csv</code>, <code>feature_names.csv</code>, and preprocessing report.</td>
+    </tr>
+  </table>
+  <div class="note">
+    <strong>Important academic point:</strong> The primary metric should be F1-macro rather than accuracy because high-severity
+    accidents are the minority class. A high accuracy score alone could hide poor High-risk detection.
+  </div>
+
+  <h2>8. Feature Engineering</h2>
+  <p>
+    Feature engineering expanded the dataset from raw observations into risk factors that better represent mountainous-road
+    hazards. The feature registry ranks candidate features using mutual information and marks which features are used in the
+    model.
+  </p>
+  <table>
+    <tr>
+      <th>Feature Group</th>
+      <th>Example Features</th>
+      <th>Reason for Inclusion</th>
+    </tr>
+    <tr>
+      <td>Weather</td>
+      <td>weather condition, visibility class, low visibility, fog risk, rainfall intensity</td>
+      <td>Fog, rain, low visibility, and pressure changes are critical in hill-country accident risk.</td>
+    </tr>
+    <tr>
+      <td>Road geometry</td>
+      <td>slope category, road curvature, sharp curve flag, steep road flag</td>
+      <td>Mountain roads introduce braking, turning, and stability risks not present on flat roads.</td>
+    </tr>
+    <tr>
+      <td>Vehicle type</td>
+      <td>vehicle risk weight, heavy vehicle flag, one-hot vehicle type features</td>
+      <td>Different vehicles respond differently to gradients, curves, rain, and visibility.</td>
+    </tr>
+    <tr>
+      <td>Speed and telemetry</td>
+      <td>speed ratio, speed excess, telemetry speed ratio, brake index</td>
+      <td>Real-time unsafe driving behaviour can raise alert level even in moderate road conditions.</td>
+    </tr>
+    <tr>
+      <td>Time</td>
+      <td>night, weekend, monsoon season, morning/evening peak</td>
+      <td>Accident patterns vary by visibility, traffic level, and seasonal rain exposure.</td>
+    </tr>
+    <tr>
+      <td>Interactions</td>
+      <td>rain x curve, visibility x night, slope x curve, lorry x steep road</td>
+      <td>Compound risk is non-linear: multiple moderate hazards together can create High risk.</td>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <th>Top Feature</th>
+      <th>Group</th>
+      <th>Mutual Information Score</th>
+    </tr>
+    <tr><td>weather_enc</td><td>Weather</td><td>0.197</td></tr>
+    <tr><td>location_risk</td><td>Location</td><td>0.195</td></tr>
+    <tr><td>slope_cat</td><td>Road</td><td>0.177</td></tr>
+    <tr><td>road_curv_enc</td><td>Road</td><td>0.171</td></tr>
+    <tr><td>is_sharp</td><td>Road</td><td>0.157</td></tr>
+    <tr><td>is_steep</td><td>Road</td><td>0.156</td></tr>
+    <tr><td>vis_class</td><td>Weather</td><td>0.147</td></tr>
+    <tr><td>slope_x_curve</td><td>Road interaction</td><td>0.140</td></tr>
+    <tr><td>high_risk_combo</td><td>Interaction</td><td>0.131</td></tr>
+    <tr><td>rain_x_curve</td><td>Interaction</td><td>0.119</td></tr>
+  </table>
+
+  <h2>9. Model Development and Evaluation</h2>
+  <p>
+    The proposal selected Random Forest as the main model. The implementation follows this and also compares XGBoost to
+    strengthen the research evaluation. The main evaluation metric is F1-macro because it treats Low, Medium, and High severity
+    classes equally and is more suitable for imbalanced safety data.
+  </p>
+  <h3>Model Comparison Results</h3>
+  <table>
+    <tr>
+      <th>Model</th>
+      <th>F1-Macro</th>
+      <th>Kappa</th>
+      <th>AUC-ROC</th>
+      <th>Accuracy</th>
+    </tr>
+    <tr><td>Random Forest default</td><td>0.8791</td><td>0.7817</td><td>0.9742</td><td>0.8700</td></tr>
+    <tr><td>Random Forest tuned</td><td>0.8791</td><td>0.7817</td><td>0.9736</td><td>0.8700</td></tr>
+    <tr><td>XGBoost default</td><td>0.8979</td><td>0.8298</td><td>0.9793</td><td>0.9000</td></tr>
+    <tr><td>XGBoost tuned</td><td>0.9120</td><td>0.8473</td><td>0.9797</td><td>0.9100</td></tr>
+  </table>
+  <h3>Class-Level Results for Tuned Models</h3>
+  <table>
+    <tr>
+      <th>Model</th>
+      <th>Low F1</th>
+      <th>Medium F1</th>
+      <th>High F1</th>
+      <th>High Precision</th>
+      <th>High Recall</th>
+    </tr>
+    <tr><td>Random Forest tuned</td><td>0.8254</td><td>0.8785</td><td>0.9333</td><td>1.0000</td><td>0.8750</td></tr>
+    <tr><td>XGBoost tuned</td><td>0.8852</td><td>0.9174</td><td>0.9333</td><td>1.0000</td><td>0.8750</td></tr>
+  </table>
+  <p>
+    The tuned XGBoost model currently performs best overall with F1-macro 0.9120. However, Random Forest remains valuable
+    because it aligns with the proposal, is easier to explain to non-technical stakeholders, and can be used as the main
+    interpretable baseline.
+  </p>
+
+  <h3>Additional Baseline Models Tested</h3>
+  <p>
+    To make the model selection academically stronger, additional ML methods were tested beyond Random Forest and XGBoost.
+    This helps show that the final method was selected through comparison rather than assumption. SMOTE was applied only to
+    training folds during cross-validation to avoid leakage.
+  </p>
+  <table>
+    <tr>
+      <th>Model</th>
+      <th>F1-Macro</th>
+      <th>High F1</th>
+      <th>High Recall</th>
+      <th>Kappa</th>
+      <th>AUC-ROC</th>
+      <th>CV Mean</th>
+    </tr>
+    <tr><td>Gradient Boosting</td><td>0.9237</td><td>0.9032</td><td>0.8750</td><td>0.8802</td><td>0.9703</td><td>0.7966</td></tr>
+    <tr><td>XGBoost tuned</td><td>0.9202</td><td>0.9333</td><td>0.8750</td><td>0.8636</td><td>0.9815</td><td>0.8175</td></tr>
+    <tr><td>Logistic Regression</td><td>0.9174</td><td>0.9697</td><td>1.0000</td><td>0.8497</td><td>0.9905</td><td>0.8859</td></tr>
+    <tr><td>Extra Trees</td><td>0.8905</td><td>0.9032</td><td>0.8750</td><td>0.8156</td><td>0.9776</td><td>0.8191</td></tr>
+    <tr><td>Random Forest tuned</td><td>0.8791</td><td>0.9333</td><td>0.8750</td><td>0.7817</td><td>0.9736</td><td>0.8082</td></tr>
+    <tr><td>SVM RBF</td><td>0.8703</td><td>0.8571</td><td>0.7500</td><td>0.7881</td><td>0.9673</td><td>0.8437</td></tr>
+    <tr><td>AdaBoost</td><td>0.7777</td><td>0.8000</td><td>0.8750</td><td>0.6320</td><td>0.8871</td><td>0.6870</td></tr>
+    <tr><td>Decision Tree</td><td>0.7157</td><td>0.5517</td><td>0.5000</td><td>0.5920</td><td>0.7731</td><td>0.7115</td></tr>
+    <tr><td>KNN</td><td>0.6829</td><td>0.7895</td><td>0.9375</td><td>0.5016</td><td>0.9230</td><td>0.6898</td></tr>
+    <tr><td>Gaussian Naive Bayes</td><td>0.5297</td><td>0.5283</td><td>0.8750</td><td>0.3100</td><td>0.8534</td><td>0.5490</td></tr>
+    <tr><td>Dummy majority</td><td>0.1417</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.5000</td><td>0.1448</td></tr>
+  </table>
+  <div class="note">
+    <strong>Interpretation:</strong> Gradient Boosting gave the highest held-out F1-macro in this run, while Logistic Regression
+    showed the strongest cross-validation mean. Because the dataset is still mock/prototype data, this should be reported as
+    preliminary. The final model decision should be repeated after real police data is added.
+  </div>
+
+  <div class="figure">
+    <img src="../outputs/model_baselines/baseline_model_comparison.png" alt="Additional model baseline comparison">
+    <div class="caption">Figure 1. Additional baseline model comparison across simple, distance-based, tree-based, and boosting methods.</div>
+  </div>
+
+  <div class="figure">
+    <img src="../outputs/reports/comparison_figure.png" alt="Model comparison figure">
+    <div class="caption">Figure 2. Model comparison visualisation generated from the experiment outputs.</div>
+  </div>
+
+  <div class="figure">
+    <img src="../outputs/reports/roc_curves.png" alt="ROC curves">
+    <div class="caption">Figure 3. ROC curves for model evaluation.</div>
+  </div>
+
+  <h2>10. Imbalanced Data Handling</h2>
+  <p>
+    Accident severity data is naturally imbalanced: severe accidents are less frequent but more important for safety. The
+    project therefore tests imbalance-handling strategies such as class weighting, SMOTE, and combined approaches. The RF tuning
+    report shows that SMOTE improves the baseline Random Forest from F1-macro 0.8474 to 0.8815 after tuning.
+  </p>
+  <table>
+    <tr>
+      <th>Strategy</th>
+      <th>F1-Macro</th>
+      <th>High F1</th>
+      <th>High Precision</th>
+      <th>High Recall</th>
+    </tr>
+    <tr><td>Baseline, no handling</td><td>0.8472</td><td>0.8571</td><td>1.0000</td><td>0.7500</td></tr>
+    <tr><td>class_weight='balanced'</td><td>0.8474</td><td>0.8148</td><td>1.0000</td><td>0.6875</td></tr>
+    <tr><td>SMOTE only</td><td>0.8791</td><td>0.9333</td><td>1.0000</td><td>0.8750</td></tr>
+    <tr><td>SMOTE + balanced</td><td>0.8791</td><td>0.9333</td><td>1.0000</td><td>0.8750</td></tr>
+    <tr><td>SMOTE + balanced_subsample</td><td>0.8735</td><td>0.9032</td><td>0.9333</td><td>0.8750</td></tr>
+  </table>
+  <div class="figure">
+    <img src="../outputs/rf_tuning/strategy_comparison.png" alt="RF imbalance strategy comparison">
+    <div class="caption">Figure 4. Random Forest imbalance-handling strategy comparison.</div>
+  </div>
+
+  <h2>11. Explainability and Research Findings</h2>
+  <p>
+    SHAP analysis was applied to the tuned Random Forest model on the held-out test set. This is useful academically because it
+    explains why the model predicts Low, Medium, or High risk. It also gives evidence for the research claim that weather,
+    visibility, road geometry, and vehicle type interact in mountain-road accidents.
+  </p>
+  <div class="grid2">
+    <div class="box">
+      <strong>Finding 1: Weather and visibility dominate High severity.</strong>
+      Visibility, visibility class, and weather condition are the strongest High-risk predictors in the SHAP report.
+    </div>
+    <div class="box">
+      <strong>Finding 2: Road geometry compounds risk.</strong>
+      Slope, curvature, and the slope x curvature interaction show that steep sharp bends create non-linear danger.
+    </div>
+    <div class="box">
+      <strong>Finding 3: Vehicle type supports the proposal.</strong>
+      Vehicle risk weight, lorry-steep interaction, and motorcycle-rain interaction support vehicle-specific risk modelling.
+    </div>
+    <div class="box">
+      <strong>Finding 4: Time matters.</strong>
+      Night-time and monsoon-season flags increase risk and support real-time contextual alerting.
+    </div>
+  </div>
+  <div class="figure">
+    <img src="../outputs/shap/shap_bar_global.png" alt="Global SHAP bar chart">
+    <div class="caption">Figure 5. SHAP global feature importance.</div>
+  </div>
+  <div class="figure">
+    <img src="../outputs/shap/shap_vehicle_comparison.png" alt="SHAP vehicle comparison">
+    <div class="caption">Figure 6. Vehicle-specific SHAP comparison supporting the vehicle-type research focus.</div>
+  </div>
+  <div class="figure">
+    <img src="../outputs/plots/feature_importance.png" alt="Feature importance chart">
+    <div class="caption">Figure 7. Feature importance visualisation for dissertation and supervisor discussion.</div>
+  </div>
+
+  <h2>12. System Prototype</h2>
+  <p>
+    Beyond model training, the project has been organised as a deployable software system. The current architecture contains a
+    backend, frontend, data processing pipeline, trained models, and an edge-device simulation layer.
+  </p>
+  <table>
+    <tr>
+      <th>Layer</th>
+      <th>Implemented Components</th>
+      <th>Purpose</th>
+    </tr>
+    <tr>
+      <td>Data pipeline</td>
+      <td><code>src/data_collection</code>, <code>src/preprocessing</code>, <code>src/feature_engineering</code></td>
+      <td>Collect weather/road data, merge records, and generate model-ready features.</td>
+    </tr>
+    <tr>
+      <td>Modelling</td>
+      <td><code>src/modeling</code>, <code>models/saved_models</code></td>
+      <td>Train, tune, compare, and save Random Forest and XGBoost models.</td>
+    </tr>
+    <tr>
+      <td>Evaluation</td>
+      <td><code>src/evaluation</code>, <code>outputs/shap</code>, <code>outputs/reports</code></td>
+      <td>Produce model comparison, feature importance, ROC, SHAP, and report files.</td>
+    </tr>
+    <tr>
+      <td>Backend</td>
+      <td><code>backend/api/predict.py</code>, <code>weather.py</code>, <code>segments.py</code>, <code>telemetry.py</code></td>
+      <td>Expose prediction, weather, road segment, and telemetry endpoints.</td>
+    </tr>
+    <tr>
+      <td>Frontend</td>
+      <td><code>frontend/public/dashboard.html</code>, <code>predict.html</code>, JS components</td>
+      <td>Driver-facing dashboard and prediction UI.</td>
+    </tr>
+    <tr>
+      <td>Device layer</td>
+      <td><code>device/edge_agent.py</code>, <code>obd_adapter.py</code>, telemetry queue</td>
+      <td>Simulate edge telemetry input such as speed, acceleration, and GPS.</td>
+    </tr>
+  </table>
+  <p>
+    The intended runtime flow is: driver selects or sends vehicle type, system fetches current weather, nearest road segment
+    features and telemetry are added, the model predicts risk level, and the interface displays a Low, Medium, or High warning
+    with vehicle-specific alert messaging.
+  </p>
+
+  <h2>13. Work Completed So Far</h2>
+  <ol>
+    <li>Extracted and reviewed the submitted proposal scope, problem statement, research questions, objectives, methodology, and expected system architecture.</li>
+    <li>Created a realistic 500-row mock Kadugannawa accident dataset to support development before official police data is available.</li>
+    <li>Integrated weather data using existing Excel weather records and OpenMeteo historical/forecast data.</li>
+    <li>Built OpenStreetMap road geometry extraction for slope, curvature, and road segment features.</li>
+    <li>Created preprocessing pipeline with date normalisation, left-join merging, imputation, train-test split, scaling, and leakage prevention.</li>
+    <li>Engineered 70+ candidate features covering weather, road, vehicle, speed, time, location, and interaction risks.</li>
+    <li>Applied SMOTE correctly to the training set only and compared imbalance-handling strategies.</li>
+    <li>Trained Random Forest baseline, tuned Random Forest, default XGBoost, and tuned XGBoost models.</li>
+    <li>Generated model comparison reports, ROC plots, feature importance plots, RF tuning plots, and SMOTE visualisations.</li>
+    <li>Implemented SHAP explainability and generated global, class-level, vehicle-level, and individual prediction explanations.</li>
+    <li>Scaffolded backend API, frontend dashboard, Docker configuration, and edge-device telemetry simulation.</li>
+  </ol>
+
+  <h2>14. Limitations and Research Risks</h2>
+  <table>
+    <tr>
+      <th>Risk</th>
+      <th>Impact</th>
+      <th>Mitigation</th>
+    </tr>
+    <tr>
+      <td>Mock accident data</td>
+      <td>Model scores may be optimistic because the current accident records are simulated.</td>
+      <td>Clearly state that current results are prototype results. Replace with official police data when available and rerun all experiments.</td>
+    </tr>
+    <tr>
+      <td>Class imbalance</td>
+      <td>High-severity accidents are rare, so accuracy alone can be misleading.</td>
+      <td>Use F1-macro, High-class recall, High-class precision, and SMOTE inside cross-validation.</td>
+    </tr>
+    <tr>
+      <td>Data leakage</td>
+      <td>Outcome variables such as injuries or fatalities could inflate performance.</td>
+      <td>Drop leakage columns before modelling and document this in the methodology.</td>
+    </tr>
+    <tr>
+      <td>Weather granularity</td>
+      <td>Daily weather may not represent accident-time conditions accurately.</td>
+      <td>Use OpenMeteo hourly or current API data for deployment and, if possible, accident-time matching.</td>
+    </tr>
+    <tr>
+      <td>Road geometry accuracy</td>
+      <td>OSM data may not perfectly represent local curve sharpness or surface condition.</td>
+      <td>Validate high-risk locations manually and compare with police/local authority knowledge.</td>
+    </tr>
+    <tr>
+      <td>Deployment validation</td>
+      <td>Prototype may behave differently with delayed APIs or weak network conditions.</td>
+      <td>Add caching, fallback weather values, offline road features, and input validation tests.</td>
+    </tr>
+  </table>
+
+  <h2>15. Next Steps Before Final Dissertation</h2>
+  <ol>
+    <li>Obtain and clean real police accident records for Kadugannawa or nearby mountain-road segments.</li>
+    <li>Map real accident locations to OSM road segments and validate GPS accuracy.</li>
+    <li>Replace mock dataset with real records and rerun preprocessing, feature engineering, model training, and SHAP analysis.</li>
+    <li>Use a dedicated validation set for threshold optimisation instead of choosing thresholds on the test set.</li>
+    <li>Finalise whether the dissertation will present Random Forest as the main model with XGBoost as comparison, or deploy XGBoost while retaining RF for interpretability.</li>
+    <li>Run backend API tests and demonstrate a real-time prediction request using current weather and selected vehicle type.</li>
+    <li>Prepare Chapter 4 methodology and Chapter 5 results using the generated reports and figures.</li>
+    <li>Add an ethics/data privacy section covering police data anonymisation, GPS privacy, and responsible alert design.</li>
+  </ol>
+
+  <h2>16. Suggested Supervisor Meeting Explanation</h2>
+  <p>
+    A concise way to explain the current progress:
+  </p>
+  <div class="box">
+    I have implemented the full prototype pipeline for my proposed vehicle-type-based accident alert system. Since official
+    police data is not yet finalised, I used a realistic Kadugannawa mock accident dataset with the same schema planned for
+    replacement. I merged accident data with weather data, OpenMeteo API data, and OpenStreetMap road geometry, then performed
+    feature engineering for vehicle, road, weather, time, speed, and interaction risks. I trained Random Forest as proposed and
+    also compared it with XGBoost. The tuned XGBoost currently gives the best F1-macro score, while Random Forest remains the
+    interpretable baseline. I also used SMOTE for imbalance handling and SHAP for explainability. The software prototype includes
+    backend API modules, frontend dashboard pages, and telemetry simulation. My next key step is to replace mock accident records
+    with real police data and rerun the full evaluation.
+  </div>
+
+  <h2>17. Questions to Ask the Supervisor</h2>
+  <ol>
+    <li>Should the final dissertation keep Random Forest as the primary model because it was proposed originally, or present XGBoost as the final deployed model with Random Forest as the baseline?</li>
+    <li>Is the current use of mock police data acceptable for prototype development until official records are received?</li>
+    <li>What exact validation evidence is expected for the final submission: model metrics only, prototype demo, user testing, or all three?</li>
+    <li>Should the scope include all vehicle types available in the dataset, or focus mainly on cars, motorcycles, buses, and lorries?</li>
+    <li>Is Kadugannawa alone sufficient as the case study, or should another mountain-road segment be added for comparison?</li>
+  </ol>
+
+  <h2>18. Appendix: Key Files Produced</h2>
+  <table>
+    <tr>
+      <th>Category</th>
+      <th>Files</th>
+    </tr>
+    <tr>
+      <td>Processed data</td>
+      <td><code>data/processed/merged_accidents_weather.csv</code>, <code>engineered_features.csv</code>, <code>X_train.csv</code>, <code>X_test.csv</code>, <code>feature_registry.csv</code></td>
+    </tr>
+    <tr>
+      <td>Models</td>
+      <td><code>models/saved_models/rf_model.pkl</code>, <code>rf_tuned_final.pkl</code>, <code>rf_smote_model.pkl</code>, <code>xgb_model.pkl</code></td>
+    </tr>
+    <tr>
+      <td>Reports</td>
+      <td><code>outputs/reports/comparison_report.txt</code>, <code>outputs/model_baselines/baseline_model_report.txt</code>, <code>outputs/rf_tuning/tuning_report.txt</code>, <code>outputs/shap/shap_report.txt</code>, <code>data/processed/pipeline_report.txt</code></td>
+    </tr>
+    <tr>
+      <td>Figures</td>
+      <td><code>comparison_figure.png</code>, <code>roc_curves.png</code>, <code>feature_importance.png</code>, <code>shap_bar_global.png</code>, <code>shap_vehicle_comparison.png</code></td>
+    </tr>
+    <tr>
+      <td>System</td>
+      <td><code>backend/</code>, <code>frontend/</code>, <code>device/</code>, <code>docker-compose.yml</code></td>
+    </tr>
+  </table>
+</body>
+</html>

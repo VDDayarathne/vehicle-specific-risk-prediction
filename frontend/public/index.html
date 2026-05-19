@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KaduGuard - Accident Risk Prediction</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        a {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        a:hover {
+            background: #764ba2;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Configure API endpoint for all pages
+        window.KADUGUARD_API_URL = 'http://localhost:8000';
+    </script>
+    <div class="container">
+        <h1>🚨 KaduGuard</h1>
+        <p>Vehicle Type-Based Alert System for Hazardous Pathways</p>
+        <div class="buttons">
+            <a href="/predict.html">📊 Risk Prediction</a>
+            <a href="/dashboard.html">📈 Dashboard</a>
+            <a href="http://localhost:8000/docs">📚 API Docs</a>
+        </div>
+    </div>
+</body>
+</html>

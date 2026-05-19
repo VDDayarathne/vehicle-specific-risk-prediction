@@ -1,0 +1,5 @@
+{"device_id": "edge-demo-device", "vehicle_type": "bus", "latitude": 7.255625, "longitude": 80.538268, "speed_kmh": 48.3, "heading_deg": 44.2, "accel_m_s2": 0.26, "rpm": 3039, "timestamp": "2026-05-02T03:12:20.696594"}
+{"device_id": "edge-demo-device", "vehicle_type": "bus", "latitude": 7.256797, "longitude": 80.537335, "speed_kmh": 48.2, "heading_deg": 55.3, "accel_m_s2": 0.16, "rpm": 3174, "timestamp": "2026-05-02T03:12:38.267045"}
+{"device_id": "edge-demo-device", "vehicle_type": "bus", "latitude": 7.257817, "longitude": 80.536237, "speed_kmh": 49.2, "heading_deg": 66.4, "accel_m_s2": -0.16, "rpm": 3002, "timestamp": "2026-05-02T03:13:03.846893"}
+{"device_id": "edge-demo-device", "vehicle_type": "bus", "latitude": 7.258661, "longitude": 80.534999, "speed_kmh": 48.7, "heading_deg": 77.5, "accel_m_s2": -0.48, "rpm": 3040, "timestamp": "2026-05-02T03:13:37.458493"}
+{"device_id": "edge-demo-device", "vehicle_type": "bus", "latitude": 7.259311, "longitude": 80.533648, "speed_kmh": 45.0, "heading_deg": 88.6, "accel_m_s2": -0.67, "rpm": 3032, "timestamp": "2026-05-02T03:14:19.108450"}

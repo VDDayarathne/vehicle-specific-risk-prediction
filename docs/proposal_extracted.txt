@@ -1,0 +1,404 @@
+Research Proposal  
+Student Name  H.G.V.D. Dayarathne Student Index Number  20APSE4843 Research Topic  Vehicle Type based alert system for hazardous pathways: a Machine Learning based real time accident prediction for hill country roads. Supervisor(s) Mrs.K.G.L. Chathumini  
+Agreement I am Vishwa Deshan Dayarathne willing to submit the following Proposal format and I am confirming that this topic is a novel research and I am aware of the consequences occurs in the case of plagiarism found.   
+ 
+ 
+ 
+20/11/2025 
+..................................                                                        .............................. 
+            Signature                                                                                          Date   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Background Communities in mountainous areas such as Kadugannawa in the Kandy district have become increasingly concerned about the continued increase in traffic accidents in recent years. These regions present a different set of challenges than flat urban road networks, such as narrow, winding roads, sudden elevation changes, and weather that can shift from clear skies to thick fog or torrential rain in a matter of minutes. Drivers of buses, motorcycles, and large trucks handle these conditions in different ways, and when collisions do occur, the results are often dangerous. Although local authorities and residents continue to use them, it is becoming increasingly clear that traditional warning signs and cautions are not enough to prevent lifethreatening accidents. 
+This fact makes a more intelligent and flexible approach to driver safety essential. To help drivers avoid dangerous situations before they escalate, the current project focuses on real-time data and predictive modeling in the field of Intelligent Transport Systems (ITS). This is especially important in situations where traditional warning systems cannot distinguish between a long-haul truck approaching a tight curve and a three-wheeler traveling on a steep hill. In complex terrain such as Kadugannawa, most current systems fail to convey the true level of danger as they treat every road and vehicle equally. 
+Previous studies [1], [2] have investigated the use of machine learning and big data to predict accident probability. However, these models have mostly focused on urban or highway environments and were created using static information. Although useful, they do not take into account the specific set of conditions that exist in rural, mountainous areas, where weather, road layout, and vehicle behavior combine in an irregular manner. More significantly, no current methodology generates timely, customized warnings by combining real-time data from a car background with past accident trends. 
+This discrepancy highlights the core intent of the current investigation. The goal is to develop a large-scale, data-driven warning system that can detect certain hazards for different vehicle types operating on winding and sloping terrain. The project will use machine learning models to create actionable, real-time warnings by combining data from multiple sources, including traffic flow, road gradient information, live weather updates, and previous accident reports. By doing this, the system hopes to proactively assist drivers in avoiding accidents and predict where they are most likely to occur. Ultimately, our strategy goes beyond broad safety recommendations to a smart, context-aware solution that can significantly reduce traffic accidents in difficult situations. 
+  
+ 
+ 
+
+Literature Review 1. General Landscape of Accident Prediction Research 
+Most accident prediction systems have historically been designed and evaluated in flat highway networks or metropolitan settings [3]. These are regions with dense communication networks, better data collection, and more predictable vehicle movement. As a result, a variety of machine learning (ML) and deep learning (DL) models, including CNN, LSTM, SVM, and more recently graph-based models, have been trained on urban datasets [3], with minimal consideration for challenging terrain, including narrow mountain paths, slopes, and sudden bends [4]. 
+This research examination makes it clear that urban-based solutions cannot easily be adopted for mountain roads. Most traditional models are unable to identify the specific accident variables introduced by mountain conditions, including elevation changes, blind bends, sudden weather shifts, and vehicle stability issues [4]. 
+ 
+2. Early Approaches (2010-2020): Foundations but Limited Applicability 
+Researchers have largely focused on statistical models and traditional machine learning methods over the past decade [5]. These systems have relied primarily on structured factors such as time, traffic flow, driver demographics, and basic environmental details, as well as previous accident statistics [6]. 
+For example, 
+* since 2010, Bayesian terrain-based techniques have attempted to predict human behavior in complex settings, providing insights into how terrain affects movement. However, these have been primarily designed for general risk assessment or search and rescue situations rather than real-time driving situations [7]. 
+* To classify incidents or identify contributing causes, data mining and classification approaches (such as J48, BayesNet, and rough sets) have been used [5]. Although they provide useful pattern recognition, they have had problems with a variety of situations and lacked real-time flexibility.Another limitation of this early stage is that vehicle types were treated as uniform. A bus climbing a steep curve behaves very differently from a motorcycle or a small car, but these models did not account for such differences [8]. 
+Despite their shortcomings, these early investigations laid a crucial foundation and emphasized the importance of human behavior, the environment, and data-driven analysis [9]. 
+They failed to achieve the goal of creating systems that dynamically respond to real-time risk indicators, especially in remote or geographically difficult locations [10]. 
+ 
+3. Growth of ML/DL and Behavioral Modeling (2021-2023) 
+Deep learning, sensor fusion, and graph-based networks were introduced in the later wave of research [11]. The goal of these systems was to better represent the complex relationships between cars, roads, and human drivers [12]. 
+ 
+3.1 IoV Uses and Advanced Sensors 
+• OBD-II data to detect aggressive or dangerous behavior [13]. 
+• edge computing nodes to process driving data in real time [14]. 
+• graph-based neural networks to model spatial and temporal traffic relationships were among the first studies [11]. 
+• smartphone sensors to monitor patterns such as swaying or sudden braking [15]. 
+Accuracy rates above 90% were observed by several models, especially for accident risk classification and behavior recognition [11]. For example, in supervised settings, graph convergent LSTMs (GConvLSTM) produced highly reliable results [11]. 
+3.2 Remaining Challenges 
+As accuracy increased, additional issues emerged: 
+* Generalizing results was challenging due to proprietary or vendor-specific sensor data. 
+* Many datasets were biased toward cities and did not accurately reflect rural or mountainous roads [13]. 
+* Much of the research used simulation-based validation, which does not account for the unpredictability of real-world driving [14]. 
+* Road gradients, loose dirt, and variations in visibility are examples of terrain-specific accident issues that are still largely ignored [4].  
+ 
+4. Latest Trends (2024-2025): Moving Toward Real-Time Systems, but Still Incomplete 
+Embedded systems, IoT-based warning systems, and low-cost versions using microcontrollers and multi-sensor arrays have all received increasing attention in recent years [16] [17]. The aim of these experiments is to develop useful systems that can detect or warn drivers of potential collisions in real time. 
+* Drone-assisted search and rescue [18]. 
+* CNN-based face analysis for drowsiness detection [19]. 
+* GPS-accelerometer-based collision detection [20]. 
+* Multi-threshold algorithms for false alarm reduction [21]. 
+* Traffic jam and infrastructure-based accident detection are some of the key developments [22]. 
+These studies acknowledge real-world challenges more explicitly than earlier work, such as false positives on rough roads, limited network coverage in rural areas, and hardware constraints [23]. Systems designed specifically for mountainous roads have also begun to appear in conceptual form, but many lack prototype-level testing and still rely on simplified assumptions [4]. 
+4.1 Persistent Gaps 
+Despite these advances, a number of issues remain unresolved. 
+* Most real-time systems rely on reliable internet or GPS, which is not always available in remote areas [10]. 
+* Mountain road factors such as slopes, sudden elevation changes, and weather interactions are underrepresented [4]. 
+* Vehicle-specific risk modeling is still rare. Therefore, while contemporary technologies are largely reliable, they [12]. 
+5. Cross-Study Synthesis: What the Literature Agrees On 
+Across all phases of the literature, several consistent themes appear: 
+5.1 Strengths of Existing Work 
+* ML and DL models are excellent at identifying patterns [11]. 
+* Complex spatiotemporal relationships are captured by LSTMs and graph networks [11]. ? Low-cost behavioural monitoring is made possible by smartphone and car sensors [15]. 
+* Even in environments with limited resources, real-time warnings can be enabled via embedded systems [17]. 
+ 
+5.2 Common Limitations 
+* Generalization is hampered by heavy reliance on urban datasets [11]. 
+* Warning accuracy is reduced in the absence of vehicle-specific differentiation [12]. 
+* Validation is poor in rural or mountainous areas [4]. 
+* Most systems ignore environmental factors including rain, fog, elevation, and road structure; real-time solutions often rely on fixed connectivity, which is unsuitable in mountainous locations [4]. 
+ Although current research in accident prediction has made progress, the literature consistently highlights several gaps that limit the real-world effectiveness of current systems. Most methods offer limited flexibility for different vehicle types or environments with poor network access, because they only use historical data or are difficult to operate in changing conditions [10]. Moreover, terrain-specific hazards such as steep gradients and sharp curves, which are common in mountainous areas, are rarely taken into account by traditional models. These shortcomings highlight the need for a more adaptable and useful solution that combines historical and current data, and is affordable and reliable in remote environments [4]. Therefore, where current systems are weak, a hybrid accident prediction and warning system based on random forests that incorporates sensor inputs, environmental parameters, and topography information offers a powerful and timely way to improve road safety [12]. 
+ 
+Gaps in Existing Research - Detailed Study 1. No vehicle-specific accident prediction 
+Different vehicles (cars, buses, lorries, motorcycles) behave differently on mountain roads, but most research treats all vehicles the same. There are no models designed for each vehicle type. 
+2. Mountain-road conditions are not included 
+Most studies ignore important mountain-road factors like slope, sharp curves, elevation, and low visibility. These are major reasons for accidents in areas like Kadugannawa. 
+3. No complete real-time warning system for hill roads 
+Research mainly focuses on highways or city roads. There is no full system that predicts accidents and gives warnings specifically for dangerous mountain roads. 
+4. Historical data and live data are not combined 
+Studies either use past accident data or real-time data, but not both together. A strong system should combine: 
+* past accident trends 
+* live weather 
+* real-time traffic 
+* simple vehicle signals 
+  
+ 
+ 
+6. Too much dependence on expensive or private sensors 
+Some systems use special sensors or manufacturer-specific data those normal vehicles don't have. This makes them impractical for mixed vehicles in Sri Lanka. 
+ 
+ 
+Problem Statement and Research Questions  Problem Statement 
+ 
+"How to develop an accurate ML algorithm, which could early predict the road accidents in mountainous areas based on vehicle type?" This question arises because mountainous roads experience unique hazards such as steep slopes, sharp curves, and sudden weather changes, and different vehicle types cars, motorcycles, buses, and lorries respond to these conditions in different ways. However, existing accident prediction systems are mostly designed for urban or highway environments, treat all vehicles the same, and rarely combine historical data with realtime environmental factors. As a result, there is currently no accurate, vehicle-specific, and terrain-aware accident prediction solution for mountainous regions, creating an urgent need for a machine learning model that can provide early and reliable warnings to reduce accidents in these high-risk areas. 
+ 
+Research Questions 
+ 
+Main Research Question: How to develop an accurate ML algorithm, which could early predict the road accidents in mountainous areas based on vehicle type? 
+  RQ1: What existing machine learning algorithms have been used for early prediction of road accidents? 
+  RQ2: What are the key road-safety factors in mountainous areas, and which vehicle-specific factors (for cars and motorbikes) influence early accident prediction? 
+  RQ3: How can an accurate machine learning algorithm be developed to identify road accidents in advance within mountainous environments? 
+  RQ4: How can the algorithm developed in RQ3 be evaluated to ensure it predicts road accidents early enough to support safer driving on mountainous roads? 
+  
+ 
+ 
+Research Objectives and Goals Research Goal -  
+My main objective is to develop a vehicle-specific, real-time accident risk prediction and alert system for mountainous roads, enabling drivers to receive early warnings and travel in a safer environment. 
+ 
+Sub Objectives - 
+RO1: To conduct a literature review to identify existing ML algorithms used for accident prediction, the key road-safety factors in mountainous areas, and the vehicle-specific factors that influence early accident prediction for cars and motorbikes. 
+RO2: To develop an accurate machine learning algorithm using historical data to identify vehicle accidents in advance. 
+RO3: To evaluate the accuracy and performance of the developed algorithm using real-time data. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 	Fig. 1. Research question (RQ) to research objective (RO) mapping diagram. 
+  
+
+Proposed Research Method  
+ 
+
+	 	Fig. 2. Proposed research methodology workflow. 
+ 
+ 
+ 
+ 
+1. Data Collection 
+ 
+Historical Data 
+* Accident records from police and insurance databases ? 	Includes: 
+• Date and time 
+• Vehicle type 
+• Location 
+• Weather condition 
+• Cause of accident 
+Real-Time Data 
+* Weather information from OpenWeatherMap API 
+* Traffic and GPS movement patterns from Google Maps API 
+* Vehicle telemetry such as speed, acceleration, and braking frequency 
+Topographical Data 
+* Road gradient and elevation 
+* Curve sharpness 
+* Collected from Survey Department maps or GPS-based digital elevation models 
+ 
+2. Data Preprocessing 
+Data Cleaning & Normalization 
+* Remove duplicate or irrelevant records 
+* Standardize units (speed, slope, distance) 
+* Normalize numerical features 
+Handling Missing & Noisy Data 
+* Impute missing values 
+* Identify and remove outliers based on threshold analysis 
+ 
+ 
+Data Integration 
+* Merge historical and real-time datasets using timestamp + GPS coordinates 
+* Synchronize topographical data with accident locations 
+Feature Engineering 
+Generate meaningful predictive variables, including: 
+* Road Wetness Index 
+* Visibility Score 
+* Traffic Congestion Level 
+* Gradient Severity 
+* Curvature Risk Score 
+Exploratory Data Analysis (EDA) 
+* Identify high-risk road zones and time periods 
+* Analyze correlations between accident frequency and: 
+• Weather 
+• Time of day 
+• Road geometry 
+• Vehicle type 
+* Identify the most influential features for accident risk prediction 
+ 
+3. Algorithm Development 
+The core ML model will be developed using prepared datasets. 
+Model Selection 
+? Random Forest Classifier chosen due to: 
+• Ability to handle nonlinear patterns 
+• Robustness against noisy data 
+• Good performance with mixed-type features 
+ 
+Model Inputs & Outputs 
+* Input: Combined historical + real-time + topographical features 
+* Output: Vehicle-type-based accident risk levels 
+• Low 
+• Medium 
+• High 
+Training Process 
+* Train-test split 
+* K-fold cross-validation 
+* Hyperparameter tuning (tree depth, number of estimators, etc.) 
+ 
+4. Testing 
+This stage ensures the model behaves correctly under different conditions. 
+Testing Activities 
+* Test the model using unseen test data 
+* Validate input-output consistency 
+* Test behaviour under multiple vehicle types 
+* Evaluate stability under different real-time variations (weather, traffic, gradient changes) 
+* Verify error handling for missing or delayed API data 
+ 
+5. Model Evaluation 
+The final model will be evaluated using standard ML performance measures. Evaluation Metrics 
+* Accuracy 
+* Precision 
+* Recall 
+* F1-score 
+* Confusion Matrix Interpretability 
+* Feature importance analysis 
+* Comparison of risk levels generated for different vehicle types 
+* Identification of key predictors influencing accidents in mountainous terrain 
+6. System Development 
+After confirming model performance, the system will be implemented as a real-time accident risk alert application. 
+System Architecture 
+? Backend: 
+• ML prediction engine 
+• Data fetching and integration modules 
+? Frontend: 
+• Mobile/Web dashboard for drivers 
+• Display of real-time risk levels and alerts 
+Alert Mechanism 
+? Color-coded risk levels: 
+• Green - Low 
+• Yellow - Medium 
+• Red - High 
+* Real-time audio and visual alerts 
+* Optional feature: safer route suggestions 
+Implementation Tools 
+* Python for data processing and model development 
+* Flask / FastAPI for backend 
+* React / Android for dashboard 
+* OpenWeatherMap & Google Maps APIs 
+* MySQL / PostgreSQL for data storage  
+
+DEPARTMENT OF SOFTWARE ENGINEERING 
+BSc HONOURS DEGREE PROGRAMME IN SOFTWARE ENGINEERING  
+SE 8101 Research Project in Software Engineering 
+ 
+ 
+Expected Outcome • A comprehensive dataset combining historical and live data. 
+• A trained machine learning model capable of predicting accident risks by vehicle type. 
+• A working prototype of a real-time driver alert system. 
+• Visual dashboard displaying risk zones and safety suggestions. 
+• Insights and recommendations for transportation safety policy in mountainous areas. 
+  
+ 	 
+
+ 
+Research Plan and Time Table                                                                                                              TABLE I. Research plan and timetable (graphical view) 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+DEPARTMENT OF SOFTWARE ENGINEERING 
+BSc HONOURS DEGREE PROGRAMME IN SOFTWARE ENGINEERING  
+SE 8101 Research Project in Software Engineering 
+ 
+ 
+ 
+ 
+Proposed Budget   
+ 
+
+
+References  
+ 
+[1] P. Pan, "LoRa-based vehicle-to-pedestrian collision warning system using LSTM ANN," 2022. 
+[2] L. Osi, "Time to collision estimation for vehicles coming from behind using in-vehicle camera," 2019. 
+[3] O. Oloniyo, "Design and Implementation of an Intelligent Vehicle Tracking and Accident Alert System," 2025. 
+[4] N. Navin Kumar, "Smart road safety and vehicle accident prevention system for mountain roads," 2025. 
+[5] S. F. Moula, "Advanced Traffic Pole Upgrade Module (ATPUM): A comprehensive study on smart infrastructure for hazard detection," 2025. 
+[6] A. Morimoto, "A conceptual framework for road traffic safety considering differences in traffic culture," 2022. 
+[7] K. Manchala, "Advancements in Machine Learning and Data Mining Techniques for Collision Prediction and Hazard Detection in Internet of Vehicles," 2024. 
+[8] S. Malawade, "Spatiotemporal scene-graph embedding for autonomous vehicle collision prediction," 2022. 
+[9] L. Lin, "Real-time traffic accidents post-impact prediction: Based on crowdsourcing data," 2020. 
+[10] L. Lin, "A Bayesian approach to modeling lost person behaviors based on terrain features in wilderness search and rescue," 2010. 
+[11] Y. Li, "Traffic crash characteristics in Shenzhen, China from 2014 to 2016," 2021. 
+[12] Y. Li, "Analysis of the transition condition of rear-end collisions using time-to-collision index and vehicle trajectory data," 2020. 
+[13] L. Li, "Risk assessment based collision avoidance decision-making for autonomous vehicles in multiscenarios," 2021. 
+[14] J. Lee, "Prediction of collision avoidance ability of two-wheeled vehicle riders using driving behaviors and emotional states," 2021. 
+[15] G. Kothai, "A new hybrid deep learning algorithm for prediction of wide traffic congestion in smart cities," 2021. 
+[16] P. Khosravinia, "Enhancing Road Safety Through Accurate Detection of Hazardous Driving Behaviors With Graph Convolutional Recurrent Networks," 2023. 
+[17] K. A. Karthick, "Driver Alert System Using Convolutional Neural Network," 2025. 
+[18] S. Hussain, "Performance evaluation of various data mining algorithms on road traffic accident dataset," 2019. 
+[19] S. Gutierrez-Osorio, "Ensemble deep learning models for traffic accident prediction using social media data," 2022. 
+[20] L. Guo, "Forwarding collision assessment with localization information using the machine learning method," 2022. 
+[21] J. Fang, "DADA: Driver attention prediction in driving accident scenarios," 2022. 
+[22] O. Faisal, "A Smart Vehicle Alert System with Intelligent Vehicle Safety," 2024. 
+[23] B. Davis, "NH-TTC: A gradient-based framework for generalized anticipatory collision avoidance," 2020. 
+[24] N. M. Chowdhury, "Requirement analysis for building practical accident warning systems based on vehicular ad-hoc networks," 2014. 
+[25] S. B. Brahim, "A machine learning smartphone-based sensing for driver behavior classification," 2022. 
+[26] K. Bilstrup, "Vehicle Alert System (VAS) Project," . 
+[27] M. AbouElassad, "Framework for analyzing driving behavior," 2020. 
+[28] E. Abdelrahman, "Robust data-driven framework for driver behavior profiling using supervised machine learning," 2022. DEPARTMENT OF SOFTWARE ENGINEERING 
+BSc HONOURS DEGREE PROGRAMME IN SOFTWARE ENGINEERING  
+SE 8101 Research Project in Software Engineering 
+ 
+[29] X. Zhao, "Individual driver crash risk classification based on IoV data and offline consumer behavior data," 2021. 
+[30] J. Zhao, "Traffic accident risk prediction algorithm of edge Internet of Vehicles based on deep learning," 2020. 
+[31] Y. Zhang, "A safety collision avoidance algorithm based on comprehensive characteristics," 2020. 
+[32] Y. Yuan, "Adaptive forward vehicle collision warning based on driving behavior," 2020. 
+[33] J. Yu, "Deep spatio-temporal graph convolutional network for traffic accident prediction," 2021. 
+[34] H. Yu, "Traffic accident prediction using Deep Spatio-Temporal Graph Convolutional Network," 2021. 
+[35] X. Yang, "Design of hazardous materials transportation safety management system under the vehicleinfrastructure connected environment," 2019. 
+[36] L. Yang, "Transfer learning-based vehicle collision prediction," 2022. 
+[37] Y. Wang, "Rear-end collision forecasting with deep learning," 2020. 
+[38] J. Wang, "Safety of Autonomous Vehicles," 2020. 
+[39] J. Wang, "A real-time collision prediction mechanism with deep learning for intelligent transportation system," 2020. 
+[40] V. I. Venu, "Embedded system-based traffic light audio-visual alert system for drivers," 2025. 
+[41] M. J. V. Veelen, "Drones reduce the treatment-free interval in search and rescue operations with telemedical support," 2023. 
+[42] N. Suat-Rojas, "Extraction and analysis of social networks data to detect traffic accidents," 2022. 
+[43] A. Silva, "Various ML methods for collision prediction overview," 2020. 
+[44] B. Ryder, "Preventing traffic accidents with in-vehicle decision support systems: The impact of accident hotspot warnings on driver behaviour," 2017. 
+[45] F. K. M. Rashid, "Enhancing system safety in critical architectures: Augmented hypothesis testing with early design knowledge," 2024. 
+[46] R. Ranjan, "Snapshot-based traffic congestion prediction using deep learning," 2020. 
+[47] R. Ranjan, "City-wide traffic congestion prediction based on CNN, LSTM and transpose CNN," 2020. 
+[48] M. Petraki, "Analyzing driving habits using smartphone sensor data and GIS," 2020. [49] L. Peng, "Driving risk assessment using a rough-set-based method," 2019. 
+ 
+ 
+ 
+  
+ 
+Any Other Relevant Information  
+ 
+ 
+ 
+ 
+  
+SABARAGAMUWA UNIVERSITY OF SRI LANKA                                                          
+ FACULTY OF COMPUTING 
+DEPARTMENT OF SOFTWARE ENGINEERING 
+BSc HONOURS DEGREE PROGRAMME IN SOFTWARE ENGINEERING  
+SE 8101 Research Project in Software Engineering 
+ 
+
+
+SABARAGAMUWA UNIVERSITY OF SRI LANKA                                                          
+ FACULTY OF COMPUTING 
+DEPARTMENT OF SOFTWARE ENGINEERING 
+BSc HONOURS DEGREE PROGRAMME IN SOFTWARE ENGINEERING  
+SE 8101 Research Project in Software Engineering 
+ 
+
+
+SABARAGAMUWA UNIVERSITY OF SRI LANKA                                                          
+ FACULTY OF COMPUTING 
+DEPARTMENT OF SOFTWARE ENGINEERING 
+BSc HONOURS DEGREE PROGRAMME IN SOFTWARE ENGINEERING  
+SE 8101 Research Project in Software Engineering 
+ 
+
+
+SABARAGAMUWA UNIVERSITY OF SRI LANKA                                                          
+ 	FACULTY OF COMPUTING 
+
+
+SABARAGAMUWA UNIVERSITY OF SRI LANKA                                                          
+ FACULTY OF COMPUTING 
+DEPARTMENT OF SOFTWARE ENGINEERING 
+BSc HONOURS DEGREE PROGRAMME IN SOFTWARE ENGINEERING  
+SE 8101 Research Project in Software Engineering 
+ 
+
+
+SABARAGAMUWA UNIVERSITY OF SRI LANKA                                                          
+ 	FACULTY OF COMPUTING 
+
+

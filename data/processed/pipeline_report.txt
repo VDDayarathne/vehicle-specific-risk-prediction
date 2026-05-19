@@ -1,0 +1,124 @@
+PREPROCESSING PIPELINE REPORT
+  ==============================
+  Generated : 2026-05-07 11:40:50
+
+  Source files
+  ------------
+  Accidents  : C:\Users\ASUS\Downloads\datasets\New folder\data\raw\kadugannawa_accidents_mock.csv
+  Weather    : C:\Users\ASUS\Downloads\datasets\New folder\data\raw\export.xlsx
+  OSM roads  : C:\Users\ASUS\Downloads\datasets\New folder\data\raw\kadugannawa_road_segments.csv
+
+  Dataset sizes
+  -------------
+  Training (post-SMOTE) : 510 rows x 74 features
+  Test (held-out)       : 96 rows x 74 features
+  Test size             : 20%
+
+  Class distribution
+  ------------------
+  Training (after SMOTE):
+    Low    (0) : 170
+    Medium (1) : 170
+    High   (2) : 170
+  Test (original):
+    Low    (0) : 43
+    Medium (1) : 35
+    High   (2) : 18
+
+  Features (74 total)
+  --------
+    is_weekend
+hour
+elevation_m
+num_vehicles
+driver_age
+driving_exp_yrs
+estimated_speed_kmh
+speed_limit_kmh
+speeding
+precipitation_mm
+temp_avg_c
+visibility_km
+wind_speed_kmh
+pressure_hpa
+road_slope_deg
+is_wet_road
+risk_probability
+wx_tavg
+wx_tmin
+wx_tmax
+wx_prcp
+wx_wspd
+wx_pres
+wx_temp_range
+wx_is_rainy
+wx_heavy_rain
+wx_rain_3day
+wx_pressure_drop
+telemetry_speed_kmh
+telemetry_heading_deg
+telemetry_accel_m_s2
+telemetry_rpm
+telemetry_latitude
+telemetry_longitude
+vehicle_risk_weight
+is_heavy_vehicle
+speed_excess_kmh
+speed_ratio
+is_morning_peak
+is_evening_peak
+is_night
+hour_sin
+hour_cos
+month
+is_monsoon
+season_enc
+slope_cat_enc
+is_sharp_curve
+high_risk_combo
+young_driver
+inexperienced
+exp_ratio
+rain_intensity_num
+visibility_cls_enc
+road_curvature_enc
+surface_enc
+weather_enc
+telemetry_speed_ratio
+telemetry_brake_index
+telemetry_gps_valid
+veh_bus
+veh_car
+veh_lorry
+veh_motorcycle
+veh_pick-up
+veh_three-wheeler
+veh_van
+acc_animal_crossing
+acc_brake_failure
+acc_excessive_speed
+acc_mechanical_error
+acc_overtaking
+acc_slipped
+gen_male
+
+  Leakage prevention
+  ------------------
+  Dropped columns : ['injuries', 'fatalities', 'risk_score']
+  SMOTE applied   : training set ONLY (before: imbalanced, after: balanced)
+  Scaler fitted   : training set ONLY (test transformed with train fit)
+
+  Artifacts saved
+  ---------------
+  C:\Users\ASUS\Downloads\datasets\New folder\data\processed/X_train.csv       — Training features (SMOTE + scaled)
+  C:\Users\ASUS\Downloads\datasets\New folder\data\processed/X_test.csv        — Test features (scaled, no leakage)
+  C:\Users\ASUS\Downloads\datasets\New folder\data\processed/y_train.csv       — Training labels
+  C:\Users\ASUS\Downloads\datasets\New folder\data\processed/y_test.csv        — Test labels
+  C:\Users\ASUS\Downloads\datasets\New folder\data\processed/feature_names.csv — Ordered feature list
+  C:\Users\ASUS\Downloads\datasets\New folder\data\processed/scaler.pkl        — Fitted StandardScaler
+  C:\Users\ASUS\Downloads\datasets\New folder\data\processed/knn_imp.pkl       — Fitted KNN imputer (for inference)
+  C:\Users\ASUS\Downloads\datasets\New folder\data\processed/med_imp.pkl       — Fitted median imputer (for inference)
+
+  Next step
+  ---------
+  python train_model.py

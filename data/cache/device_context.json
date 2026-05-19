@@ -1,0 +1,1 @@
+{"integration-device-001": {"vehicle_type": "bus"}, "runcheck-device": {"vehicle_type": "car"}, "string": {"latitude": -90.0, "longitude": -180.0, "speed_kmh": 0.0, "heading_deg": 360.0, "accel_m_s2": 0.0, "rpm": 0, "vehicle_type": "car"}}

@@ -60,7 +60,7 @@ RECOMMENDATION
 ----------------------------------------------------------------------
 Best strategy: SMOTE + class_weight='balanced' on balanced SMOTE set.
 Best params: n_estimators=300, max_features=0.3, max_depth=None.
-Tuned RF F1-macro improvement: 0.8474 (baseline) → 0.8815 (tuned).
+Tuned RF F1-macro improvement: 0.8474 (baseline) -> 0.8815 (tuned).
 
 COMPARISON WITH XGBoost (from model_comparison.py)
 ----------------------------------------------------------------------
