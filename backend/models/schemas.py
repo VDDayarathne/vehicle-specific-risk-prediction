@@ -71,10 +71,12 @@ class WeatherResponse(BaseModel):
     temperature_c:  float
     humidity_pct:   float
     rainfall_mm:    float
+    precipitation_mm: float
     wind_speed_kmh: float
     visibility_km:  float
     description:    str
     icon:           str
+    weather_risk_score: int
 
 
 # ── Telemetry Request / Response ───────────────────────────────────────────

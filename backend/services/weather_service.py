@@ -63,14 +63,42 @@ async def fetch_current_weather(lat: float = KADUGANNAWA_LAT,
     vis_raw = c.get("visibility", 10000)
     vis_km  = round(vis_raw / 1000, 1) if vis_raw else 10.0
 
+    prcp = round(c.get("precipitation", 0.0), 2)
+    wind_spd = round(c.get("wind_speed_10m", 0.0), 1)
+
+    # Calculate weather risk score (from 0 to 6)
+    import datetime
+    risk = 0
+    if prcp > 5.0:
+        risk += 3
+    elif prcp > 0.5:
+        risk += 1
+
+    if vis_km < 0.5:
+        risk += 2
+    elif vis_km < 1.5:
+        risk += 1
+
+    if wind_spd > 40.0: # high winds
+        risk += 1
+
+    # Night risk
+    current_hour = datetime.datetime.now().hour
+    if current_hour < 6 or current_hour >= 20:
+        risk += 1
+
+    weather_risk_score = min(6, risk)
+
     payload = {
         "temperature_c":  round(c.get("temperature_2m", 25.0), 1),
         "humidity_pct":   round(c.get("relative_humidity_2m", 70.0), 1),
-        "rainfall_mm":    round(c.get("precipitation", 0.0), 2),
-        "wind_speed_kmh": round(c.get("wind_speed_10m", 0.0), 1),
+        "rainfall_mm":    prcp,
+        "precipitation_mm": prcp,
+        "wind_speed_kmh": wind_spd,
         "visibility_km":  vis_km,
         "description":    desc,
         "icon":           icon,
+        "weather_risk_score": weather_risk_score,
     }
 
     # Write to cache for offline fallback (key by lat:lon)
@@ -81,3 +109,4 @@ async def fetch_current_weather(lat: float = KADUGANNAWA_LAT,
         pass
 
     return payload
+

@@ -5,7 +5,7 @@ FastAPI backend combining:
   1. ML model inference  (XGBoost / Random Forest, pkl loaded at startup)
   2. Live weather        (Open-Meteo — no API key needed)
   3. Alert engine        (per vehicle-type, per-segment risk messages)
-  4. Route hazard API    (Kadugannawa->Hingula segment risk scoring)
+    4. Route hazard API    (Kadugannawa->Mawanella segment risk scoring)
   5. Navigation session  (ride start/stop, real-time position updates)
   6. 7-day forecast      (hourly risk scores for dashboard)
   7. Static HTML serving (driver navigation UI)
@@ -52,6 +52,7 @@ from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field, validator
+import pandas as pd
 
 warnings.filterwarnings("ignore")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s  %(levelname)s  %(message)s")
@@ -85,23 +86,15 @@ HOURLY_VARS = [
     "cloud_cover", "weather_code", "is_day",
 ]
 
-# ── Route definition: Kadugannawa -> Hingula ───────────────────────────────────
+# ── Route definition: Kadugannawa -> Mawanella ────────────────────────────────
 ROUTE_SEGMENTS = [
-    {"id":1,  "name":"Peradeniya Junction",       "lat":7.2488,"lon":80.4748,"dist_km":0.0,  "slope":1.7,  "curvature":"sharp",    "speed_limit":60,"risk":"low",    "alert_km":0.4},
-    {"id":2,  "name":"A1 Entry Climb",            "lat":7.2510,"lon":80.4850,"dist_km":1.8,  "slope":2.1,  "curvature":"mild",     "speed_limit":60,"risk":"low",    "alert_km":0.3},
-    {"id":3,  "name":"Kadugannawa–Pottepitiya",   "lat":7.2569,"lon":80.5190,"dist_km":4.2,  "slope":2.5,  "curvature":"sharp",    "speed_limit":50,"risk":"medium", "alert_km":0.5},
-    {"id":4,  "name":"Sensation Rock Bend",        "lat":7.2585,"lon":80.5218,"dist_km":5.5,  "slope":8.0,  "curvature":"sharp",    "speed_limit":50,"risk":"high",   "alert_km":0.8},
-    {"id":5,  "name":"Salgala Descent",            "lat":7.2620,"lon":80.5108,"dist_km":7.1,  "slope":12.0, "curvature":"sharp",    "speed_limit":40,"risk":"high",   "alert_km":1.0},
-    {"id":6,  "name":"Queens Hotel Hairpin",       "lat":7.2649,"lon":80.5221,"dist_km":8.9,  "slope":6.0,  "curvature":"sharp",    "speed_limit":40,"risk":"high",   "alert_km":0.7},
-    {"id":7,  "name":"Tunnel Bend",               "lat":7.2663,"lon":80.5520,"dist_km":10.4, "slope":3.5,  "curvature":"mild",     "speed_limit":50,"risk":"medium", "alert_km":0.5},
-    {"id":8,  "name":"Kadugannawa Town",          "lat":7.2657,"lon":80.5524,"dist_km":11.8, "slope":1.0,  "curvature":"straight", "speed_limit":50,"risk":"medium", "alert_km":0.4},
-    {"id":9,  "name":"Danture Road Junction",     "lat":7.2821,"lon":80.5343,"dist_km":13.5, "slope":0.3,  "curvature":"sharp",    "speed_limit":50,"risk":"medium", "alert_km":0.4},
-    {"id":10, "name":"Balana Road Descent",       "lat":7.2618,"lon":80.5107,"dist_km":15.2, "slope":2.8,  "curvature":"sharp",    "speed_limit":40,"risk":"high",   "alert_km":0.8},
-    {"id":11, "name":"Gampola Road Merge",        "lat":7.2479,"lon":80.5269,"dist_km":17.0, "slope":2.6,  "curvature":"mild",     "speed_limit":50,"risk":"medium", "alert_km":0.4},
-    {"id":12, "name":"Hingula Approach",          "lat":7.2437,"lon":80.5437,"dist_km":19.5, "slope":0.5,  "curvature":"mild",     "speed_limit":60,"risk":"low",    "alert_km":0.3},
-    {"id":13, "name":"Hingula Junction",          "lat":7.2437,"lon":80.5437,"dist_km":22.0, "slope":0.0,  "curvature":"straight", "speed_limit":60,"risk":"low",    "alert_km":0.0},
+    {"id":1, "name":"Upper Kadugannawa Pass",         "lat":7.25726,"lon":80.50429,"dist_km":0.0, "slope":12.0, "curvature":"sharp",   "speed_limit":40,"risk":"high",   "alert_km":0.8},
+    {"id":2, "name":"Pahala Kadugannawa (Lower Pass)", "lat":7.24977,"lon":80.49451,"dist_km":1.5, "slope":9.0,  "curvature":"sharp",   "speed_limit":40,"risk":"high",   "alert_km":0.7},
+    {"id":3, "name":"Hingula / Ganethenna",           "lat":7.25127,"lon":80.47977,"dist_km":3.2, "slope":4.0,  "curvature":"mild",    "speed_limit":50,"risk":"medium", "alert_km":0.5},
+    {"id":4, "name":"Mawanella Approach",             "lat":7.25278,"lon":80.46519,"dist_km":5.0, "slope":1.5,  "curvature":"straight", "speed_limit":60,"risk":"low",    "alert_km":0.3},
+    {"id":5, "name":"Mawanella Area",                 "lat":7.25393,"lon":80.45014,"dist_km":7.0, "slope":0.5,  "curvature":"straight", "speed_limit":60,"risk":"low",    "alert_km":0.0},
 ]
-TOTAL_ROUTE_KM = 22.0
+TOTAL_ROUTE_KM = 7.0
 
 # In-memory ride sessions {session_id: {...}}
 _sessions: Dict[str, dict] = {}
@@ -642,7 +635,7 @@ def health():
 @app.get("/route/segments", tags=["Route"])
 def get_route_segments():
     """
-    Return all Kadugannawa->Hingula route segments with static risk data.
+    Return all Kadugannawa->Mawanella route segments with static risk data.
     Includes GPS coordinates, speed limits, curvature, slope, and risk level.
     """
     weather = fetch_current_weather()
@@ -654,12 +647,52 @@ def get_route_segments():
             "weather_alert_level": alert["alert_level"],
             "weather_risk_score":  weather["weather_risk_score"],
         })
+    # Attempt to build a denser road_path from OSM segments CSV (midpoints)
+    road_path = []
+    try:
+        segs_csv = _ROOT / "data" / "raw" / "kadugannawa_road_segments.csv"
+        if segs_csv.exists():
+            df = pd.read_csv(segs_csv)
+            # Use midpoints when available, otherwise fall back to start points
+            if "midpoint_lat" in df.columns and "midpoint_lon" in df.columns:
+                pts = df[["midpoint_lat", "midpoint_lon"]].dropna()
+                pts = pts.rename(columns={"midpoint_lat": "lat", "midpoint_lon": "lon"})
+            else:
+                pts = df[["start_lat", "start_lon"]].dropna()
+                pts = pts.rename(columns={"start_lat": "lat", "start_lon": "lon"})
+
+            # Project points onto the main route vector to order them along the corridor
+            start_pt = (ROUTE_SEGMENTS[0]["lat"], ROUTE_SEGMENTS[0]["lon"]) if ROUTE_SEGMENTS else (0, 0)
+            end_pt = (ROUTE_SEGMENTS[-1]["lat"], ROUTE_SEGMENTS[-1]["lon"]) if ROUTE_SEGMENTS else (0, 0)
+            vx = end_pt[0] - start_pt[0]
+            vy = end_pt[1] - start_pt[1]
+            norm = vx * vx + vy * vy if (vx or vy) else 1.0
+
+            def proj_t(row):
+                dx = row["lat"] - start_pt[0]
+                dy = row["lon"] - start_pt[1]
+                return (dx * vx + dy * vy) / norm
+
+            pts = pts.assign(t=pts.apply(proj_t, axis=1))
+            pts = pts.sort_values("t")
+            # Build unique ordered path
+            seen = set()
+            for _, r in pts.iterrows():
+                coord = (round(float(r["lat"]), 6), round(float(r["lon"]), 6))
+                if coord in seen:
+                    continue
+                seen.add(coord)
+                road_path.append([coord[0], coord[1]])
+    except Exception:
+        road_path = []
+
     return {
-        "route": "Kadugannawa -> Hingula",
+        "route": "Kadugannawa -> Mawanella",
         "total_km": TOTAL_ROUTE_KM,
         "segment_count": len(ROUTE_SEGMENTS),
         "weather": weather,
         "segments": enriched,
+        "road_path": road_path,
     }
 
 
@@ -759,7 +792,7 @@ def start_session(req: RideSessionStart):
         "status":        "active",
     }
     log.info(f"Session {sid} started: {req.vehicle_type}")
-    return {"session_id": sid, "route": "Kadugannawa -> Hingula", "total_km": TOTAL_ROUTE_KM, "weather": weather}
+    return {"session_id": sid, "route": "Kadugannawa -> Mawanella", "total_km": TOTAL_ROUTE_KM, "weather": weather}
 
 
 @app.post("/route/session/update", tags=["Navigation"])
