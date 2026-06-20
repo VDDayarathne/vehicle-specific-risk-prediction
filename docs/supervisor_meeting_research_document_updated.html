@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Complete Research Progress Document - Vehicle Type-Based Alert System</title>
+  <style>
+    @page { size: A4; margin: 18mm 16mm; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: #1f2933;
+      background: #fff;
+      font-family: "Segoe UI", Arial, sans-serif;
+      font-size: 11.1pt;
+      line-height: 1.5;
+    }
+    h1, h2, h3 { color: #12324a; line-height: 1.2; margin: 0 0 8px; }
+    h1 { font-size: 25pt; margin-top: 22mm; }
+    h2 {
+      font-size: 16.5pt;
+      border-bottom: 2px solid #d9e2ec;
+      padding-bottom: 5px;
+      margin-top: 24px;
+      break-after: avoid;
+    }
+    h3 { font-size: 12.7pt; margin-top: 16px; break-after: avoid; }
+    p { margin: 0 0 9px; }
+    ul, ol { margin: 4px 0 12px 20px; padding: 0; }
+    li { margin-bottom: 4px; }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 10px 0 14px;
+      font-size: 9.4pt;
+      break-inside: avoid;
+    }
+    th, td { border: 1px solid #c9d6e2; padding: 6px 7px; vertical-align: top; }
+    th { background: #e8f1f8; color: #12324a; font-weight: 700; }
+    code { font-family: Consolas, "Courier New", monospace; font-size: 9.3pt; color: #0f4c5c; }
+    .cover {
+      min-height: 245mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      page-break-after: always;
+    }
+    .subtitle {
+      font-size: 15pt;
+      color: #486581;
+      margin: 8px 0 28px;
+      max-width: 690px;
+    }
+    .meta {
+      display: grid;
+      grid-template-columns: 42mm 1fr;
+      gap: 6px 10px;
+      max-width: 700px;
+      margin-top: 22px;
+      font-size: 11.3pt;
+    }
+    .meta div:nth-child(odd) { font-weight: 700; color: #334e68; }
+    .tagline {
+      border-left: 5px solid #2f80a7;
+      background: #f2f7fb;
+      padding: 12px 14px;
+      margin-top: 26px;
+      max-width: 710px;
+      font-size: 11.4pt;
+    }
+    .small { color: #52616f; font-size: 9.6pt; }
+    .note {
+      background: #fff7e6;
+      border-left: 4px solid #d97706;
+      padding: 9px 11px;
+      margin: 10px 0 14px;
+    }
+    .good {
+      background: #edf7ed;
+      border-left: 4px solid #2e7d32;
+      padding: 9px 11px;
+      margin: 10px 0 14px;
+    }
+    .grid2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 10px 0 14px;
+    }
+    .box {
+      border: 1px solid #c9d6e2;
+      padding: 10px 11px;
+      break-inside: avoid;
+    }
+    .box strong { color: #12324a; }
+    .toc {
+      columns: 2;
+      column-gap: 24px;
+      margin-top: 10px;
+    }
+    .toc p { margin-bottom: 5px; }
+    .page-break { page-break-before: always; }
+    .pipeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 7px;
+      margin: 10px 0 15px;
+    }
+    .step {
+      border: 1px solid #b9cad7;
+      background: #f7fbff;
+      padding: 8px;
+      min-height: 57px;
+      font-size: 9.2pt;
+    }
+    .figure { margin: 13px 0 17px; break-inside: avoid; text-align: center; }
+    .figure img { max-width: 100%; max-height: 165mm; border: 1px solid #d9e2ec; }
+    .caption { text-align: left; color: #52616f; font-size: 9.4pt; margin-top: 5px; }
+  </style>
+</head>
+<body>
+  <section class="cover">
+    <div>
+      <h1>Vehicle Type-Based Alert System for Hazardous Pathways</h1>
+      <p class="subtitle">Complete Research and Prototype Progress Document: From Proposal to Machine Learning Pipeline, Explainable Results, Backend APIs, Web Dashboard, and Android Real-Time Driving App</p>
+      <div class="meta">
+        <div>Student</div><div>H.G.V.D. Dayarathne</div>
+        <div>Index Number</div><div>20APSE4843</div>
+        <div>Supervisor</div><div>Mrs. K.G.L. Chathumini</div>
+        <div>Degree Module</div><div>SE 8101 Research Project in Software Engineering</div>
+        <div>Focus Area</div><div>Kadugannawa, Kandy District, Sri Lanka</div>
+        <div>Document Purpose</div><div>Updated supervisor meeting research document</div>
+        <div>Prepared On</div><div>11 June 2026</div>
+      </div>
+      <div class="tagline">
+        This updated document replaces the earlier May progress snapshot with a complete beginning-to-end account of the research work completed so far:
+        proposal alignment, data collection, preprocessing, feature engineering, model training, imbalance handling, explainability,
+        backend services, web dashboard, Android mobile map flow, live trip prediction, and telemetry integration.
+      </div>
+    </div>
+    <p class="small">Source basis: previous supervisor meeting document, project README, processed datasets, pipeline reports, model comparison reports, RF tuning outputs, SMOTE outputs, SHAP outputs, backend API modules, Android source code, and recent mobile map/telemetry implementation.</p>
+  </section>
+
+  <h2>Table of Contents</h2>
+  <div class="toc">
+    <p>1. Executive Summary</p>
+    <p>2. Research Background</p>
+    <p>3. Problem, Questions, and Objectives</p>
+    <p>4. Proposal Alignment</p>
+    <p>5. Complete Methodology</p>
+    <p>6. Data Collection</p>
+    <p>7. Preprocessing and Integration</p>
+    <p>8. Feature Engineering</p>
+    <p>9. Model Development</p>
+    <p>10. Evaluation Results</p>
+    <p>11. Imbalanced Data Handling</p>
+    <p>12. Explainability</p>
+    <p>13. Software Architecture</p>
+    <p>14. Backend API</p>
+    <p>15. Web Dashboard</p>
+    <p>16. Android Mobile App</p>
+    <p>17. Real-Time Driving Flow</p>
+    <p>18. Limitations and Risks</p>
+    <p>19. Work Completed</p>
+    <p>20. Remaining Work</p>
+    <p>21. Supervisor Discussion Points</p>
+    <p>22. Appendix</p>
+  </div>
+
+  <h2>1. Executive Summary</h2>
+  <p>
+    The research project develops a vehicle type-based accident risk prediction and alert system for hazardous hill-country roads.
+    Kadugannawa was selected as the main case study because it contains steep gradients, sharp curves, changing weather,
+    limited visibility conditions, and mixed traffic involving cars, vans, buses, lorries, motorcycles, and three-wheelers.
+  </p>
+  <p>
+    The main research idea is that different vehicle types do not face equal accident risk under the same road and weather
+    conditions. A wet sharp bend at night can be more dangerous for a motorcycle or loaded lorry than for a small car.
+    Therefore, the system combines historical accident patterns, road geometry, weather, time, vehicle type, and live telemetry
+    to predict a Low, Medium, or High risk level and provide a vehicle-specific warning.
+  </p>
+  <div class="good">
+    <strong>Current overall status:</strong> The project now contains an end-to-end research prototype: accident/weather/road
+    data collection, preprocessing, feature engineering, Random Forest and XGBoost experiments, baseline model comparison,
+    SMOTE imbalance handling, SHAP explainability, backend prediction APIs, weather and segment services, a web dashboard,
+    Android authentication and mobile prediction integration, real-time driving-session map, OpenFreeMap/MapLibre rendering,
+    risk-zone overlays, trip start/end flow, foreground GPS tracking, and telemetry upload/offline queue handling.
+  </div>
+
+  <h2>2. Research Background</h2>
+  <p>
+    Mountain-road accident prediction is different from general urban accident prediction because terrain and micro-climate
+    conditions have strong influence. Kadugannawa roads include slopes, bends, rain exposure, fog/visibility variation, and
+    heavy vehicle movement. Traditional warning systems generally provide static road signs or generic alerts. The proposed
+    system moves toward dynamic, context-aware alerts that are calculated from current and historical conditions.
+  </p>
+  <p>
+    The research contribution is both analytical and practical. Analytically, it investigates which features are most useful
+    for predicting road accident severity in a mountainous environment. Practically, it implements a deployable prototype
+    where mobile users can select a vehicle type, start a trip, view their location on a free map, receive periodic risk
+    predictions, and send GPS/telemetry data to the backend.
+  </p>
+
+  <h2>3. Research Problem, Questions, and Objectives</h2>
+  <h3>Problem Statement</h3>
+  <p>
+    Existing road accident prediction systems often treat all vehicles similarly, focus on urban or highway environments, and
+    lack integration between vehicle type, real-time weather, road geometry, and live driving telemetry. This creates a gap
+    for hill-country roads where terrain, visibility, and vehicle-specific handling characteristics can significantly change
+    accident risk.
+  </p>
+  <h3>Research Questions</h3>
+  <ol>
+    <li>What machine learning algorithms have been used for early road accident prediction?</li>
+    <li>Which mountain-road, weather, and vehicle-specific factors influence accident risk?</li>
+    <li>How can an accurate machine learning model be developed to identify accident risk in advance for mountainous roads?</li>
+    <li>How can the model be evaluated and integrated into a real-time warning system?</li>
+  </ol>
+  <h3>Research Objectives</h3>
+  <table>
+    <tr><th>Objective</th><th>Description</th><th>Progress</th></tr>
+    <tr>
+      <td>RO1</td>
+      <td>Review ML accident prediction approaches and identify vehicle, road, weather, and telemetry risk factors.</td>
+      <td>Proposal review completed; feature set reflects weather, road geometry, vehicle type, time, driver, and speed/telemetry factors.</td>
+    </tr>
+    <tr>
+      <td>RO2</td>
+      <td>Develop an ML model that predicts accident risk levels for hazardous mountain roads.</td>
+      <td>Random Forest, tuned Random Forest, XGBoost, Gradient Boosting, Logistic Regression, Extra Trees, SVM, KNN, Naive Bayes, Decision Tree, AdaBoost, and Dummy baseline experiments completed.</td>
+    </tr>
+    <tr>
+      <td>RO3</td>
+      <td>Evaluate model performance using robust metrics and explain the predictions.</td>
+      <td>F1-macro, class-wise F1, High-class recall, AUC-ROC, kappa, cross-validation, feature importance, and SHAP outputs generated.</td>
+    </tr>
+    <tr>
+      <td>RO4</td>
+      <td>Integrate the model into a real-time alert prototype.</td>
+      <td>Backend API, web dashboard, Android map screen, mobile prediction endpoint, trip lifecycle, and telemetry worker implemented.</td>
+    </tr>
+  </table>
+
+  <h2>4. Alignment with Submitted Proposal</h2>
+  <table>
+    <tr><th>Proposal Requirement</th><th>Implementation Completed</th><th>Current Evidence</th></tr>
+    <tr>
+      <td>Use historical accident data with vehicle type, location, time, weather, and accident attributes.</td>
+      <td>Created and used mock Kadugannawa accident records while keeping the schema replaceable for official police records.</td>
+      <td><code>data/raw/kadugannawa_accidents_mock.csv</code>, <code>data/raw/Police.records.data.Kadugannawa.csv</code></td>
+    </tr>
+    <tr>
+      <td>Use weather information for accident risk prediction.</td>
+      <td>Integrated local weather export and OpenMeteo historical/forecast weather data.</td>
+      <td><code>data/raw/export.xlsx</code>, <code>kadugannawa_historical_daily.csv</code>, <code>kadugannawa_forecast_7d.csv</code></td>
+    </tr>
+    <tr>
+      <td>Use road and topographic characteristics.</td>
+      <td>Built OSM road geometry extraction and risk-zone data for Kadugannawa road segments.</td>
+      <td><code>data/raw/kadugannawa_road_segments.csv</code>, <code>backend/api/segments.py</code>, <code>/api/mobile/risk-zones</code></td>
+    </tr>
+    <tr>
+      <td>Train a Random Forest model.</td>
+      <td>Random Forest baseline and tuned Random Forest implemented, then compared with stronger baselines.</td>
+      <td><code>src/modeling/main.py</code>, <code>rf_tuning_imbalanced.py</code>, <code>model_comparison.py</code></td>
+    </tr>
+    <tr>
+      <td>Evaluate model using accuracy, precision, recall, F1, confusion matrix, and feature importance.</td>
+      <td>Generated comparison reports, ROC curves, confusion matrices, feature importance charts, SHAP reports, and class-level metrics.</td>
+      <td><code>outputs/reports</code>, <code>outputs/rf_tuning</code>, <code>outputs/smote</code>, <code>outputs/shap</code></td>
+    </tr>
+    <tr>
+      <td>Develop a real-time warning system prototype.</td>
+      <td>Implemented backend APIs, web dashboard, Android app, map, trip start/end, prediction loop, and telemetry upload.</td>
+      <td><code>backend/api/mobile.py</code>, <code>frontend/public/dashboard.html</code>, <code>android/app/src/main</code></td>
+    </tr>
+  </table>
+
+  <h2>5. Complete Methodology</h2>
+  <p>
+    The methodology has been converted from the proposal workflow into an executable software and ML pipeline. Each step
+    produces artifacts that are used by the next step, making the project repeatable when real police accident records become
+    available.
+  </p>
+  <div class="pipeline">
+    <div class="step"><strong>1. Proposal Study</strong><br>Research gap, objectives, and methodology definition.</div>
+    <div class="step"><strong>2. Data Collection</strong><br>Accident, weather, OSM road, and telemetry data.</div>
+    <div class="step"><strong>3. Cleaning</strong><br>Date alignment, missing values, leakage column removal.</div>
+    <div class="step"><strong>4. Feature Engineering</strong><br>Weather, road, vehicle, time, speed, and interactions.</div>
+    <div class="step"><strong>5. Training</strong><br>RF, XGBoost, Gradient Boosting, and other baselines.</div>
+    <div class="step"><strong>6. Evaluation</strong><br>F1-macro, High recall, AUC, kappa, CV, confusion matrices.</div>
+    <div class="step"><strong>7. Explainability</strong><br>Feature importance and SHAP interpretation.</div>
+    <div class="step"><strong>8. Deployment Prototype</strong><br>Backend, dashboard, Android app, map, telemetry.</div>
+  </div>
+
+  <h2>6. Data Collection and Dataset Status</h2>
+  <table>
+    <tr><th>Data Source</th><th>File / Component</th><th>Status</th><th>Purpose</th></tr>
+    <tr>
+      <td>Mock accident records</td>
+      <td><code>data/raw/kadugannawa_accidents_mock.csv</code></td>
+      <td>Used for prototype training</td>
+      <td>Allows model development before official police data is available.</td>
+    </tr>
+    <tr>
+      <td>Police record placeholder</td>
+      <td><code>data/raw/Police.records.data.Kadugannawa.csv</code></td>
+      <td>Prepared for later replacement</td>
+      <td>Supports transition from mock data to real accident data.</td>
+    </tr>
+    <tr>
+      <td>Weather export</td>
+      <td><code>data/raw/export.xlsx</code></td>
+      <td>Integrated</td>
+      <td>Provides historical temperature, rainfall, visibility, wind, and pressure context.</td>
+    </tr>
+    <tr>
+      <td>OpenMeteo data</td>
+      <td><code>kadugannawa_historical_daily.csv</code>, <code>kadugannawa_forecast_7d.csv</code></td>
+      <td>Generated</td>
+      <td>Supports historical training context and future/current alert context.</td>
+    </tr>
+    <tr>
+      <td>OpenStreetMap road geometry</td>
+      <td><code>kadugannawa_road_segments.csv</code></td>
+      <td>Generated and used by backend/mobile</td>
+      <td>Provides segment name, coordinates, gradient, curvature, and base risk level.</td>
+    </tr>
+    <tr>
+      <td>Mobile telemetry</td>
+      <td><code>LocationService.kt</code>, <code>TelemetryWorker.kt</code>, <code>/api/telemetry</code></td>
+      <td>Implemented</td>
+      <td>Provides live latitude, longitude, speed, heading, vehicle type, device ID, and timestamp.</td>
+    </tr>
+  </table>
+
+  <h2>7. Data Preprocessing and Integration</h2>
+  <p>
+    The preprocessing pipeline creates model-ready features from accident, weather, road, and contextual data. The pipeline
+    normalises date fields before merging accident and weather rows, handles missing values, prevents data leakage, applies
+    scaling, and stores fitted preprocessing objects for inference reuse.
+  </p>
+  <table>
+    <tr><th>Preprocessing Area</th><th>Completed Work</th></tr>
+    <tr><td>Train-test split</td><td>20% held-out stratified test set retained before oversampling.</td></tr>
+    <tr><td>Class imbalance</td><td>SMOTE applied only to training data. Current report shows training after SMOTE as 681 rows x 64 features, balanced as 227 Low, 227 Medium, 227 High.</td></tr>
+    <tr><td>Missing values</td><td>KNN and median imputers fitted on training data and saved for inference reuse.</td></tr>
+    <tr><td>Scaling</td><td>Scaler fitted only on training data; test set transformed using that fitted scaler.</td></tr>
+    <tr><td>Leakage prevention</td><td>Dropped outcome-derived fields: <code>injuries</code>, <code>fatalities</code>, and <code>risk_score</code>.</td></tr>
+    <tr><td>Artifacts</td><td><code>X_train.csv</code>, <code>X_test.csv</code>, <code>y_train.csv</code>, <code>y_test.csv</code>, <code>feature_names.csv</code>, <code>scaler.pkl</code>, <code>knn_imp.pkl</code>, <code>med_imp.pkl</code>.</td></tr>
+  </table>
+  <div class="note">
+    <strong>Important methodological note:</strong> F1-macro and class-wise High-risk recall are more important than accuracy
+    because severe accidents are naturally less frequent but more important to detect.
+  </div>
+
+  <h2>8. Feature Engineering</h2>
+  <p>
+    Feature engineering expanded raw observations into 64 model features, with additional candidate features explored through
+    feature registry and mutual information analysis. The project specifically adds interaction features because hill-road
+    accidents often happen when multiple moderate risks occur together.
+  </p>
+  <table>
+    <tr><th>Feature Group</th><th>Examples</th><th>Research Value</th></tr>
+    <tr><td>Weather</td><td>rainfall, precipitation, visibility, wind speed, pressure, rainy/heavy-rain flags</td><td>Captures rain, fog, low visibility, and changing weather.</td></tr>
+    <tr><td>Road geometry</td><td>elevation, road slope, slope category, curvature, sharp curve flag, steep road flag</td><td>Captures mountainous-road hazards.</td></tr>
+    <tr><td>Vehicle type</td><td>vehicle risk weight, heavy vehicle flag, bus/car/lorry/motorcycle/three-wheeler one-hot fields</td><td>Supports the vehicle-specific research aim.</td></tr>
+    <tr><td>Speed and telemetry</td><td>estimated speed, speed limit, speed excess, speed ratio, live speed and heading</td><td>Links risk prediction to driving behaviour.</td></tr>
+    <tr><td>Time</td><td>hour, weekend, night, morning/evening peak, monsoon, season encoding</td><td>Represents visibility, traffic pattern, and seasonal rain effects.</td></tr>
+    <tr><td>Interactions</td><td>rain x curve, slope x curve, high-risk combination, lorry x steep road, motorcycle x rain</td><td>Captures compound non-linear risk.</td></tr>
+  </table>
+
+  <h2>9. Model Development</h2>
+  <p>
+    The proposal originally selected Random Forest because it handles non-linear feature interactions, works well with mixed
+    tabular data, and is easier to explain than many black-box models. The implementation kept Random Forest as the primary
+    proposal-aligned model, then expanded the experiment design to include XGBoost and other baselines for stronger academic
+    comparison.
+  </p>
+  <table>
+    <tr><th>Model Group</th><th>Models Tested</th><th>Purpose</th></tr>
+    <tr><td>Simple baselines</td><td>Dummy majority, Logistic Regression, Gaussian Naive Bayes</td><td>Show baseline performance and avoid arbitrary model selection.</td></tr>
+    <tr><td>Distance/margin methods</td><td>KNN, SVM RBF</td><td>Compare non-tree classification approaches.</td></tr>
+    <tr><td>Tree-based methods</td><td>Decision Tree, Extra Trees, Random Forest</td><td>Evaluate interpretable and ensemble tree methods.</td></tr>
+    <tr><td>Boosting methods</td><td>AdaBoost, Gradient Boosting, XGBoost</td><td>Test higher-performing non-linear ensemble models.</td></tr>
+  </table>
+
+  <h2>10. Model Evaluation Results</h2>
+  <h3>Random Forest and XGBoost Comparison</h3>
+  <table>
+    <tr><th>Model</th><th>F1-Macro</th><th>Kappa</th><th>AUC-ROC</th><th>Accuracy</th></tr>
+    <tr><td>Random Forest default</td><td>0.8791</td><td>0.7817</td><td>0.9742</td><td>0.8700</td></tr>
+    <tr><td>Random Forest tuned</td><td>0.8791</td><td>0.7817</td><td>0.9736</td><td>0.8700</td></tr>
+    <tr><td>XGBoost default</td><td>0.8979</td><td>0.8298</td><td>0.9793</td><td>0.9000</td></tr>
+    <tr><td>XGBoost tuned</td><td>0.9120</td><td>0.8473</td><td>0.9797</td><td>0.9100</td></tr>
+  </table>
+  <h3>Class-Level Tuned Model Results</h3>
+  <table>
+    <tr><th>Model</th><th>Low F1</th><th>Medium F1</th><th>High F1</th><th>High Precision</th><th>High Recall</th></tr>
+    <tr><td>Random Forest tuned</td><td>0.8254</td><td>0.8785</td><td>0.9333</td><td>1.0000</td><td>0.8750</td></tr>
+    <tr><td>XGBoost tuned</td><td>0.8852</td><td>0.9174</td><td>0.9333</td><td>1.0000</td><td>0.8750</td></tr>
+  </table>
+  <h3>Additional Baseline Results</h3>
+  <table>
+    <tr><th>Model</th><th>F1-Macro</th><th>High F1</th><th>High Recall</th><th>Kappa</th><th>AUC-ROC</th><th>CV Mean</th></tr>
+    <tr><td>Gradient Boosting</td><td>0.9237</td><td>0.9032</td><td>0.8750</td><td>0.8802</td><td>0.9703</td><td>0.7966</td></tr>
+    <tr><td>XGBoost tuned</td><td>0.9202</td><td>0.9333</td><td>0.8750</td><td>0.8636</td><td>0.9815</td><td>0.8175</td></tr>
+    <tr><td>Logistic Regression</td><td>0.9174</td><td>0.9697</td><td>1.0000</td><td>0.8497</td><td>0.9905</td><td>0.8859</td></tr>
+    <tr><td>Extra Trees</td><td>0.8905</td><td>0.9032</td><td>0.8750</td><td>0.8156</td><td>0.9776</td><td>0.8191</td></tr>
+    <tr><td>Random Forest tuned</td><td>0.8791</td><td>0.9333</td><td>0.8750</td><td>0.7817</td><td>0.9736</td><td>0.8082</td></tr>
+    <tr><td>SVM RBF</td><td>0.8703</td><td>0.8571</td><td>0.7500</td><td>0.7881</td><td>0.9673</td><td>0.8437</td></tr>
+    <tr><td>AdaBoost</td><td>0.7777</td><td>0.8000</td><td>0.8750</td><td>0.6320</td><td>0.8871</td><td>0.6870</td></tr>
+    <tr><td>Decision Tree</td><td>0.7157</td><td>0.5517</td><td>0.5000</td><td>0.5920</td><td>0.7731</td><td>0.7115</td></tr>
+    <tr><td>KNN</td><td>0.6829</td><td>0.7895</td><td>0.9375</td><td>0.5016</td><td>0.9230</td><td>0.6898</td></tr>
+    <tr><td>Gaussian Naive Bayes</td><td>0.5297</td><td>0.5283</td><td>0.8750</td><td>0.3100</td><td>0.8534</td><td>0.5490</td></tr>
+    <tr><td>Dummy majority</td><td>0.1417</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.5000</td><td>0.1448</td></tr>
+  </table>
+  <div class="note">
+    <strong>Interpretation:</strong> Gradient Boosting produced the best held-out F1-macro in the additional baseline run,
+    while XGBoost and Logistic Regression also performed strongly. Because the current accident records are still prototype/mock
+    data, final model selection must be repeated after official police data is integrated.
+  </div>
+
+  <div class="figure">
+    <img src="../outputs/model_baselines/baseline_model_comparison.png" alt="Baseline model comparison">
+    <div class="caption">Figure 1. Additional baseline model comparison for dissertation model selection.</div>
+  </div>
+  <div class="figure">
+    <img src="../outputs/reports/comparison_figure.png" alt="Model comparison">
+    <div class="caption">Figure 2. Random Forest and XGBoost comparison generated by the modelling pipeline.</div>
+  </div>
+  <div class="figure">
+    <img src="../outputs/reports/roc_curves.png" alt="ROC curves">
+    <div class="caption">Figure 3. ROC curves for multi-class accident severity prediction.</div>
+  </div>
+
+  <h2>11. Imbalanced Data Handling</h2>
+  <p>
+    Accident severity datasets are imbalanced because severe accidents are less frequent. The project therefore tested
+    class weighting, SMOTE, and combined approaches. SMOTE was applied only to the training split, and cross-validation uses
+    SMOTE inside each fold to avoid leakage.
+  </p>
+  <table>
+    <tr><th>Strategy</th><th>F1-Macro</th><th>High F1</th><th>High Precision</th><th>High Recall</th></tr>
+    <tr><td>Baseline, no handling</td><td>0.8472</td><td>0.8571</td><td>1.0000</td><td>0.7500</td></tr>
+    <tr><td>class_weight='balanced'</td><td>0.8474</td><td>0.8148</td><td>1.0000</td><td>0.6875</td></tr>
+    <tr><td>SMOTE only</td><td>0.8791</td><td>0.9333</td><td>1.0000</td><td>0.8750</td></tr>
+    <tr><td>SMOTE + balanced</td><td>0.8791</td><td>0.9333</td><td>1.0000</td><td>0.8750</td></tr>
+    <tr><td>SMOTE + balanced_subsample</td><td>0.8735</td><td>0.9032</td><td>0.9333</td><td>0.8750</td></tr>
+  </table>
+  <div class="figure">
+    <img src="../outputs/rf_tuning/strategy_comparison.png" alt="RF tuning strategy comparison">
+    <div class="caption">Figure 4. Random Forest imbalance-handling strategy comparison.</div>
+  </div>
+  <div class="figure">
+    <img src="../outputs/smote/smote_class_balance.png" alt="SMOTE class balance">
+    <div class="caption">Figure 5. SMOTE balancing output showing equalised training classes.</div>
+  </div>
+
+  <h2>12. Explainability and Research Findings</h2>
+  <p>
+    SHAP explainability was added to support academic interpretation and stakeholder trust. It helps explain which weather,
+    road, vehicle, and time features push predictions toward Low, Medium, or High risk.
+  </p>
+  <div class="grid2">
+    <div class="box"><strong>Finding 1: Weather and visibility are major risk drivers.</strong><br>Weather condition, visibility, rain, and pressure features strongly support High-risk classification.</div>
+    <div class="box"><strong>Finding 2: Road geometry compounds risk.</strong><br>Road slope, curvature, sharp curves, and slope-curve interaction validate the mountain-road focus.</div>
+    <div class="box"><strong>Finding 3: Vehicle type matters.</strong><br>Vehicle risk weight and heavy vehicle flags support the central idea of vehicle-specific alerts.</div>
+    <div class="box"><strong>Finding 4: Time and seasonal context matter.</strong><br>Night, peak time, weekend, and monsoon features support dynamic contextual prediction.</div>
+  </div>
+  <div class="figure">
+    <img src="../outputs/shap/shap_bar_global.png" alt="SHAP global feature importance">
+    <div class="caption">Figure 6. SHAP global importance summary.</div>
+  </div>
+  <div class="figure">
+    <img src="../outputs/shap/shap_vehicle_comparison.png" alt="SHAP vehicle comparison">
+    <div class="caption">Figure 7. Vehicle-specific SHAP comparison supporting the vehicle-type research focus.</div>
+  </div>
+  <div class="figure">
+    <img src="../outputs/plots/feature_importance.png" alt="Feature importance">
+    <div class="caption">Figure 8. Feature importance chart for dissertation results discussion.</div>
+  </div>
+
+  <h2>13. Complete Software Architecture</h2>
+  <table>
+    <tr><th>Layer</th><th>Implemented Components</th><th>Role</th></tr>
+    <tr><td>Data pipeline</td><td><code>src/data_collection</code>, <code>src/preprocessing</code>, <code>src/feature_engineering</code></td><td>Collects data, cleans it, merges sources, and generates training features.</td></tr>
+    <tr><td>Modeling</td><td><code>src/modeling</code>, <code>models/saved_models</code></td><td>Trains, tunes, compares, and saves ML models.</td></tr>
+    <tr><td>Evaluation</td><td><code>src/evaluation</code>, <code>outputs/reports</code>, <code>outputs/shap</code></td><td>Produces metrics, graphs, SHAP explanations, and dissertation-ready outputs.</td></tr>
+    <tr><td>Backend</td><td><code>backend/api</code>, <code>backend/services</code>, <code>backend/models</code></td><td>Exposes prediction, weather, segment, auth, mobile, telemetry, and health APIs.</td></tr>
+    <tr><td>Frontend web</td><td><code>frontend/public/dashboard.html</code>, <code>predict.html</code></td><td>Provides dashboard and prediction interface for demonstration.</td></tr>
+    <tr><td>Android mobile</td><td><code>android/app/src/main</code></td><td>Provides real-time driving workflow, GPS, map, trip control, and risk alerts.</td></tr>
+    <tr><td>Device/edge layer</td><td><code>device/edge_agent.py</code>, <code>obd_adapter.py</code>, Android telemetry worker</td><td>Simulates or captures telemetry for live risk prediction.</td></tr>
+  </table>
+
+  <h2>14. Backend API Implementation</h2>
+  <p>
+    The backend is organised around route handlers and services. It supports general prediction requests and mobile-specific
+    endpoints. The prediction endpoints accept vehicle type, weather fields, road fields, time fields, traffic density, and
+    optional GPS/telemetry context.
+  </p>
+  <table>
+    <tr><th>Endpoint / Component</th><th>Purpose</th><th>Current Implementation</th></tr>
+    <tr><td><code>POST /api/predict</code></td><td>General risk prediction</td><td>Uses <code>PredictionRequest</code>, merges cached device context, fills safe defaults, calls <code>ModelService</code>, and returns risk level, score, probabilities, recommended speed, and alert message.</td></tr>
+    <tr><td><code>POST /api/mobile/predict</code></td><td>Mobile risk prediction</td><td>Mobile-friendly endpoint with the same prediction logic and optional high-risk notification support.</td></tr>
+    <tr><td><code>POST /api/mobile/trip/start</code></td><td>Start driver trip</td><td>Creates a trip record with driver, start time, GPS location, and vehicle type.</td></tr>
+    <tr><td><code>POST /api/mobile/trip/end</code></td><td>End driver trip</td><td>Stores end location, distance, duration, and returns risk summary fields.</td></tr>
+    <tr><td><code>GET /api/mobile/risk-zones</code></td><td>Map risk zones</td><td>Reads Kadugannawa segment CSV and returns road segment coordinates, gradient, curvature, and base risk.</td></tr>
+    <tr><td><code>POST /api/telemetry</code></td><td>Telemetry ingestion</td><td>Accepts device ID, vehicle type, GPS, speed, heading, acceleration, RPM, and ISO timestamp.</td></tr>
+    <tr><td><code>GET /api/weather</code>, <code>segments.py</code></td><td>Context data</td><td>Supports weather and road segment lookups for dashboard and prediction context.</td></tr>
+  </table>
+
+  <h2>15. Web Dashboard and Prediction Interface</h2>
+  <p>
+    The web prototype supports supervisor/demo use cases through a browser dashboard and prediction screen. It shows the
+    intended user-facing risk alert flow before the Android app is tested on-device. The current web files are located in
+    <code>frontend/public/dashboard.html</code>, <code>frontend/public/predict.html</code>, and <code>frontend/public/index.html</code>.
+  </p>
+  <p>
+    The dashboard is useful for presenting the backend prediction logic, current weather/road information, and visual output
+    without depending entirely on the mobile application during demonstrations.
+  </p>
+
+  <h2>16. Android Mobile App Implementation</h2>
+  <p>
+    The Android app extends the research from an offline ML prototype into a real-time driver-support prototype called
+    KaduGuard. The mobile implementation includes authentication, profile/device integration, map navigation, vehicle
+    selection, trip lifecycle management, location permission handling, foreground GPS tracking, periodic prediction, and
+    telemetry upload.
+  </p>
+  <table>
+    <tr><th>Android Component</th><th>Purpose</th><th>Implementation Detail</th></tr>
+    <tr><td><code>KaduGuardApiService.kt</code></td><td>Backend API contract</td><td>Defines register/login/refresh, device registration, prediction, trip start/end, trip summary, risk zones, and telemetry endpoints.</td></tr>
+    <tr><td><code>MapRoute.kt</code></td><td>Permission and route bridge</td><td>Requests fine/coarse location permission and starts driving only after permission is granted.</td></tr>
+    <tr><td><code>MapViewModel.kt</code></td><td>Driving-session controller</td><td>Loads zones, stores vehicle type, starts trips on GPS fix, calculates route distance, calls prediction every 15 seconds, and ends trips.</td></tr>
+    <tr><td><code>MapScreen.kt</code></td><td>User interface</td><td>Displays full-screen free map, risk zones, current route, current position, risk badge, vehicle chips, start/end buttons, score, speed, distance, alert message, and retry state.</td></tr>
+    <tr><td><code>LocationService.kt</code></td><td>Foreground GPS tracking</td><td>Runs high-accuracy location updates every 10 seconds, updates foreground notification, stores latest location, and enqueues telemetry work.</td></tr>
+    <tr><td><code>TelemetryWorker.kt</code></td><td>Telemetry delivery</td><td>Sends <code>device_id</code>, <code>vehicle_type</code>, GPS, speed, heading, and ISO timestamp; queues offline payloads when token/network is unavailable.</td></tr>
+    <tr><td><code>AndroidManifest.xml</code></td><td>Required permissions</td><td>Includes internet, fine/coarse/background location, notifications, foreground service, and foreground service location permissions.</td></tr>
+  </table>
+
+  <h2>17. Real-Time Driving Flow</h2>
+  <p>
+    The live mobile flow now matches the research goal: a driver selects a vehicle type before starting a trip, the app tracks
+    GPS, finds nearby road risk zones, requests periodic predictions, and displays warning information while driving.
+  </p>
+  <ol>
+    <li>User signs in and opens the driving map screen.</li>
+    <li>App loads road risk zones from <code>/api/mobile/risk-zones</code>.</li>
+    <li>User selects vehicle type: car, van, bus, lorry, or motorcycle.</li>
+    <li>User taps Start; app requests location permission if needed.</li>
+    <li>Foreground <code>LocationService</code> starts and waits for GPS fix.</li>
+    <li>On first GPS fix, app calls <code>/api/mobile/trip/start</code> with vehicle type and start location.</li>
+    <li>Every 15 seconds, <code>MapViewModel</code> builds a prediction request using vehicle type, location, speed, heading, nearest zone gradient, nearest zone curvature, hour, and day of week.</li>
+    <li>Backend returns risk level, risk score, probabilities, recommended speed, and alert message.</li>
+    <li>Map UI updates the risk badge, alert message, recommended speed, route line, current location, score, speed, and distance.</li>
+    <li>Telemetry worker uploads GPS and movement context to <code>/api/telemetry</code> or stores it in the offline queue for later sync.</li>
+    <li>User taps End; app calls <code>/api/mobile/trip/end</code> with end location, travelled distance, and duration.</li>
+  </ol>
+  <div class="good">
+    <strong>Map implementation decision:</strong> The mobile map uses a WebView with Leaflet, MapLibre, and OpenFreeMap
+    style tiles at <code>https://tiles.openfreemap.org/styles/liberty</code>. This avoids a Google Maps key requirement and
+    avoids relying on blocked OpenStreetMap volunteer tiles.
+  </div>
+
+  <h2>18. Limitations and Research Risks</h2>
+  <table>
+    <tr><th>Risk / Limitation</th><th>Impact</th><th>Mitigation</th></tr>
+    <tr><td>Mock accident records</td><td>Model scores may not represent real-world performance.</td><td>Clearly label current results as prototype results and rerun all experiments after official police data is added.</td></tr>
+    <tr><td>Small geographic focus</td><td>Findings may be specific to Kadugannawa.</td><td>Keep Kadugannawa as the main case study and optionally validate with another hill-road segment if time permits.</td></tr>
+    <tr><td>Class imbalance</td><td>High-risk accidents may be under-detected if accuracy is prioritised.</td><td>Use F1-macro, High recall, High F1, class-wise confusion matrices, and SMOTE inside cross-validation.</td></tr>
+    <tr><td>Potential data leakage</td><td>Outcome-derived fields can inflate performance.</td><td>Continue excluding injuries, fatalities, generated risk score, and other post-accident outcome fields.</td></tr>
+    <tr><td>Weather granularity</td><td>Daily weather may not match exact accident time.</td><td>Use hourly/current API weather in real deployment and document current granularity.</td></tr>
+    <tr><td>OSM road geometry quality</td><td>Segment slope/curvature may differ from real road conditions.</td><td>Manually validate high-risk segments and compare with local knowledge when possible.</td></tr>
+    <tr><td>Mobile deployment uncertainty</td><td>GPS, permissions, network, and background restrictions can affect live use.</td><td>Use foreground service, offline queue, retry logic, cached/default context values, and device testing.</td></tr>
+    <tr><td>Ethics and privacy</td><td>Police data and GPS data contain sensitive information.</td><td>Anonymise records, avoid storing unnecessary personal data, and explain GPS privacy in the dissertation.</td></tr>
+  </table>
+
+  <h2>19. Work Completed from Beginning to Current Stage</h2>
+  <ol>
+    <li>Selected the research topic: vehicle type-based alert system for hazardous hill-country pathways.</li>
+    <li>Defined the problem statement, research gap, research questions, objectives, and methodology in the proposal.</li>
+    <li>Selected Kadugannawa, Kandy District as the study area.</li>
+    <li>Prepared project architecture for data, ML, backend, frontend, Android, device, documentation, models, and outputs.</li>
+    <li>Created mock Kadugannawa accident records to support early development before official police data is available.</li>
+    <li>Prepared a police-data-compatible structure for future real accident record replacement.</li>
+    <li>Collected and stored weather data from local export and OpenMeteo sources.</li>
+    <li>Generated OpenStreetMap road segment geometry for road slope, curvature, segment coordinates, and risk-zone support.</li>
+    <li>Implemented preprocessing: date normalisation, merge logic, train/test split, leakage removal, imputation, scaling, and saved preprocessing artifacts.</li>
+    <li>Engineered weather, road, vehicle, time, speed, driver, and interaction features.</li>
+    <li>Applied SMOTE only to the training set and compared imbalance-handling strategies.</li>
+    <li>Trained Random Forest baseline, tuned Random Forest, XGBoost default, tuned XGBoost, and additional baseline models.</li>
+    <li>Generated evaluation reports: F1-macro, accuracy, AUC-ROC, kappa, class-wise F1, High precision, High recall, and cross-validation results.</li>
+    <li>Generated model visualisations: baseline model comparison, ROC curves, feature importance, RF tuning, threshold analysis, and SMOTE plots.</li>
+    <li>Implemented SHAP explainability with global, class-level, vehicle-level, dependence, beeswarm, and waterfall outputs.</li>
+    <li>Implemented backend prediction endpoints, mobile endpoints, weather/segment endpoints, auth/device APIs, telemetry schema, and model service integration.</li>
+    <li>Built the web dashboard and prediction interface for demonstration.</li>
+    <li>Implemented Android API models and Retrofit service contract.</li>
+    <li>Implemented Android map screen with free OpenFreeMap/MapLibre rendering, zone overlays, route line, and current location marker.</li>
+    <li>Implemented vehicle type selection before trip start.</li>
+    <li>Implemented mobile trip start, live prediction loop, trip end, distance/duration calculation, and risk summary fields.</li>
+    <li>Implemented foreground GPS tracking and Android permissions for real-time driving.</li>
+    <li>Fixed telemetry payload alignment with backend validation by sending device ID, vehicle type, latitude, longitude, ISO timestamp, speed, and heading.</li>
+    <li>Implemented offline telemetry queue behaviour when token or network is unavailable.</li>
+  </ol>
+
+  <h2>20. Remaining Work Before Final Dissertation</h2>
+  <ol>
+    <li>Obtain official police accident records or the best available real accident dataset.</li>
+    <li>Clean and anonymise real records, then replace or combine with mock records.</li>
+    <li>Map real accident locations to road segments and validate GPS/segment accuracy.</li>
+    <li>Rerun preprocessing, feature engineering, model training, baseline comparison, SHAP, and all figures after real data is integrated.</li>
+    <li>Decide final model presentation: Random Forest as proposal-aligned interpretable model, XGBoost/Gradient Boosting as stronger predictive model, or both.</li>
+    <li>Run backend API tests and prepare sample prediction requests/responses for dissertation appendix.</li>
+    <li>Test the Android app on a real device with GPS and network conditions.</li>
+    <li>Capture screenshots of the dashboard and Android app for Chapter 4 and Chapter 5.</li>
+    <li>Add ethics/privacy discussion for police records, GPS tracking, device identifiers, and responsible alert design.</li>
+    <li>Write final dissertation chapters: literature review, methodology, implementation, results, evaluation, limitations, and conclusion.</li>
+  </ol>
+
+  <h2>21. Suggested Supervisor Meeting Explanation</h2>
+  <div class="box">
+    I have now completed the project from the proposal stage to an end-to-end research prototype. I selected Kadugannawa as
+    the case study, prepared accident, weather, road geometry, and telemetry data sources, and built a full preprocessing and
+    feature engineering pipeline. I trained Random Forest as proposed, tuned it, compared it with XGBoost and other baseline
+    models, handled class imbalance using SMOTE, and added SHAP explainability to justify the model results. I also developed
+    the practical system side: backend prediction and mobile APIs, a dashboard, and an Android app with free map rendering,
+    vehicle selection, GPS tracking, trip start/end, real-time prediction every 15 seconds, and telemetry upload. The main
+    remaining research risk is that current model scores are based on mock/prototype accident records, so the next important
+    step is to replace the data with official police records and rerun the experiments.
+  </div>
+
+  <h2>22. Questions to Ask the Supervisor</h2>
+  <ol>
+    <li>Should the dissertation present Random Forest as the main model because it matches the proposal, or present Gradient Boosting/XGBoost as the final predictive model with Random Forest as the interpretable baseline?</li>
+    <li>Is the current prototype result acceptable while waiting for official police records, if the limitation is clearly stated?</li>
+    <li>What level of real-device mobile testing is expected for the final submission?</li>
+    <li>Should the study remain focused only on Kadugannawa, or should another hill-country road be added for validation?</li>
+    <li>What screenshots, API demonstrations, or user testing evidence should be included in the final dissertation?</li>
+    <li>How much detail should be included about privacy, GPS tracking, and responsible accident alerts?</li>
+  </ol>
+
+  <h2>23. Appendix: Key Files and Artifacts</h2>
+  <table>
+    <tr><th>Category</th><th>Files / Folders</th></tr>
+    <tr><td>Proposal/documentation</td><td><code>docs/proposal_extracted.txt</code>, <code>docs/supervisor_meeting_research_document.html</code>, this updated document</td></tr>
+    <tr><td>Raw/external data</td><td><code>data/raw</code>, <code>data/external</code>, <code>kadugannawa_forecast_7d.csv</code>, <code>kadugannawa_historical_daily.csv</code>, <code>kadugannawa_road_segments.csv</code></td></tr>
+    <tr><td>Processed data</td><td><code>data/processed</code>, <code>X_train.csv</code>, <code>X_test.csv</code>, <code>y_train.csv</code>, <code>y_test.csv</code>, <code>feature_registry.csv</code></td></tr>
+    <tr><td>Model scripts</td><td><code>src/modeling/main.py</code>, <code>model_comparison.py</code>, <code>baseline_model_comparison.py</code>, <code>rf_tuning_imbalanced.py</code>, <code>smote_implementation.py</code></td></tr>
+    <tr><td>Evaluation scripts</td><td><code>src/evaluation/shap_analysis.py</code>, <code>feature_importance_chart.py</code></td></tr>
+    <tr><td>Saved models</td><td><code>models/saved_models</code>, <code>models/pipeline_objects</code></td></tr>
+    <tr><td>Reports</td><td><code>outputs/reports/comparison_report.txt</code>, <code>outputs/model_baselines/baseline_model_report.txt</code>, <code>outputs/rf_tuning/tuning_report.txt</code>, <code>outputs/shap/shap_report.txt</code></td></tr>
+    <tr><td>Figures</td><td><code>outputs/reports</code>, <code>outputs/model_baselines</code>, <code>outputs/rf_tuning</code>, <code>outputs/smote</code>, <code>outputs/shap</code>, <code>outputs/plots</code></td></tr>
+    <tr><td>Backend</td><td><code>backend/api/predict.py</code>, <code>mobile.py</code>, <code>telemetry.py</code>, <code>segments.py</code>, <code>weather.py</code>, <code>backend/services/model_service.py</code></td></tr>
+    <tr><td>Web frontend</td><td><code>frontend/public/dashboard.html</code>, <code>frontend/public/predict.html</code></td></tr>
+    <tr><td>Android app</td><td><code>MapViewModel.kt</code>, <code>MapRoute.kt</code>, <code>MapScreen.kt</code>, <code>LocationService.kt</code>, <code>TelemetryWorker.kt</code>, <code>KaduGuardApiService.kt</code>, <code>ApiModels.kt</code></td></tr>
+  </table>
+</body>
+</html>

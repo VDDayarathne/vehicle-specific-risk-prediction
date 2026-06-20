@@ -28,6 +28,7 @@ import com.kaduguard.app.data.telemetry.TelemetryWorker
 class LocationService : Service() {
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private var locationCallback: LocationCallback? = null
+    private var vehicleType: String = DEFAULT_VEHICLE_TYPE
 
     override fun onCreate() {
         super.onCreate()
@@ -38,6 +39,7 @@ class LocationService : Service() {
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        vehicleType = intent?.getStringExtra(EXTRA_VEHICLE_TYPE)?.takeIf { it.isNotBlank() } ?: vehicleType
         when (intent?.action) {
             ACTION_START -> startLocationUpdates()
             ACTION_STOP -> stopTracking()
@@ -80,6 +82,7 @@ class LocationService : Service() {
                         .putDouble(TelemetryWorker.KEY_SPEED, if (location.hasSpeed()) location.speed * 3.6 else Double.NaN)
                         .putDouble(TelemetryWorker.KEY_HEADING, if (location.hasBearing()) location.bearing.toDouble() else Double.NaN)
                         .putString(TelemetryWorker.KEY_DEVICE_ID, null)
+                        .putString(TelemetryWorker.KEY_VEHICLE_TYPE, vehicleType)
                         .build()
 
                     val work = OneTimeWorkRequestBuilder<TelemetryWorker>()
@@ -144,14 +147,19 @@ class LocationService : Service() {
     companion object {
         const val ACTION_START = "com.kaduguard.app.action.START_LOCATION"
         const val ACTION_STOP = "com.kaduguard.app.action.STOP_LOCATION"
+        const val EXTRA_VEHICLE_TYPE = "vehicle_type"
 
         private const val CHANNEL_ID = "kaduguard_location_channel"
         private const val NOTIFICATION_ID = 1001
         private const val LOCATION_INTERVAL_MS = 10_000L
         private const val MIN_UPDATE_INTERVAL_MS = 5_000L
+        private const val DEFAULT_VEHICLE_TYPE = "car"
 
-        fun start(context: Context) {
-            val intent = Intent(context, LocationService::class.java).apply { action = ACTION_START }
+        fun start(context: Context, vehicleType: String = DEFAULT_VEHICLE_TYPE) {
+            val intent = Intent(context, LocationService::class.java).apply {
+                action = ACTION_START
+                putExtra(EXTRA_VEHICLE_TYPE, vehicleType)
+            }
             ContextCompat.startForegroundService(context, intent)
         }
 

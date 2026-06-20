@@ -1,6 +1,7 @@
 package com.kaduguard.app.data.telemetry
 
 import android.content.Context
+import android.provider.Settings
 import androidx.work.CoroutineWorker
 import androidx.work.Data
 import androidx.work.WorkerParameters
@@ -14,6 +15,7 @@ import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import com.squareup.moshi.Types
 import kotlinx.coroutines.runBlocking
+import java.time.Instant
 
 class TelemetryWorker(appContext: Context, params: WorkerParameters) : CoroutineWorker(appContext, params) {
     companion object {
@@ -22,6 +24,7 @@ class TelemetryWorker(appContext: Context, params: WorkerParameters) : Coroutine
         const val KEY_SPEED = "speed"
         const val KEY_HEADING = "heading"
         const val KEY_DEVICE_ID = "device_id"
+        const val KEY_VEHICLE_TYPE = "vehicle_type"
     }
 
     override suspend fun doWork(): Result {
@@ -29,7 +32,10 @@ class TelemetryWorker(appContext: Context, params: WorkerParameters) : Coroutine
         val lon = inputData.getDouble(KEY_LON, Double.NaN)
         val speed = inputData.getDouble(KEY_SPEED, Double.NaN)
         val heading = inputData.getDouble(KEY_HEADING, Double.NaN)
-        val deviceId = inputData.getString(KEY_DEVICE_ID)
+        val deviceId = inputData.getString(KEY_DEVICE_ID).takeUnless { it.isNullOrBlank() }
+            ?: Settings.Secure.getString(applicationContext.contentResolver, Settings.Secure.ANDROID_ID)
+            ?: "android-device"
+        val vehicleType = inputData.getString(KEY_VEHICLE_TYPE).takeUnless { it.isNullOrBlank() } ?: "car"
 
         if (lat.isNaN() || lon.isNaN()) return Result.failure()
 
@@ -39,13 +45,14 @@ class TelemetryWorker(appContext: Context, params: WorkerParameters) : Coroutine
         val repo = KaduGuardRepositoryImpl(applicationContext)
 
         val payload = mutableMapOf<String, Any>(
+            "device_id" to deviceId,
+            "vehicle_type" to vehicleType,
             "latitude" to lat,
             "longitude" to lon,
-            "timestamp" to System.currentTimeMillis(),
+            "timestamp" to Instant.now().toString(),
         )
         if (!speed.isNaN()) payload["speed_kmh"] = speed
         if (!heading.isNaN()) payload["heading_deg"] = heading
-        if (!deviceId.isNullOrBlank()) payload["device_id"] = deviceId
 
         return try {
             if (token.isNullOrBlank()) {
